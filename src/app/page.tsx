@@ -208,14 +208,14 @@ export default function Home() {
           <div className="inline-flex flex-col items-center bg-white/10 rounded-3xl p-10">
             <div className="text-7xl font-bold">$12.99</div>
             
-            <button 
-              className="mt-10 w-full max-w-xs bg-[#00E5D8] text-black font-bold text-xl py-6 rounded-3xl hover:scale-105 transition flex items-center justify-center gap-3"
-              onClick={() => {
-                window.open('https://YOUR-LEMON-SQUEEZY-CHECKOUT-LINK.com', '_blank');
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<stripe-buy-button
+                  buy-button-id="buy_btn_1TLfalDmD8jmsJxFRrGnfU9r"
+                  publishable-key="pk_live_51RQh85DmD8jmsJxFIX38XYfCkF655F4phTR6McqYqmbMfdU6w0iVy8LUtkTWQc8yupZMu8jwKud8J7mVRsBKoEXQ00pbqDp1Mq"
+                ></stripe-buy-button>`
               }}
-            >
-              Buy Now – Instant Download
-            </button>
+            />
             
             <div className="mt-8 text-xs text-white/60 flex items-center gap-6">
               <div>🔒 Secure checkout via Stripe Buy Button</div>
