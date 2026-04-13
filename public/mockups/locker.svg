@@ -1,0 +1,9 @@
+<svg width="420" height="380" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="20" width="380" height="340" rx="15" fill="#0A1729" stroke="#00E5D8" stroke-width="1"/>
+<rect x="40" y="40" width="340" height="300" rx="10" fill="#061021"/>
+<text x="210" y="100" text-anchor="middle" fill="#00E5D8" font-size="20">🔒</text>
+<text x="210" y="150" text-anchor="middle" fill="white" font-size="14" font-weight="bold">NURSE LOCKER</text>
+<text x="210" y="200" text-anchor="middle" fill="white" font-size="12">📄 📄 📄</text>
+<text x="210" y="230" text-anchor="middle" fill="white" font-size="12">BUNDLE READY</text>
+<text x="210" y="260" text-anchor="middle" fill="#00E5D8" font-size="10">FOR SHIFT</text>
+</svg>

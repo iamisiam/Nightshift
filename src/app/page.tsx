@@ -86,7 +86,7 @@ export default function Home() {
         {/* HERO IMAGE - STACK MOCKUP */}
         <div className="relative">
           <Image
-            src="/mockups/stack.jpg"
+            src="/mockups/stack.svg"
             alt="2026 Night Shift Nurse Survival Bundle printed stack"
             width={600}
             height={500}
@@ -133,7 +133,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="group">
             <Image
-              src="/mockups/stack.jpg"
+              src="/mockups/stack.svg"
               alt="Printed bundle stack"
               width={420}
               height={380}
@@ -144,7 +144,7 @@ export default function Home() {
           
           <div className="group">
             <Image
-              src="/mockups/locker.jpg"
+              src="/mockups/locker.svg"
               alt="Bundle in nurse locker"
               width={420}
               height={380}
@@ -155,7 +155,7 @@ export default function Home() {
           
           <div className="group">
             <Image
-              src="/mockups/phone.jpg"
+              src="/mockups/phone.svg"
               alt="Bundle on phone/tablet"
               width={420}
               height={380}

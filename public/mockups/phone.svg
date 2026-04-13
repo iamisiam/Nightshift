@@ -1,0 +1,12 @@
+<svg width="420" height="380" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="120" y="20" width="180" height="340" rx="25" fill="#0A1729" stroke="#00E5D8" stroke-width="2"/>
+<rect x="140" y="40" width="140" height="280" fill="#061021"/>
+<circle cx="210" cy="320" r="8" fill="#00E5D8"/>
+<text x="210" y="80" text-anchor="middle" fill="white" font-size="12" font-weight="bold">📱</text>
+<text x="210" y="120" text-anchor="middle" fill="white" font-size="14">DIGITAL</text>
+<text x="210" y="140" text-anchor="middle" fill="white" font-size="14">VERSION</text>
+<rect x="160" y="170" width="100" height="80" rx="5" fill="white/10"/>
+<text x="210" y="200" text-anchor="middle" fill="#00E5D8" font-size="12">📄</text>
+<text x="210" y="220" text-anchor="middle" fill="white" font-size="10">PDF</text>
+<text x="210" y="235" text-anchor="middle" fill="white" font-size="10">READY</text>
+</svg>
