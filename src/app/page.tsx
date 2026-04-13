@@ -1,5 +1,6 @@
-"use client";
 // app/page.tsx
+"use client";
+
 export default function Home() {
   return (
     <div style={{minHeight: '100vh', background: '#0A1729', color: '#EDE9E3', fontFamily: 'Barlow, sans-serif', fontWeight: 400, lineHeight: 1.6, overflowX: 'hidden'}}>
@@ -89,6 +90,14 @@ export default function Home() {
             cursor: 'pointer',
             transition: 'background .2s, transform .15s',
             clipPath: 'polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)'
+          }}
+          onMouseOver={(e) => {
+            const target = e.target as HTMLElement;
+            target.style.background = '#D44040';
+          }}
+          onMouseOut={(e) => {
+            const target = e.target as HTMLElement;
+            target.style.background = '#B83232';
           }}
         >
           Get the Bundle — $12.99
@@ -295,7 +304,7 @@ export default function Home() {
                   letterSpacing: '.2em',
                   color: '#636D7E',
                   textTransform: 'uppercase'
-                }}>8 Pages · 2 PDFs · $12.99</div>
+                }}>8 Pages · 4 PDFs · $12.99</div>
               </div>
               <div style={{
                 position: 'absolute',
@@ -318,7 +327,7 @@ export default function Home() {
                   fontWeight: 600,
                   letterSpacing: '.15em',
                   opacity: 0.8
-                }}>2 PDF Files</div>
+                }}>4 PDF Files</div>
               </div>
             </div>
           </div>
@@ -549,7 +558,586 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Offer/CTA Section */}
+      <div style={{
+        height: '1px',
+        background: 'linear-gradient(90deg, transparent, #252D3F, transparent)',
+        margin: '0 40px'
+      }}></div>
+
+      {/* CONTENTS */}
+      <section style={{
+        padding: '100px 40px',
+        background: '#0F1520',
+        borderTop: '1px solid #1E2535',
+        borderBottom: '1px solid #1E2535'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '10px',
+            fontFamily: 'Barlow Condensed, sans-serif',
+            fontSize: '.78rem',
+            fontWeight: 600,
+            letterSpacing: '.2em',
+            textTransform: 'uppercase',
+            color: '#636D7E',
+            marginBottom: '16px'
+          }}>
+            <div style={{
+              width: '20px',
+              height: '1px',
+              background: '#252D3F'
+            }}></div>
+            What's Inside
+          </div>
+          <h2 style={{
+            fontFamily: 'Bebas Neue, sans-serif',
+            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            letterSpacing: '.04em',
+            lineHeight: '.95',
+            marginBottom: '60px'
+          }}>
+            8 Pages. Every shift, covered.
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '2px'
+          }}>
+            {/* Page cards */}
+            <div style={{
+              background: '#0A0C12',
+              border: '1px solid #1E2535',
+              padding: '28px 24px',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'border-color .25s, transform .2s'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '3px',
+                background: 'linear-gradient(90deg, #B83232, #2B4C9E)',
+                opacity: 1
+              }}></div>
+              <div style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: '3rem',
+                color: '#252D3F',
+                lineHeight: 1,
+                marginBottom: '12px',
+                letterSpacing: '.05em'
+              }}>01</div>
+              <div style={{fontSize: '1.5rem', marginBottom: '10px'}}>📅</div>
+              <div style={{
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1rem',
+                fontWeight: 700,
+                letterSpacing: '.1em',
+                textTransform: 'uppercase',
+                color: '#EDE9E3',
+                marginBottom: '8px'
+              }}>Rotating Shift Scheduler</div>
+              <div style={{
+                fontSize: '.88rem',
+                color: '#636D7E',
+                lineHeight: 1.6
+              }}>3-week calendar with N / D / OFF / Call codes. See your rotation, protect your recovery days.</div>
+            </div>
+
+            <div style={{
+              background: '#0A0C12',
+              border: '1px solid #1E2535',
+              padding: '28px 24px',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'border-color .25s, transform .2s'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '3px',
+                background: 'linear-gradient(90deg, #B83232, #2B4C9E)',
+                opacity: 1
+              }}></div>
+              <div style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: '3rem',
+                color: '#252D3F',
+                lineHeight: 1,
+                marginBottom: '12px',
+                letterSpacing: '.05em'
+              }}>02</div>
+              <div style={{fontSize: '1.5rem', marginBottom: '10px'}}>📋</div>
+              <div style={{
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1rem',
+                fontWeight: 700,
+                letterSpacing: '.1em',
+                textTransform: 'uppercase',
+                color: '#EDE9E3',
+                marginBottom: '8px'
+              }}>SBAR Patient Handoff</div>
+              <div style={{
+                fontSize: '.88rem',
+                color: '#636D7E',
+                lineHeight: 1.6
+              }}>Full Situation–Background–Assessment–Recommendation with vitals trend, shift checklist.</div>
+            </div>
+
+            <div style={{
+              background: '#0A0C12',
+              border: '1px solid #1E2535',
+              padding: '28px 24px',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'border-color .25s, transform .2s'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '3px',
+                background: 'linear-gradient(90deg, #B83232, #2B4C9E)',
+                opacity: 1
+              }}></div>
+              <div style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: '3rem',
+                color: '#252D3F',
+                lineHeight: 1,
+                marginBottom: '12px',
+                letterSpacing: '.05em'
+              }}>03</div>
+              <div style={{fontSize: '1.5rem', marginBottom: '10px'}}>💊</div>
+              <div style={{
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1rem',
+                fontWeight: 700,
+                letterSpacing: '.1em',
+                textTransform: 'uppercase',
+                color: '#EDE9E3',
+                marginBottom: '8px'
+              }}>Medication & Task Timeline</div>
+              <div style={{
+                fontSize: '.88rem',
+                color: '#636D7E',
+                lineHeight: 1.6
+              }}>Every hour 1900–0700. Log meds, pain reassessment, I&O, rounding, and AM labs.</div>
+            </div>
+
+            <div style={{
+              background: '#0A0C12',
+              border: '1px solid #1E2535',
+              padding: '28px 24px',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'border-color .25s, transform .2s'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '3px',
+                background: 'linear-gradient(90deg, #B83232, #2B4C9E)',
+                opacity: 1
+              }}></div>
+              <div style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: '3rem',
+                color: '#252D3F',
+                lineHeight: 1,
+                marginBottom: '12px',
+                letterSpacing: '.05em'
+              }}>04</div>
+              <div style={{fontSize: '1.5rem', marginBottom: '10px'}}>📊</div>
+              <div style={{
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1rem',
+                fontWeight: 700,
+                letterSpacing: '.1em',
+                textTransform: 'uppercase',
+                color: '#EDE9E3',
+                marginBottom: '8px'
+              }}>Fatigue & Self-Care Tracker</div>
+              <div style={{
+                fontSize: '.88rem',
+                color: '#636D7E',
+                lineHeight: 1.6
+              }}>Rate fatigue 1–10 after each shift. Log sleep hours, mood, triggers, and actions.</div>
+            </div>
+
+            <div style={{
+              background: '#0A0C12',
+              border: '1px solid #1E2535',
+              padding: '28px 24px',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'border-color .25s, transform .2s'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '3px',
+                background: 'linear-gradient(90deg, #B83232, #2B4C9E)',
+                opacity: 1
+              }}></div>
+              <div style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: '3rem',
+                color: '#252D3F',
+                lineHeight: 1,
+                marginBottom: '12px',
+                letterSpacing: '.05em'
+              }}>05</div>
+              <div style={{fontSize: '1.5rem', marginBottom: '10px'}}>😴</div>
+              <div style={{
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1rem',
+                fontWeight: 700,
+                letterSpacing: '.1em',
+                textTransform: 'uppercase',
+                color: '#EDE9E3',
+                marginBottom: '8px'
+              }}>Sleep Recovery Checklist</div>
+              <div style={{
+                fontSize: '.88rem',
+                color: '#636D7E',
+                lineHeight: 1.6
+              }}>Wind-down routine, blackout environment, blue-light protocol, recovery day planner.</div>
+            </div>
+
+            <div style={{
+              background: '#0A0C12',
+              border: '1px solid #1E2535',
+              padding: '28px 24px',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'border-color .25s, transform .2s'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '3px',
+                background: 'linear-gradient(90deg, #B83232, #2B4C9E)',
+                opacity: 1
+              }}></div>
+              <div style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: '3rem',
+                color: '#252D3F',
+                lineHeight: 1,
+                marginBottom: '12px',
+                letterSpacing: '.05em'
+              }}>06–08</div>
+              <div style={{fontSize: '1.5rem', marginBottom: '10px'}}>🧠</div>
+              <div style={{
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1rem',
+                fontWeight: 700,
+                letterSpacing: '.1em',
+                textTransform: 'uppercase',
+                color: '#EDE9E3',
+                marginBottom: '8px'
+              }}>Nurse Brain & Tips Pages</div>
+              <div style={{
+                fontSize: '.88rem',
+                color: '#636D7E',
+                lineHeight: 1.6
+              }}>System assessment cues, adult vitals reference, night-shift nutrition guide, burnout prevention.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div style={{
+        height: '1px',
+        background: 'linear-gradient(90deg, transparent, #252D3F, transparent)',
+        margin: '0 40px'
+      }}></div>
+
+      {/* TESTIMONIALS */}
+      <section style={{
+        padding: '100px 40px',
+        maxWidth: '1200px',
+        margin: '0 auto'
+      }}>
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '10px',
+          fontFamily: 'Barlow Condensed, sans-serif',
+          fontSize: '.78rem',
+          fontWeight: 600,
+          letterSpacing: '.2em',
+          textTransform: 'uppercase',
+          color: '#636D7E',
+          marginBottom: '16px'
+        }}>
+          <div style={{
+            width: '20px',
+            height: '1px',
+            background: '#252D3F'
+          }}></div>
+          Real Night Shift Nurses
+        </div>
+        <h2 style={{
+          fontFamily: 'Bebas Neue, sans-serif',
+          fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+          letterSpacing: '.04em',
+          lineHeight: '.95',
+          marginBottom: '60px'
+        }}>
+          What they're saying.
+        </h2>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '16px'
+        }}>
+          {/* Testimonial 1 */}
+          <div style={{
+            background: '#0F1520',
+            border: '1px solid #1E2535',
+            padding: '32px 28px',
+            position: 'relative'
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: '16px',
+              right: '24px',
+              fontFamily: 'Bebas Neue, sans-serif',
+              fontSize: '5rem',
+              lineHeight: 1,
+              color: '#252D3F'
+            }}>"</div>
+            <div style={{
+              display: 'flex',
+              gap: '3px',
+              marginBottom: '18px'
+            }}>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+            </div>
+            <p style={{
+              fontSize: '.95rem',
+              color: '#A8B0BF',
+              lineHeight: 1.75,
+              marginBottom: '22px',
+              fontStyle: 'italic',
+              fontWeight: 300
+            }}>
+              "I've been a night shift RN for 6 years and this is the first tool that
+              <strong style={{color: '#EDE9E3', fontStyle: 'normal', fontWeight: 500}}>actually matches how my brain works at 0300.</strong>
+              The med timeline alone saved me from a near-miss last week."
+            </p>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
+            }}>
+              <div style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #B83232, #2B4C9E)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1rem',
+                fontWeight: 700,
+                flexShrink: 0
+              }}>MR</div>
+              <div>
+                <div style={{
+                  fontFamily: 'Barlow Condensed, sans-serif',
+                  fontSize: '.9rem',
+                  fontWeight: 600,
+                  letterSpacing: '.05em',
+                  color: '#EDE9E3'
+                }}>M. Reyes, RN</div>
+                <div style={{
+                  fontSize: '.78rem',
+                  color: '#636D7E'
+                }}>ICU · 6 years night shift</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 2 */}
+          <div style={{
+            background: '#0F1520',
+            border: '1px solid #1E2535',
+            padding: '32px 28px',
+            position: 'relative'
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: '16px',
+              right: '24px',
+              fontFamily: 'Bebas Neue, sans-serif',
+              fontSize: '5rem',
+              lineHeight: 1,
+              color: '#252D3F'
+            }}>"</div>
+            <div style={{
+              display: 'flex',
+              gap: '3px',
+              marginBottom: '18px'
+            }}>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+            </div>
+            <p style={{
+              fontSize: '.95rem',
+              color: '#A8B0BF',
+              lineHeight: 1.75,
+              marginBottom: '22px',
+              fontStyle: 'italic',
+              fontWeight: 300
+            }}>
+              "As a new grad I was terrified of handoffs. This SBAR sheet
+              <strong style={{color: '#EDE9E3', fontStyle: 'normal', fontWeight: 500}}>made me look like a veteran RN</strong>
+              in front of the attending on my third week. Worth every penny."
+            </p>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
+            }}>
+              <div style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #B83232, #2B4C9E)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1rem',
+                fontWeight: 700,
+                flexShrink: 0
+              }}>JT</div>
+              <div>
+                <div style={{
+                  fontFamily: 'Barlow Condensed, sans-serif',
+                  fontSize: '.9rem',
+                  fontWeight: 600,
+                  letterSpacing: '.05em',
+                  color: '#EDE9E3'
+                }}>J. Thomas, RN</div>
+                <div style={{
+                  fontSize: '.78rem',
+                  color: '#636D7E'
+                }}>Med-Surg · New Grad</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 3 */}
+          <div style={{
+            background: '#0F1520',
+            border: '1px solid #1E2535',
+            padding: '32px 28px',
+            position: 'relative'
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: '16px',
+              right: '24px',
+              fontFamily: 'Bebas Neue, sans-serif',
+              fontSize: '5rem',
+              lineHeight: 1,
+              color: '#252D3F'
+            }}>"</div>
+            <div style={{
+              display: 'flex',
+              gap: '3px',
+              marginBottom: '18px'
+            }}>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+              <span style={{color: '#C9943A', fontSize: '.9rem'}}>★</span>
+            </div>
+            <p style={{
+              fontSize: '.95rem',
+              color: '#A8B0BF',
+              lineHeight: 1.75,
+              marginBottom: '22px',
+              fontStyle: 'italic',
+              fontWeight: 300
+            }}>
+              "The fatigue tracker revealed I was crashing every time I worked 3 nights back-to-back with no meal plan.
+              <strong style={{color: '#EDE9E3', fontStyle: 'normal', fontWeight: 500}}>I fixed my rotation in one week.</strong>
+              I actually sleep now."
+            </p>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
+            }}>
+              <div style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #B83232, #2B4C9E)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1rem',
+                fontWeight: 700,
+                flexShrink: 0
+              }}>KP</div>
+              <div>
+                <div style={{
+                  fontFamily: 'Barlow Condensed, sans-serif',
+                  fontSize: '.9rem',
+                  fontWeight: 600,
+                  letterSpacing: '.05em',
+                  color: '#EDE9E3'
+                }}>K. Patel, RN, BSN</div>
+                <div style={{
+                  fontSize: '.78rem',
+                  color: '#636D7E'
+                }}>Telemetry · 4 years</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div style={{
+        height: '1px',
+        background: 'linear-gradient(90deg, transparent, #252D3F, transparent)',
+        margin: '0 40px'
+      }}></div>
+
+      {/* OFFER / CTA */}
       <section style={{
         padding: '100px 40px',
         background: '#0F1520',
@@ -732,6 +1320,51 @@ export default function Home() {
               }}>
                 <span style={{color: '#0D6B72'}}>✓</span> 8 total printable pages
               </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '.85rem',
+                fontWeight: 500,
+                letterSpacing: '.06em',
+                color: '#A8B0BF',
+                background: '#0F1520',
+                border: '1px solid #1E2535',
+                padding: '8px 14px'
+              }}>
+                <span style={{color: '#0D6B72'}}>✓</span> Unlimited prints
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '.85rem',
+                fontWeight: 500,
+                letterSpacing: '.06em',
+                color: '#A8B0BF',
+                background: '#0F1520',
+                border: '1px solid #1E2535',
+                padding: '8px 14px'
+              }}>
+                <span style={{color: '#0D6B72'}}>✓</span> Works on tablet + stylus
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '.85rem',
+                fontWeight: 500,
+                letterSpacing: '.06em',
+                color: '#A8B0BF',
+                background: '#0F1520',
+                border: '1px solid #1E2535',
+                padding: '8px 14px'
+              }}>
+                <span style={{color: '#0D6B72'}}>✓</span> 30-day money-back guarantee
+              </div>
             </div>
 
             <div 
@@ -756,13 +1389,13 @@ export default function Home() {
               gap: '8px'
             }}>
               <span style={{color: '#C9943A'}}>🔒</span>
-              Secure checkout via Stripe &nbsp;·&nbsp; All major cards + PayPal &nbsp;·&nbsp; 30-day money-back guarantee
+              Secure checkout via Stripe Buy Button &nbsp;·&nbsp; All major cards + PayPal &nbsp;·&nbsp; 30-day money-back guarantee
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <footer style={{
         padding: '40px',
         borderTop: '1px solid #1E2535',
