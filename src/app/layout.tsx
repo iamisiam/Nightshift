@@ -18,6 +18,30 @@ export const metadata: Metadata = {
   keywords: "night shift nurse planner,shift worker checklist,nurse handoff sheet,medication tracker nurses,fatigue tracker printable,sleep recovery nurse,sbar report sheet,2026 nurse planner,rotating shift scheduler,night shift survival kit,rn brain sheet,self care for nurses,digital download nurse",
 };
 
+function Header() {
+  return (
+    <header style={{ padding: "1rem", textAlign: "center" }}>
+      <img
+        src="https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-b5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/e9ee1ede-fa43-498b-bc90-894af20117cc.png"
+        alt="Logo"
+        style={{ height: "60px" }}
+      />
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer style={{ padding: "1rem", textAlign: "center" }}>
+      <img
+        src="https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-b5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/e9ee1ede-fa43-498b-bc90-894af20117cc.png"
+        alt="Logo"
+        style={{ height: "40px" }}
+      />
+    </footer>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +52,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
