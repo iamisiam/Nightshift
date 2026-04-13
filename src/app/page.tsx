@@ -1,224 +1,710 @@
 "use client";
-
 // app/page.tsx
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0A1729] text-white font-sans">
-      {/* NAVBAR */}
-      <nav className="border-b border-white/10 bg-[#0A1729]/80 backdrop-blur-md fixed w-full z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-2xl">🌙</span>
-            <h1 className="text-2xl font-bold tracking-tight">Night Shift Survival</h1>
-          </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#whats-inside" className="hover:text-[#00E5D8] transition">What&apos;s Inside</a>
-            <a href="#preview" className="hover:text-[#00E5D8] transition">Preview</a>
-            <a href="/sample" className="hover:text-[#00E5D8] transition">Sample Page</a>
-            <a href="#for-you" className="hover:text-[#00E5D8] transition">Built For You</a>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="bg-white/10 text-white text-xs px-3 py-1.5 rounded-2xl flex items-center gap-1">
-              <span className="text-emerald-400">✓</span> Instant Download
-            </div>
-            <button 
-              onClick={() => window.location.href = '#buy'}
-              className="bg-[#00E5D8] hover:bg-[#00E5D8]/90 text-black font-semibold px-6 py-2.5 rounded-2xl text-sm transition"
-            >
-              Buy Now – $12.99
-            </button>
-          </div>
+    <div style={{minHeight: '100vh', background: '#0A1729', color: '#EDE9E3', fontFamily: 'Barlow, sans-serif', fontWeight: 400, lineHeight: 1.6, overflowX: 'hidden'}}>
+      {/* Grain overlay */}
+      <div style={{
+        position: 'fixed',
+        inset: 0,
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E\")",
+        opacity: 0.35,
+        pointerEvents: 'none',
+        zIndex: 999,
+        mixBlendMode: 'overlay'
+      }}></div>
+
+      {/* NAV */}
+      <nav style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '14px 40px',
+        background: 'rgba(10,12,18,.85)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid #1E2535'
+      }}>
+        <div style={{
+          fontFamily: 'Bebas Neue, sans-serif',
+          fontSize: '1.5rem',
+          letterSpacing: '.12em',
+          display: 'flex',
+          gap: '.2em',
+          alignItems: 'center'
+        }}>
+          <span style={{color: '#B83232'}}>Leon</span>
+          <span style={{color: '#636D7E'}}>—</span>
+          <span style={{color: '#2B4C9E'}}>Link</span>
         </div>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '28px'
+        }}>
+          <a href="#whats-inside" style={{
+            fontFamily: 'Barlow Condensed, sans-serif',
+            fontSize: '.85rem',
+            fontWeight: 500,
+            letterSpacing: '.1em',
+            textTransform: 'uppercase',
+            color: '#A8B0BF',
+            transition: 'color .2s'
+          }}>Inside</a>
+          <a href="#proof" style={{
+            fontFamily: 'Barlow Condensed, sans-serif',
+            fontSize: '.85rem',
+            fontWeight: 500,
+            letterSpacing: '.1em',
+            textTransform: 'uppercase',
+            color: '#A8B0BF',
+            transition: 'color .2s'
+          }}>Reviews</a>
+          <a href="#offer" style={{
+            fontFamily: 'Barlow Condensed, sans-serif',
+            fontSize: '.85rem',
+            fontWeight: 500,
+            letterSpacing: '.1em',
+            textTransform: 'uppercase',
+            color: '#A8B0BF',
+            transition: 'color .2s'
+          }}>Pricing</a>
+        </div>
+        <button 
+          onClick={() => document.getElementById('offer')?.scrollIntoView({behavior: 'smooth'})}
+          style={{
+            fontFamily: 'Barlow Condensed, sans-serif',
+            fontSize: '.85rem',
+            fontWeight: 600,
+            letterSpacing: '.12em',
+            textTransform: 'uppercase',
+            background: '#B83232',
+            color: '#fff',
+            padding: '9px 20px',
+            border: 'none',
+            cursor: 'pointer',
+            transition: 'background .2s, transform .15s',
+            clipPath: 'polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)'
+          }}
+        >
+          Get the Bundle — $12.99
+        </button>
       </nav>
 
       {/* HERO */}
-      <header className="pt-24 pb-16 md:pt-32 md:pb-24 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <div className="inline-flex items-center gap-2 bg-white/10 text-emerald-400 text-sm font-medium px-4 py-2 rounded-3xl mb-6">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
-            </span>
-            2026 NIGHT SHIFT EDITION
+      <section>
+        <div style={{
+          minHeight: '100vh',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          alignItems: 'center',
+          padding: '120px 40px 80px',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          gap: '60px'
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '10px',
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.8rem',
+              fontWeight: 600,
+              letterSpacing: '.18em',
+              textTransform: 'uppercase',
+              color: '#C9943A',
+              marginBottom: '22px'
+            }}>
+              <div style={{
+                width: '28px',
+                height: '2px',
+                background: 'linear-gradient(90deg, #B83232, #2B4C9E)'
+              }}></div>
+              2026 Night Shift Edition &nbsp;·&nbsp; Instant Download
+            </div>
+            
+            <h1 style={{
+              fontFamily: 'Bebas Neue, sans-serif',
+              fontSize: 'clamp(4rem, 8vw, 7.5rem)',
+              lineHeight: '.92',
+              letterSpacing: '.03em',
+              marginBottom: '28px'
+            }}>
+              <span style={{color: '#EDE9E3'}}>Own Your</span><br/>
+              <span style={{
+                background: 'linear-gradient(95deg, #B83232 0%, #D44040 40%, #2B4C9E 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>Night Shift.</span><br/>
+              <span style={{color: '#EDE9E3'}}>Finally.</span>
+            </h1>
+            
+            <p style={{
+              fontSize: '1.1rem',
+              fontWeight: 300,
+              color: '#A8B0BF',
+              lineHeight: 1.7,
+              marginBottom: '40px',
+              maxWidth: '440px'
+            }}>
+              The <strong style={{color: '#EDE9E3', fontWeight: 500}}>complete organizational system</strong> for 12-hour night shift RNs.
+              Stop duct-taping scattered notes together. One bundle replaces it all —
+              <strong style={{color: '#EDE9E3', fontWeight: 500}}>8 printable pages</strong> built from real shifts.
+            </p>
+
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '20px',
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.85rem',
+              fontWeight: 400,
+              letterSpacing: '.06em',
+              color: '#636D7E',
+              marginBottom: '20px'
+            }}>
+              <span style={{display: 'flex', alignItems: 'center', gap: '6px'}}>
+                <span style={{color: '#0D6B72'}}>✓</span> Instant PDF download
+              </span>
+              <div style={{
+                width: '4px',
+                height: '4px',
+                background: '#252D3F',
+                borderRadius: '50%'
+              }}></div>
+              <span style={{display: 'flex', alignItems: 'center', gap: '6px'}}>
+                <span style={{color: '#0D6B72'}}>✓</span> Print unlimited
+              </span>
+              <div style={{
+                width: '4px',
+                height: '4px',
+                background: '#252D3F',
+                borderRadius: '50%'
+              }}></div>
+              <span style={{display: 'flex', alignItems: 'center', gap: '6px'}}>
+                <span style={{color: '#0D6B72'}}>✓</span> 30-day guarantee
+              </span>
+            </div>
+
+            <button 
+              onClick={() => document.getElementById('offer')?.scrollIntoView({behavior: 'smooth'})}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px',
+                background: 'linear-gradient(135deg, #B83232 0%, #2B4C9E 100%)',
+                color: '#fff',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '1.1rem',
+                fontWeight: 700,
+                letterSpacing: '.12em',
+                textTransform: 'uppercase',
+                padding: '18px 40px',
+                border: 'none',
+                cursor: 'pointer',
+                clipPath: 'polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%)',
+                transition: 'opacity .2s, transform .15s'
+              }}
+              onMouseOver={(e) => {
+                const target = e.target as HTMLElement;
+                target.style.opacity = '0.88';
+                target.style.transform = 'translateY(-2px)';
+              }}
+              onMouseOut={(e) => {
+                const target = e.target as HTMLElement;
+                target.style.opacity = '1';
+                target.style.transform = 'translateY(0)';
+              }}
+            >
+              ↓ &nbsp; Get Instant Access — $12.99
+            </button>
           </div>
-          
-          <h1 className="text-5xl md:text-6xl font-bold leading-none tracking-tighter mb-4">
-            2026 Night Shift<br />
-            <span className="text-[#00E5D8]">Nurse Survival Bundle</span>
-          </h1>
-          
-          <p className="text-xl text-white/70 mt-6 max-w-lg">
-            2 printable PDFs (8 pages total) built exclusively for 12-hour night shift RNs.<br />
-            Shift Scheduler • SBAR Handoff • Med Timeline • Fatigue Tracker • Sleep Recovery
+
+          <div style={{
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'center'
+          }}>
+            <div style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '480px'
+            }}>
+              <div style={{
+                position: 'absolute',
+                inset: '-2px',
+                background: 'linear-gradient(135deg, #B83232, transparent 40%, #2B4C9E)',
+                zIndex: 0
+              }}></div>
+              <img
+                src="/mockups/stack.jpg"
+                alt="Night Shift Nurse Bundle printout stack"
+                style={{
+                  position: 'relative',
+                  zIndex: 1,
+                  width: '100%',
+                  filter: 'grayscale(10%) contrast(1.05)',
+                  borderRadius: '24px',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+                  display: 'block'
+                }}
+                onError={(e) => {
+                  const target = e.target as HTMLElement;
+                  target.style.display = 'none';
+                  const fallback = document.getElementById('hero-fallback');
+                  if (fallback) (fallback as HTMLElement).style.display = 'flex';
+                }}
+              />
+              {/* Fallback visual */}
+              <div id="hero-fallback" style={{
+                position: 'relative',
+                zIndex: 1,
+                background: 'linear-gradient(135deg, #0F1724 0%, #161C2A 100%)',
+                aspectRatio: '1',
+                display: 'none',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '12px',
+                border: '1px solid #1E2535',
+                borderRadius: '24px'
+              }}>
+                <div style={{
+                  fontFamily: 'Bebas Neue, sans-serif',
+                  fontSize: '1.4rem',
+                  letterSpacing: '.12em',
+                  color: '#C9943A'
+                }}>NIGHT SHIFT</div>
+                <div style={{
+                  fontFamily: 'Bebas Neue, sans-serif',
+                  fontSize: '3.5rem',
+                  lineHeight: '.9',
+                  textAlign: 'center',
+                  letterSpacing: '.05em'
+                }}>NURSE<br/>SURVIVAL<br/>BUNDLE</div>
+                <div style={{
+                  fontFamily: 'Barlow Condensed, sans-serif',
+                  fontSize: '.75rem',
+                  letterSpacing: '.2em',
+                  color: '#636D7E',
+                  textTransform: 'uppercase'
+                }}>8 Pages · 2 PDFs · $12.99</div>
+              </div>
+              <div style={{
+                position: 'absolute',
+                bottom: '-16px',
+                right: '-16px',
+                zIndex: 2,
+                background: '#C9943A',
+                color: '#0A0C12',
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: '1.2rem',
+                letterSpacing: '.1em',
+                padding: '14px 18px',
+                lineHeight: 1.1,
+                clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)'
+              }}>
+                8 PAGES
+                <div style={{
+                  fontFamily: 'Barlow Condensed, sans-serif',
+                  fontSize: '.7rem',
+                  fontWeight: 600,
+                  letterSpacing: '.15em',
+                  opacity: 0.8
+                }}>2 PDF Files</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div style={{
+        height: '1px',
+        background: 'linear-gradient(90deg, transparent, #252D3F, transparent)',
+        margin: '0 40px'
+      }}></div>
+
+      {/* BEFORE / AFTER */}
+      <section style={{
+        padding: '100px 40px',
+        maxWidth: '1200px',
+        margin: '0 auto'
+      }}>
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '10px',
+          fontFamily: 'Barlow Condensed, sans-serif',
+          fontSize: '.78rem',
+          fontWeight: 600,
+          letterSpacing: '.2em',
+          textTransform: 'uppercase',
+          color: '#636D7E',
+          marginBottom: '16px'
+        }}>
+          <div style={{
+            width: '20px',
+            height: '1px',
+            background: '#252D3F'
+          }}></div>
+          The Transformation
+        </div>
+        <h2 style={{
+          fontFamily: 'Bebas Neue, sans-serif',
+          fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+          letterSpacing: '.04em',
+          lineHeight: '.95',
+          marginBottom: '60px'
+        }}>
+          Before this bundle.<br/>After this bundle.
+        </h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 80px 1fr',
+          gap: 0,
+          alignItems: 'start'
+        }}>
+          <div style={{
+            background: '#0F1520',
+            border: '1px solid rgba(184, 50, 50, .3)'
+          }}>
+            <div style={{
+              padding: '16px 24px',
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.85rem',
+              fontWeight: 700,
+              letterSpacing: '.2em',
+              textTransform: 'uppercase',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              background: 'rgba(184, 50, 50, .12)',
+              color: '#D44040'
+            }}>
+              <span style={{fontSize: '1rem'}}>✕</span> Before — Your Night Shifts Now
+            </div>
+            <div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+                padding: '14px 24px',
+                borderBottom: '1px solid #1E2535',
+                fontSize: '.95rem',
+                color: '#A8B0BF',
+                lineHeight: 1.5
+              }}>
+                <span style={{
+                  fontSize: '.8rem',
+                  flexShrink: 0,
+                  marginTop: '3px',
+                  color: '#B83232',
+                  opacity: 0.7
+                }}>✕</span>
+                Scribbling handoff notes on random paper scraps that fall out of your pocket
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+                padding: '14px 24px',
+                borderBottom: '1px solid #1E2535',
+                fontSize: '.95rem',
+                color: '#A8B0BF',
+                lineHeight: 1.5
+              }}>
+                <span style={{
+                  fontSize: '.8rem',
+                  flexShrink: 0,
+                  marginTop: '3px',
+                  color: '#B83232',
+                  opacity: 0.7
+                }}>✕</span>
+                Forgetting which meds are due at 0200 when the fatigue hits hardest
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+                padding: '14px 24px',
+                borderBottom: '1px solid #1E2535',
+                fontSize: '.95rem',
+                color: '#A8B0BF',
+                lineHeight: 1.5
+              }}>
+                <span style={{
+                  fontSize: '.8rem',
+                  flexShrink: 0,
+                  marginTop: '3px',
+                  color: '#B83232',
+                  opacity: 0.7
+                }}>✕</span>
+                Getting home and lying awake at 0900 despite being exhausted
+              </div>
+            </div>
+          </div>
+
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingTop: '120px'
+          }}>
+            <div style={{
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #B83232, #2B4C9E)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.2rem',
+              flexShrink: 0
+            }}>→</div>
+          </div>
+
+          <div style={{
+            background: '#0F1520',
+            border: '1px solid rgba(43, 76, 158, .3)'
+          }}>
+            <div style={{
+              padding: '16px 24px',
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.85rem',
+              fontWeight: 700,
+              letterSpacing: '.2em',
+              textTransform: 'uppercase',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              background: 'rgba(43, 76, 158, .12)',
+              color: '#4068C8'
+            }}>
+              <span style={{fontSize: '1rem'}}>✓</span> After — With the Bundle
+            </div>
+            <div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+                padding: '14px 24px',
+                borderBottom: '1px solid #1E2535',
+                fontSize: '.95rem',
+                color: '#A8B0BF',
+                lineHeight: 1.5
+              }}>
+                <span style={{
+                  fontSize: '.8rem',
+                  flexShrink: 0,
+                  marginTop: '3px',
+                  color: '#0D6B72'
+                }}>✓</span>
+                Structured SBAR sheet — complete, confident handoffs every single shift
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+                padding: '14px 24px',
+                borderBottom: '1px solid #1E2535',
+                fontSize: '.95rem',
+                color: '#A8B0BF',
+                lineHeight: 1.5
+              }}>
+                <span style={{
+                  fontSize: '.8rem',
+                  flexShrink: 0,
+                  marginTop: '3px',
+                  color: '#0D6B72'
+                }}>✓</span>
+                1900–0700 medication & task timeline so nothing slips at 0230
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+                padding: '14px 24px',
+                borderBottom: '1px solid #1E2535',
+                fontSize: '.95rem',
+                color: '#A8B0BF',
+                lineHeight: 1.5
+              }}>
+                <span style={{
+                  fontSize: '.8rem',
+                  flexShrink: 0,
+                  marginTop: '3px',
+                  color: '#0D6B72'
+                }}>✓</span>
+                Post-shift wind-down checklist that actually gets you to sleep in daylight
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Offer/CTA Section */}
+      <section style={{
+        padding: '100px 40px',
+        background: '#0F1520',
+        borderTop: '1px solid #1E2535',
+        borderBottom: '1px solid #1E2535'
+      }} id="offer">
+        <div style={{
+          maxWidth: '860px',
+          margin: '0 auto',
+          textAlign: 'center'
+        }}>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '10px',
+            fontFamily: 'Barlow Condensed, sans-serif',
+            fontSize: '.78rem',
+            fontWeight: 600,
+            letterSpacing: '.2em',
+            textTransform: 'uppercase',
+            color: '#636D7E',
+            marginBottom: '16px',
+            justifyContent: 'center'
+          }}>
+            <div style={{
+              width: '20px',
+              height: '1px',
+              background: '#252D3F'
+            }}></div>
+            Get the Bundle
+          </div>
+          <h2 style={{
+            fontFamily: 'Bebas Neue, sans-serif',
+            fontSize: 'clamp(3rem, 7vw, 6rem)',
+            letterSpacing: '.04em',
+            lineHeight: '.92',
+            marginBottom: '20px'
+          }}>
+            Your shift.<br/>
+            <span style={{
+              fontStyle: 'normal',
+              background: 'linear-gradient(90deg, #D44040, #2B4C9E)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>Your system.</span>
+          </h2>
+          <p style={{
+            fontSize: '1.1rem',
+            fontWeight: 300,
+            color: '#A8B0BF',
+            marginBottom: '50px',
+            lineHeight: 1.7
+          }}>
+            One download. Two PDFs. Eight pages that change how you work, sleep, and survive night shift.
           </p>
 
-          <div className="mt-8 flex items-center gap-4">
-            <div className="text-5xl font-semibold">$12.99</div>
-            <div className="text-xs bg-emerald-400/20 text-emerald-400 px-3 py-1 rounded-xl flex items-center">
-              8 PAGES • UNLIMITED PRINTS
+          <div style={{
+            background: '#0A0C12',
+            border: '1px solid #252D3F',
+            padding: '48px',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '3px',
+              background: 'linear-gradient(90deg, #B83232, #2B4C9E)'
+            }}></div>
+            <div style={{
+              fontFamily: 'Bebas Neue, sans-serif',
+              fontSize: '5rem',
+              letterSpacing: '.05em',
+              lineHeight: 1,
+              marginBottom: '6px'
+            }}>
+              <span style={{color: '#636D7E', fontSize: '2.5rem', verticalAlign: 'top', marginTop: '10px', display: 'inline-block'}}>$</span>
+              <span style={{
+                background: 'linear-gradient(135deg, #C9943A 0%, #E8B055 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>12</span>
+              <span style={{color: '#636D7E', fontSize: '2.5rem', verticalAlign: 'top', marginTop: '10px', display: 'inline-block'}}>.99</span>
             </div>
-          </div>
-
-          <button 
-            onClick={() => window.location.href = '#buy'}
-            className="mt-8 bg-[#00E5D8] hover:bg-white text-black font-semibold text-lg px-10 py-5 rounded-3xl flex items-center gap-3 transition shadow-xl shadow-[#00E5D8]/30"
-          >
-            Get Instant Access Now
-            <span className="text-2xl">→</span>
-          </button>
-
-          <div className="mt-6 flex items-center gap-8 text-sm text-white/60">
-            <div className="flex items-center gap-2">
-              <span className="text-emerald-400">✓</span> Instant PDF Download
+            <div style={{
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.8rem',
+              fontWeight: 500,
+              letterSpacing: '.18em',
+              textTransform: 'uppercase',
+              color: '#636D7E',
+              marginBottom: '32px'
+            }}>
+              One-time purchase &nbsp;·&nbsp; Instant download &nbsp;·&nbsp; Yours forever
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-emerald-400">✓</span> Works on tablet + stylus
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-emerald-400">✓</span> 100% Money-back guarantee
-            </div>
-          </div>
-        </div>
 
-        {/* HERO IMAGE - STACK MOCKUP */}
-        <div className="relative">
-          <img
-            src="/mockups/stack.jpg"
-            alt="2026 Night Shift Nurse Survival Bundle printed stack"
-            className="rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition w-full"
-          />
-          <div className="absolute -bottom-4 -right-4 bg-white text-black text-xs font-bold px-4 py-2 rounded-2xl flex items-center gap-2 shadow-xl">
-            <span>8 PAGES</span>
-            <span className="text-emerald-400">•</span>
-            <span>PRINT UNLIMITED</span>
-          </div>
-        </div>
-      </header>
-
-      {/* WHAT'S INCLUDED QUICK LIST */}
-      <section className="bg-white/5 py-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-center text-3xl font-bold mb-8">Everything you need in one bundle</h2>
-          <div className="grid md:grid-cols-4 gap-6 text-center">
-            {[
-              { icon: '📅', title: 'Shift Scheduler' },
-              { icon: '📋', title: 'SBAR Handoff' },
-              { icon: '💊', title: 'Med Timeline' },
-              { icon: '🧬', title: 'Fatigue Tracker' },
-              { icon: '😴', title: 'Sleep Recovery' },
-              { icon: '💡', title: 'Nurse Brain Tips' },
-            ].map((item, i) => (
-              <div key={i} className="bg-white/10 rounded-3xl p-6 hover:bg-white/20 transition">
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <div className="font-semibold">{item.title}</div>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: '12px',
+              marginBottom: '40px'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '.85rem',
+                fontWeight: 500,
+                letterSpacing: '.06em',
+                color: '#A8B0BF',
+                background: '#0F1520',
+                border: '1px solid #1E2535',
+                padding: '8px 14px'
+              }}>
+                <span style={{color: '#0D6B72'}}>✓</span> Example Bundle PDF (filled)
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PREVIEW THE BUNDLE */}
-      <section id="preview" className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-4xl font-bold text-center mb-4">Preview the Bundle</h2>
-        <p className="text-white/70 text-center max-w-md mx-auto mb-8">
-          Real pages. Real samples. Designed from actual night shifts.
-        </p>
-        
-        <div className="text-center mb-8">
-          <a 
-            href="/sample"
-            className="inline-block bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-2xl text-sm font-medium transition border border-white/20"
-          >
-            📄 View Sample Page
-          </a>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="group">
-            <img
-              src="/mockups/stack.jpg"
-              alt="Printed bundle stack"
-              className="rounded-3xl shadow-2xl group-hover:scale-105 transition w-full"
-            />
-
-          </div>
-          
-          <div className="group">
-            <img
-              src="/mockups/locker.jpg"
-              alt="Bundle in nurse locker"
-              className="rounded-3xl shadow-2xl group-hover:scale-105 transition w-full"
-            />
-
-          </div>
-          
-          <div className="group">
-            <img
-              src="/mockups/phone.jpg"
-              alt="Bundle on phone/tablet"
-              className="rounded-3xl shadow-2xl group-hover:scale-105 transition w-full"
-            />
-
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT'S INSIDE DETAILED */}
-      <section id="whats-inside" className="bg-[#061021] py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">What&apos;s Inside: 8 Printable Pages</h2>
-          <div className="space-y-16">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-5">
-                <div className="text-emerald-400 text-sm tracking-widest">PAGE 01</div>
-                <h3 className="text-3xl font-bold">Cover Page</h3>
-                <p className="text-white/70 mt-3">Dark navy design with teal accents. Laminate for durability.</p>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '.85rem',
+                fontWeight: 500,
+                letterSpacing: '.06em',
+                color: '#A8B0BF',
+                background: '#0F1520',
+                border: '1px solid #1E2535',
+                padding: '8px 14px'
+              }}>
+                <span style={{color: '#0D6B72'}}>✓</span> Blank Fillable Bundle PDF
               </div>
-              <div className="md:col-span-7 bg-white/10 rounded-3xl p-8 text-center">
-                <p className="text-2xl">🌙 2026 Night Shift Nurse Survival Bundle</p>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '.85rem',
+                fontWeight: 500,
+                letterSpacing: '.06em',
+                color: '#A8B0BF',
+                background: '#0F1520',
+                border: '1px solid #1E2535',
+                padding: '8px 14px'
+              }}>
+                <span style={{color: '#0D6B72'}}>✓</span> 8 total printable pages
               </div>
             </div>
-            <div className="text-center text-white/60 text-sm">
-              Full details match the exact PDF (J. Rodriguez sample, Angela Torres patient, etc.)
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* BUILT FOR YOU */}
-      <section id="for-you" className="py-20 bg-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Built For Night Shift RNs Like You</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/10 rounded-3xl p-8">
-              <div className="text-5xl mb-6">🏥</div>
-              <h3 className="font-semibold text-xl">Rural Hospital Nurses</h3>
-              <p className="text-white/70 mt-2">Limited resources? One system replaces scattered sheets.</p>
-            </div>
-            <div className="bg-white/10 rounded-3xl p-8">
-              <div className="text-5xl mb-6">👩‍⚕️</div>
-              <h3 className="font-semibold text-xl">New Grad RNs</h3>
-              <p className="text-white/70 mt-2">Build safe habits with structured SBAR + timelines.</p>
-            </div>
-            <div className="bg-white/10 rounded-3xl p-8">
-              <div className="text-5xl mb-6">🔥</div>
-              <h3 className="font-semibold text-xl">Burned-Out Night Shifters</h3>
-              <p className="text-white/70 mt-2">Fatigue tracking + sleep recovery tools included.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* BUY SECTION — Lemon Squeezy ready */}
-      <section id="buy" className="py-24 border-t border-white/10">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h2 className="text-5xl font-bold mb-4">Ready to make your next night shift easier?</h2>
-          <p className="text-xl text-white/70 mb-10">One-time purchase. Unlimited prints. Lifetime updates.</p>
-          
-          <div className="inline-flex flex-col items-center bg-white/10 rounded-3xl p-10">
-            <div className="text-7xl font-bold">$12.99</div>
-            
-            <div
+            <div 
               dangerouslySetInnerHTML={{
                 __html: `<stripe-buy-button
                   buy-button-id="buy_btn_1TLfalDmD8jmsJxFRrGnfU9r"
@@ -226,25 +712,61 @@ export default function Home() {
                 ></stripe-buy-button>`
               }}
             />
-            
-            <div className="mt-8 text-xs text-white/60 flex items-center gap-6">
-              <div>🔒 Secure checkout via Stripe Buy Button</div>
-              <div>💳 All major cards + PayPal</div>
-              <div>30-day money-back guarantee</div>
+
+            <div style={{
+              marginTop: '20px',
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.82rem',
+              fontWeight: 400,
+              letterSpacing: '.06em',
+              color: '#636D7E',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px'
+            }}>
+              <span style={{color: '#C9943A'}}>🔒</span>
+              Secure checkout via Stripe &nbsp;·&nbsp; All major cards + PayPal &nbsp;·&nbsp; 30-day money-back guarantee
             </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-black/30 py-12 text-white/60 text-sm">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p>© 2026 Leon Tucker • Built for night shift heroes</p>
-          <p className="mt-2 text-xs">nightshift-blond.vercel.app • All rights reserved</p>
-          <p className="mt-8 text-[10px] max-w-md mx-auto">
-            night shift nurse planner • SBAR handoff sheet • medication timeline • fatigue tracker • sleep recovery for nurses • rotating shift scheduler
-          </p>
+      {/* Footer */}
+      <footer style={{
+        padding: '40px',
+        borderTop: '1px solid #1E2535',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '20px',
+        flexWrap: 'wrap'
+      }}>
+        <div style={{
+          fontFamily: 'Bebas Neue, sans-serif',
+          fontSize: '1.3rem',
+          letterSpacing: '.12em'
+        }}>
+          <span style={{color: '#B83232'}}>Leon</span>
+          <span style={{color: '#636D7E'}}>—</span>
+          <span style={{color: '#2B4C9E'}}>Link</span>
         </div>
+        <p style={{
+          fontSize: '.8rem',
+          color: '#636D7E',
+          fontFamily: 'Barlow Condensed, sans-serif',
+          letterSpacing: '.06em'
+        }}>
+          © 2026 Leon-Link · Built for night shift heroes · All rights reserved
+        </p>
+        <p style={{
+          fontSize: '.8rem',
+          color: '#636D7E',
+          fontFamily: 'Barlow Condensed, sans-serif',
+          letterSpacing: '.06em'
+        }}>
+          Night shift nurse planner · SBAR handoff · Med timeline · Fatigue tracker
+        </p>
       </footer>
     </div>
   );
