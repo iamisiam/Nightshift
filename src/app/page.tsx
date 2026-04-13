@@ -218,7 +218,7 @@ export default function Home() {
             </button>
             
             <div className="mt-8 text-xs text-white/60 flex items-center gap-6">
-              <div>🔒 Secure checkout via Lemon Squeezy</div>
+              <div>🔒 Secure checkout via Stripe</div>
               <div>💳 All major cards + PayPal</div>
               <div>30-day money-back guarantee</div>
             </div>
