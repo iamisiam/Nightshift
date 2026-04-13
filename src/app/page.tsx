@@ -604,7 +604,7 @@ export default function Home() {
             marginBottom: '50px',
             lineHeight: 1.7
           }}>
-            One download. Two PDFs. Eight pages that change how you work, sleep, and survive night shift.
+            One download. Three PDFs. Eight pages that change how you work, sleep, and survive night shift.
           </p>
 
           <div style={{
@@ -686,6 +686,21 @@ export default function Home() {
                 padding: '8px 14px'
               }}>
                 <span style={{color: '#0D6B72'}}>✓</span> Blank Fillable Bundle PDF
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '.85rem',
+                fontWeight: 500,
+                letterSpacing: '.06em',
+                color: '#A8B0BF',
+                background: '#0F1520',
+                border: '1px solid #1E2535',
+                padding: '8px 14px'
+              }}>
+                <span style={{color: '#0D6B72'}}>✓</span> Implementation Guide PDF
               </div>
               <div style={{
                 display: 'flex',
