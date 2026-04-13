@@ -1,12 +1,9 @@
 "use client";
 
-const lemonSqueezyUrl = process.env.NEXT_PUBLIC_LEMON_SQUEEZY_URL || "https://your-store.lemonsqueezy.com";
+// app/page.tsx
+import Image from 'next/image';
 
-const mockupImages = {
-  stack: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/8c61fd71-d58a-4830-ae3f-10d5104bb9a3.jpg',
-  locker: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/6bb3b3eb-9b61-42f7-97dd-288a61d0b1cb.jpg',
-  phone: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/ba393b4d-724b-4a01-8713-a25155b36692.jpg',
-};
+const lemonSqueezyUrl = process.env.NEXT_PUBLIC_LEMON_SQUEEZY_URL || "https://your-store.lemonsqueezy.com";
 
 export default function Home() {
   return (
@@ -28,7 +25,7 @@ export default function Home() {
               <span className="text-emerald-400">✓</span> Instant Download
             </div>
             <button 
-              onClick={() => document.getElementById('buy')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => window.location.href = '#buy'}
               className="bg-[#00E5D8] hover:bg-[#00E5D8]/90 text-black font-semibold px-6 py-2.5 rounded-2xl text-sm transition"
             >
               Buy Now – $12.99
@@ -66,7 +63,7 @@ export default function Home() {
           </div>
 
           <button 
-            onClick={() => document.getElementById('buy')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => window.location.href = '#buy'}
             className="mt-8 bg-[#00E5D8] hover:bg-white text-black font-semibold text-lg px-10 py-5 rounded-3xl flex items-center gap-3 transition shadow-xl shadow-[#00E5D8]/30"
           >
             Get Instant Access Now
@@ -88,10 +85,13 @@ export default function Home() {
 
         {/* HERO IMAGE - STACK MOCKUP */}
         <div className="relative">
-          <img
-            src={mockupImages.stack}
+          <Image
+            src="/mockups/stack.jpg"
             alt="2026 Night Shift Nurse Survival Bundle printed stack"
-            className="w-full max-w-[600px] rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition"
+            width={600}
+            height={500}
+            className="rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition"
+            priority
           />
           <div className="absolute -bottom-4 -right-4 bg-white text-black text-xs font-bold px-4 py-2 rounded-2xl flex items-center gap-2 shadow-xl">
             <span>8 PAGES</span>
@@ -132,28 +132,34 @@ export default function Home() {
         
         <div className="grid md:grid-cols-3 gap-8">
           <div className="group">
-            <img
-            src={mockupImages.stack}
-            alt="2026 Night Shift Nurse Survival Bundle printed stack"
-            className="w-full max-w-[600px] rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition"
-          />
+            <Image
+              src="/mockups/stack.jpg"
+              alt="Printed bundle stack"
+              width={420}
+              height={380}
+              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+            />
             <p className="text-center mt-4 text-white/70 text-sm">8-Page Printable Stack</p>
           </div>
           
           <div className="group">
-            <img
-              src={mockupImages.stack}
-              alt="Printed bundle stack"
-              className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition"
+            <Image
+              src="/mockups/locker.jpg"
+              alt="Bundle in nurse locker"
+              width={420}
+              height={380}
+              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
             />
             <p className="text-center mt-4 text-white/70 text-sm">Real locker setup</p>
           </div>
           
           <div className="group">
-            <img
-              src={mockupImages.locker}
-              alt="Bundle in nurse locker"
-              className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition"
+            <Image
+              src="/mockups/phone.jpg"
+              alt="Bundle on phone/tablet"
+              width={420}
+              height={380}
+              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
             />
             <p className="text-center mt-4 text-white/70 text-sm">Tablet + stylus ready</p>
           </div>
@@ -188,6 +194,11 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-12">Built For Night Shift RNs Like You</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/10 rounded-3xl p-8">
+              <div className="text-5xl mb-6">🏥</div>
+              <h3 className="font-semibold text-xl">Rural Hospital Nurses</h3>
+              <p className="text-white/70 mt-2">Limited resources? One system replaces scattered sheets.</p>
+            </div>
+            <div className="bg-white/10 rounded-3xl p-8">
               <div className="text-5xl mb-6">👩‍⚕️</div>
               <h3 className="font-semibold text-xl">New Grad RNs</h3>
               <p className="text-white/70 mt-2">Build safe habits with structured SBAR + timelines.</p>
@@ -221,7 +232,7 @@ export default function Home() {
             
             <div className="mt-8 text-xs text-white/60 flex items-center gap-6">
               <div>🔒 Secure checkout via Lemon Squeezy</div>
-              <div>��� All major cards + PayPal</div>
+              <div>💳 All major cards + PayPal</div>
               <div>30-day money-back guarantee</div>
             </div>
           </div>
