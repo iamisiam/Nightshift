@@ -1,13 +1,11 @@
 "use client";
 
-import Image from 'next/image';
-
 const lemonSqueezyUrl = process.env.NEXT_PUBLIC_LEMON_SQUEEZY_URL || "https://your-store.lemonsqueezy.com";
 
 const mockupImages = {
-  stack: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/8196ba65-71fd-4931-aa19-f85eacccc6f1.jpg',
-  locker: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/57e0db84-dfb0-4f88-a808-560bebc682d1.jpg',
-  phone: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/bcbbedcd-a799-4d65-ac9b-a67bff3ce25b.jpg',
+  stack: '/mockup-stack.jpg',
+  locker: '/mockup-locker.jpg',
+  phone: '/mockup-phone.jpg',
 };
 
 export default function Home() {
@@ -30,7 +28,7 @@ export default function Home() {
               <span className="text-emerald-400">✓</span> Instant Download
             </div>
             <button 
-              onClick={() => window.location.href = '#buy'}
+              onClick={() => document.getElementById('buy')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-[#00E5D8] hover:bg-[#00E5D8]/90 text-black font-semibold px-6 py-2.5 rounded-2xl text-sm transition"
             >
               Buy Now – $12.99
@@ -68,7 +66,7 @@ export default function Home() {
           </div>
 
           <button 
-            onClick={() => window.location.href = '#buy'}
+            onClick={() => document.getElementById('buy')?.scrollIntoView({ behavior: 'smooth' })}
             className="mt-8 bg-[#00E5D8] hover:bg-white text-black font-semibold text-lg px-10 py-5 rounded-3xl flex items-center gap-3 transition shadow-xl shadow-[#00E5D8]/30"
           >
             Get Instant Access Now
@@ -90,13 +88,10 @@ export default function Home() {
 
         {/* HERO IMAGE - STACK MOCKUP */}
         <div className="relative">
-          <Image
+          <img
             src={mockupImages.stack}
             alt="2026 Night Shift Nurse Survival Bundle printed stack"
-            width={600}
-            height={500}
-            className="rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition"
-            priority
+            className="w-full max-w-[600px] rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition"
           />
           <div className="absolute -bottom-4 -right-4 bg-white text-black text-xs font-bold px-4 py-2 rounded-2xl flex items-center gap-2 shadow-xl">
             <span>8 PAGES</span>
@@ -137,34 +132,28 @@ export default function Home() {
         
         <div className="grid md:grid-cols-3 gap-8">
           <div className="group">
-            <Image
+            <img
               src={mockupImages.stack}
               alt="Printed bundle stack"
-              width={420}
-              height={380}
-              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+              className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition"
             />
             <p className="text-center mt-4 text-white/70 text-sm">8-Page Printable Stack</p>
           </div>
           
           <div className="group">
-            <Image
+            <img
               src={mockupImages.locker}
               alt="Bundle in nurse locker"
-              width={420}
-              height={380}
-              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+              className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition"
             />
             <p className="text-center mt-4 text-white/70 text-sm">Real locker setup</p>
           </div>
           
           <div className="group">
-            <Image
+            <img
               src={mockupImages.phone}
               alt="Bundle on phone/tablet"
-              width={420}
-              height={380}
-              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+              className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition"
             />
             <p className="text-center mt-4 text-white/70 text-sm">Tablet + stylus ready</p>
           </div>
@@ -237,7 +226,7 @@ export default function Home() {
             
             <div className="mt-8 text-xs text-white/60 flex items-center gap-6">
               <div>🔒 Secure checkout via Lemon Squeezy</div>
-              <div>💳 All major cards + PayPal</div>
+              <div>��� All major cards + PayPal</div>
               <div>30-day money-back guarantee</div>
             </div>
           </div>
