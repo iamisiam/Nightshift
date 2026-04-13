@@ -1,362 +1,257 @@
-"use client";
+import Image from 'next/image';
 
-
-import { useState } from "react";
 const lemonSqueezyUrl = process.env.NEXT_PUBLIC_LEMON_SQUEEZY_URL || "https://your-store.lemonsqueezy.com";
 
-const features = [
-  {
-    icon: "🌙",
-    title: "Cover Page",
-    description: "Calming night-shift design with moon and stethoscope motifs in blues and greens.",
-  },
-  {
-    icon: "📅",
-    title: "Rotating Shift Scheduler",
-    description: "Monthly/weekly calendar grid to plan your 12-hour day and night rotations across 4 weeks.",
-  },
-  {
-    icon: "📋",
-    title: "SBAR Patient Handoff Sheet",
-    description: "Situation, Background, Assessment, Recommendation format with space for room and patient details.",
-  },
-  {
-    icon: "💊",
-    title: "Hourly Medication & Task Timeline",
-    description: "1900-0700 night shift time slots with checkboxes for meds, vitals, charting, and assessments.",
-  },
-  {
-    icon: "🧬",
-    title: "Daily Fatigue & Self-Care Tracker",
-    description: "1-10 alertness scale, sleep/caffeine/mood logging, self-care checklist, and quick action prompts.",
-  },
-  {
-    icon: "😴",
-    title: "Post-Shift Sleep Recovery Checklist",
-    description: "Wind-down steps, caffeine cutoff rule, blackout tips, and a recovery day planner.",
-  },
-  {
-    icon: "💡",
-    title: "Night Shift Tips & Self-Care Prompts",
-    description: "Snack ideas, micro-break reminders, burnout warning signs, and coping strategies.",
-  },
-  {
-    icon: "📖",
-    title: "How to Use Guide",
-    description: "Instructions for every page plus pro tips on printing, laminating, and going digital.",
-  },
-];
-
-const targetAudiences = [
-  {
-    icon: "🏥",
-    title: "Rural Hospital Nurses",
-    description: "Limited resources? This bundle replaces multiple scattered sheets with one organized system.",
-    bg: "bg-[#E8F4F8]",
-  },
-  {
-    icon: "👩‍⚕️",
-    title: "New Grad RNs",
-    description: "Structured SBAR sheets and med timelines help you build confidence and safe habits.",
-    bg: "bg-[#FFF3E0]",
-  },
-  {
-    icon: "🔥",
-    title: "Burned-Out Night Shifters",
-    description: "Fatigue tracking, sleep recovery tools, and burnout prevention built right in.",
-    bg: "bg-[#F0EAF5]",
-  },
-];
-
-const relatedSearches = [
-  "night shift nurse planner",
-  "shift worker checklist",
-  "nurse handoff sheet",
-  "medication tracker nurses",
-  "fatigue tracker printable",
-  "sleep recovery nurse",
-  "sbar report sheet",
-  "2026 nurse planner",
-  "rotating shift scheduler",
-  "night shift survival kit",
-  "rn brain sheet",
-  "self care for nurses",
-  "digital download nurse",
-];
+const mockupImages = {
+  stack: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/8196ba65-71fd-4931-aa19-f85eacccc6f1.jpg',
+  locker: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/57e0db84-dfb0-4f88-a808-560bebc682d1.jpg',
+  phone: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/bcbbedcd-a799-4d65-ac9b-a67bff3ce25b.jpg',
+};
 
 export default function Home() {
-  const [loadingLemon, setLoadingLemon] = useState(false);
-  
-  const [success, setSuccess] = useState(() => {
-    if (typeof window !== "undefined") {
-      return new URLSearchParams(window.location.search).get("success") === "true";
-    }
-    return false;
-  });
-  const [canceled, setCanceled] = useState(() => {
-    if (typeof window !== "undefined") {
-      return new URLSearchParams(window.location.search).get("canceled") === "true";
-    }
-    return false;
-  });
-
-  const handleLemonSqueezyCheckout = () => {
-    setLoadingLemon(true);
-    window.location.href = lemonSqueezyUrl;
-  };
-
-
-  if (success) {
-    return (
-      <main className="min-h-screen bg-gradient-to-b from-[#0F1B2D] via-[#162A45] to-[#0F1B2D] flex items-center justify-center">
-        <div className="max-w-md mx-auto px-6 py-16 text-center">
-          <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[#1A7A6D] flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <h1 className="text-3xl font-bold text-white mb-4">Payment Successful!</h1>
-          <p className="text-[#4A9CC7] mb-8">
-            Thank you for your purchase. Your Night Shift Nurse Survival Bundle is ready to download.
-          </p>
-          <a
-            href="/api/download"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A7A6D] hover:bg-[#15685D] text-white rounded-lg text-lg font-semibold transition-colors"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Download PDF
-          </a>
-        </div>
-      </main>
-    );
-  }
-
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0F1B2D] via-[#162A45] to-[#0F1B2D]">
-      {canceled && (
-        <div className="bg-red-600 text-white text-center py-3">
-          Payment was canceled. Please try again.
+    <div className="min-h-screen bg-[#0A1729] text-white font-sans">
+      {/* NAVBAR */}
+      <nav className="border-b border-white/10 bg-[#0A1729]/80 backdrop-blur-md fixed w-full z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">🌙</span>
+            <h1 className="text-2xl font-bold tracking-tight">Night Shift Survival</h1>
+          </div>
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#whats-inside" className="hover:text-[#00E5D8] transition">What&apos;s Inside</a>
+            <a href="#preview" className="hover:text-[#00E5D8] transition">Preview</a>
+            <a href="#for-you" className="hover:text-[#00E5D8] transition">Built For You</a>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="bg-white/10 text-white text-xs px-3 py-1.5 rounded-2xl flex items-center gap-1">
+              <span className="text-emerald-400">✓</span> Instant Download
+            </div>
+            <button 
+              onClick={() => window.location.href = '#buy'}
+              className="bg-[#00E5D8] hover:bg-[#00E5D8]/90 text-black font-semibold px-6 py-2.5 rounded-2xl text-sm transition"
+            >
+              Buy Now – $12.99
+            </button>
+          </div>
         </div>
-      )}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-[15%] w-32 h-32 rounded-full bg-[rgba(43,168,154,0.08)]"></div>
-          <div className="absolute top-40 right-[25%] w-20 h-20 rounded-full bg-[rgba(43,168,154,0.05)]"></div>
-          <div className="absolute top-16 right-[40%] w-2 h-2 rounded-full bg-[rgba(255,255,255,0.15)]"></div>
-          <div className="absolute top-32 right-[30%] w-1.5 h-1.5 rounded-full bg-[rgba(255,255,255,0.1)]"></div>
-          <div className="absolute top-24 right-[50%] w-1 h-1 rounded-full bg-[rgba(255,255,255,0.12)]"></div>
-        </div>
-        <div className="max-w-4xl mx-auto px-6 pt-16 pb-20 relative">
-          <div className="inline-block mb-6">
-            <span className="text-xs font-bold tracking-widest uppercase text-white bg-[#1A7A6D] px-4 py-1.5 rounded">
-              Printable PDF Bundle
+      </nav>
+
+      {/* HERO */}
+      <header className="pt-24 pb-16 md:pt-32 md:pb-24 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div className="inline-flex items-center gap-2 bg-white/10 text-emerald-400 text-sm font-medium px-4 py-2 rounded-3xl mb-6">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
             </span>
+            2026 NIGHT SHIFT EDITION
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
-            2026 Night Shift
-          </h1>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#2BA89A] leading-tight mb-6">
-            Nurse Survival Bundle
-          </h1>
-          <p className="text-lg text-[#4A9CC7] max-w-xl mb-2">
-            Shift Scheduler - SBAR Handoff - Med Timeline
-          </p>
-          <p className="text-lg text-[#4A9CC7] max-w-xl mb-8">
-            Fatigue Tracker - Sleep Recovery - Self-Care
-          </p>
-          <p className="text-base text-[rgba(255,255,255,0.5)] mb-3 max-w-lg">
-            8 Printable Pages | Designed for 12-Hour Night Shift RNs
-          </p>
-          <p className="text-sm text-[rgba(255,255,255,0.35)] max-w-lg">
-            Print unlimited copies or use on your tablet
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="max-w-4xl mx-auto px-6 py-16">
-          <div className="mb-12">
-            <p className="text-lg text-[#1A1A2E] font-semibold leading-relaxed mb-4">
-              Tired of scattered notes and burnout during 12-hour night shifts in 2026? This
-              hyper-specific printable bundle is designed exclusively for shift-working RNs to stay
-              organized, ensure safe handoffs, track meds, monitor fatigue, and protect your
-              recovery sleep.
-            </p>
-            <p className="text-base text-[#4A4A6A] font-semibold mb-3">
-              What&apos;s Included in the PDF Bundle:
-            </p>
-            <ul className="space-y-2 text-[#4A4A6A] mb-6">
-              <li className="flex items-start gap-2">
-                <span className="text-[#1A7A6D] mt-1">✓</span>
-                <span>Rotating Shift Scheduler for your 2-4 week rotations</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#1A7A6D] mt-1">✓</span>
-                <span>SBAR Patient Handoff / Report Sheet with plenty of writing space</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#1A7A6D] mt-1">✓</span>
-                <span>Hourly Night Shift Medication & Task Timeline (1900-0700 slots with checkboxes)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#1A7A6D] mt-1">✓</span>
-                <span>Daily Fatigue & Alertness Self-Care Tracker (1-10 scale + action prompts)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#1A7A6D] mt-1">✓</span>
-                <span>Post-Shift Sleep Recovery Checklist & Wind-Down Planner</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#1A7A6D] mt-1">✓</span>
-                <span>Quick Night Shift Tips & Self-Care Prompts page</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#1A7A6D] mt-1">✓</span>
-                <span>Bonus: How to Use guide</span>
-              </li>
-            </ul>
-            <p className="text-base text-[#4A4A6A] leading-relaxed mb-4">
-              Print as many copies as you need or use digitally on your tablet. Perfect for rural
-              hospital nurses, new grads, or experienced night shifters fighting fatigue.
-            </p>
-            <p className="text-sm text-[#8A8AA0] italic">Created with real shift life in mind.</p>
-          </div>
-
-          <div className="bg-[#F8FAFB] rounded-xl p-8 mb-12 border border-[#E8ECF0]">
-            <div className="text-center">
-              <p className="text-sm text-[#4A4A6A] mb-2">Full 8-page bundle</p>
-              <p className="text-3xl font-bold text-[#0F1B2D] mb-6">$12.99</p>
-              <button
-                onClick={handleLemonSqueezyCheckout}
-                disabled={loadingLemon}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A7A6D] hover:bg-[#15685D] disabled:bg-[#1A7A6D]/70 text-white rounded-lg text-lg font-semibold transition-colors cursor-pointer"
-              >
-                {loadingLemon ? (
-                  <span>Loading...</span>
-                ) : (
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                      <polyline points="7 10 12 15 17 10"></polyline>
-                      <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Buy Now with Lemon Squeezy
-                  </>
-                )}
-              </button>
-              <p className="text-xs text-[#8A8AA0] mt-4">Secure checkout. Instant PDF download.</p>
-            </div>
-          </div>
-
           
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#0F1B2D] mb-8 text-center">
-              Preview the Bundle
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <img src="https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/8196ba65-71fd-4931-aa19-f85eacccc6f1.jpg" alt="Shift Scheduler Preview" className="w-full rounded-lg shadow-md" />
-              <img src="https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/57e0db84-dfb0-4f88-a808-560bebc682d1.jpg" alt="SBAR Handoff Preview" className="w-full rounded-lg shadow-md" />
-              <img src="https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/bcbbedcd-a799-4d65-ac9b-a67bff3ce25b.jpg" alt="Fatigue Tracker Preview" className="w-full rounded-lg shadow-md" />
+          <h1 className="text-5xl md:text-6xl font-bold leading-none tracking-tighter mb-4">
+            2026 Night Shift<br />
+            <span className="text-[#00E5D8]">Nurse Survival Bundle</span>
+          </h1>
+          
+          <p className="text-xl text-white/70 mt-6 max-w-lg">
+            8 printable pages built exclusively for 12-hour night shift RNs.<br />
+            Shift Scheduler • SBAR Handoff • Med Timeline • Fatigue Tracker • Sleep Recovery
+          </p>
+
+          <div className="mt-8 flex items-center gap-4">
+            <div className="text-5xl font-semibold">$12.99</div>
+            <div className="text-xs bg-emerald-400/20 text-emerald-400 px-3 py-1 rounded-xl flex items-center">
+              8 PAGES • UNLIMITED PRINTS
             </div>
           </div>
 
-<div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#0F1B2D] mb-8 text-center">
-              What&apos;s Inside: 8 Printable Pages
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex gap-4 p-4 rounded-lg border border-[#E8ECF0] hover:border-[#2BA89A] transition-colors"
-                >
-                  <div className="text-2xl flex-shrink-0 w-10 h-10 rounded-lg bg-[#E8F4F8] flex items-center justify-center">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[#162A45] text-sm mb-1">{feature.title}</h3>
-                    <p className="text-xs text-[#4A4A6A] leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <button 
+            onClick={() => window.location.href = '#buy'}
+            className="mt-8 bg-[#00E5D8] hover:bg-white text-black font-semibold text-lg px-10 py-5 rounded-3xl flex items-center gap-3 transition shadow-xl shadow-[#00E5D8]/30"
+          >
+            Get Instant Access Now
+            <span className="text-2xl">→</span>
+          </button>
 
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#0F1B2D] mb-6 text-center">Built For Night Shift RNs</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              {targetAudiences.map((audience) => (
-                <div key={audience.title} className={`p-6 rounded-lg ${audience.bg}`}>
-                  <div className="text-2xl mb-3">{audience.icon}</div>
-                  <h3 className="font-semibold text-[#162A45] text-sm mb-2">{audience.title}</h3>
-                  <p className="text-xs text-[#4A4A6A]">{audience.description}</p>
-                </div>
-              ))}
+          <div className="mt-6 flex items-center gap-8 text-sm text-white/60">
+            <div className="flex items-center gap-2">
+              <span className="text-emerald-400">✓</span> Instant PDF Download
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-emerald-400">✓</span> Works on tablet + stylus
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-emerald-400">✓</span> 100% Money-back guarantee
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="bg-[#F8FAFB] border-t border-[#E8ECF0]">
-        <div className="max-w-4xl mx-auto px-6 py-10">
-          <p className="text-xs text-[#8A8AA0] font-semibold uppercase tracking-wider mb-4">
-            Related Searches
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {relatedSearches.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-3 py-1.5 rounded-full bg-white border border-[#E8ECF0] text-[#4A4A6A]"
-              >
-                {tag}
-              </span>
+        {/* HERO IMAGE - STACK MOCKUP */}
+        <div className="relative">
+          <Image
+            src={mockupImages.stack}
+            alt="2026 Night Shift Nurse Survival Bundle printed stack"
+            width={600}
+            height={500}
+            className="rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition"
+            priority
+          />
+          <div className="absolute -bottom-4 -right-4 bg-white text-black text-xs font-bold px-4 py-2 rounded-2xl flex items-center gap-2 shadow-xl">
+            <span>8 PAGES</span>
+            <span className="text-emerald-400">•</span>
+            <span>PRINT UNLIMITED</span>
+          </div>
+        </div>
+      </header>
+
+      {/* WHAT'S INCLUDED QUICK LIST */}
+      <section className="bg-white/5 py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-center text-3xl font-bold mb-8">Everything you need in one bundle</h2>
+          <div className="grid md:grid-cols-4 gap-6 text-center">
+            {[
+              { icon: '📅', title: 'Shift Scheduler' },
+              { icon: '📋', title: 'SBAR Handoff' },
+              { icon: '💊', title: 'Med Timeline' },
+              { icon: '🧬', title: 'Fatigue Tracker' },
+              { icon: '😴', title: 'Sleep Recovery' },
+              { icon: '💡', title: 'Nurse Brain Tips' },
+            ].map((item, i) => (
+              <div key={i} className="bg-white/10 rounded-3xl p-6 hover:bg-white/20 transition">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="font-semibold">{item.title}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <footer className="bg-[#0F1B2D] border-t border-[rgba(43,168,154,0.15)]">
-        <div className="max-w-4xl mx-auto px-6 py-8 text-center">
-          <p className="text-xs text-[rgba(255,255,255,0.3)]">2026 Night Shift Nurse Survival Bundle</p>
-          <p className="text-xs text-[rgba(255,255,255,0.2)] mt-1">
-            $12.99 - Printable PDF. For personal use only.
+      {/* PREVIEW THE BUNDLE */}
+      <section id="preview" className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-center mb-4">Preview the Bundle</h2>
+        <p className="text-white/70 text-center max-w-md mx-auto mb-12">
+          Real pages. Real samples. Designed from actual night shifts.
+        </p>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="group">
+            <Image
+              src={mockupImages.stack}
+              alt="Printed bundle stack"
+              width={420}
+              height={380}
+              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+            />
+            <p className="text-center mt-4 text-white/70 text-sm">8-Page Printable Stack</p>
+          </div>
+          
+          <div className="group">
+            <Image
+              src={mockupImages.locker}
+              alt="Bundle in nurse locker"
+              width={420}
+              height={380}
+              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+            />
+            <p className="text-center mt-4 text-white/70 text-sm">Real locker setup</p>
+          </div>
+          
+          <div className="group">
+            <Image
+              src={mockupImages.phone}
+              alt="Bundle on phone/tablet"
+              width={420}
+              height={380}
+              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+            />
+            <p className="text-center mt-4 text-white/70 text-sm">Tablet + stylus ready</p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT'S INSIDE DETAILED */}
+      <section id="whats-inside" className="bg-[#061021] py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-12">What&apos;s Inside: 8 Printable Pages</h2>
+          <div className="space-y-16">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-5">
+                <div className="text-emerald-400 text-sm tracking-widest">PAGE 01</div>
+                <h3 className="text-3xl font-bold">Cover Page</h3>
+                <p className="text-white/70 mt-3">Dark navy design with teal accents. Laminate for durability.</p>
+              </div>
+              <div className="md:col-span-7 bg-white/10 rounded-3xl p-8 text-center">
+                <p className="text-2xl">🌙 2026 Night Shift Nurse Survival Bundle</p>
+              </div>
+            </div>
+            <div className="text-center text-white/60 text-sm">
+              Full details match the exact PDF (J. Rodriguez sample, Angela Torres patient, etc.)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BUILT FOR YOU */}
+      <section id="for-you" className="py-20 bg-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-12">Built For Night Shift RNs Like You</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white/10 rounded-3xl p-8">
+              <div className="text-5xl mb-6">🏥</div>
+              <h3 className="font-semibold text-xl">Rural Hospital Nurses</h3>
+              <p className="text-white/70 mt-2">Limited resources? One system replaces scattered sheets.</p>
+            </div>
+            <div className="bg-white/10 rounded-3xl p-8">
+              <div className="text-5xl mb-6">👩‍⚕️</div>
+              <h3 className="font-semibold text-xl">New Grad RNs</h3>
+              <p className="text-white/70 mt-2">Build safe habits with structured SBAR + timelines.</p>
+            </div>
+            <div className="bg-white/10 rounded-3xl p-8">
+              <div className="text-5xl mb-6">🔥</div>
+              <h3 className="font-semibold text-xl">Burned-Out Night Shifters</h3>
+              <p className="text-white/70 mt-2">Fatigue tracking + sleep recovery tools included.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BUY SECTION — Lemon Squeezy ready */}
+      <section id="buy" className="py-24 border-t border-white/10">
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h2 className="text-5xl font-bold mb-4">Ready to make your next night shift easier?</h2>
+          <p className="text-xl text-white/70 mb-10">One-time purchase. Unlimited prints. Lifetime updates.</p>
+          
+          <div className="inline-flex flex-col items-center bg-white/10 rounded-3xl p-10">
+            <div className="text-7xl font-bold">$12.99</div>
+            
+            <button 
+              className="mt-10 w-full max-w-xs bg-[#00E5D8] text-black font-bold text-xl py-6 rounded-3xl hover:scale-105 transition flex items-center justify-center gap-3"
+              onClick={() => {
+                window.open(lemonSqueezyUrl, '_blank');
+              }}
+            >
+              Buy Now – Instant Download
+            </button>
+            
+            <div className="mt-8 text-xs text-white/60 flex items-center gap-6">
+              <div>🔒 Secure checkout via Lemon Squeezy</div>
+              <div>💳 All major cards + PayPal</div>
+              <div>30-day money-back guarantee</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-black/30 py-12 text-white/60 text-sm">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <p>© 2026 Leon Tucker • Built for night shift heroes</p>
+          <p className="mt-2 text-xs">nightshift-blond.vercel.app • All rights reserved</p>
+          <p className="mt-8 text-[10px] max-w-md mx-auto">
+            night shift nurse planner • SBAR handoff sheet • medication timeline • fatigue tracker • sleep recovery for nurses • rotating shift scheduler
           </p>
         </div>
       </footer>
-    </main>
+    </div>
   );
 }
