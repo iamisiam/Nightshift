@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "");
+import { useState } from "react";
+const lemonSqueezyUrl = process.env.NEXT_PUBLIC_LEMON_SQUEEZY_URL || "https://your-store.lemonsqueezy.com";
 
 const features = [
   {
@@ -86,8 +85,8 @@ const relatedSearches = [
 ];
 
 export default function Home() {
-  const [loadingStripe, setLoadingStripe] = useState(false);
-  const [loadingPayPal, setLoadingPayPal] = useState(false);
+  const [loadingLemon, setLoadingLemon] = useState(false);
+  
   const [success, setSuccess] = useState(() => {
     if (typeof window !== "undefined") {
       return new URLSearchParams(window.location.search).get("success") === "true";
@@ -101,26 +100,11 @@ export default function Home() {
     return false;
   });
 
-  const handleStripeCheckout = async () => {
-    setLoadingStripe(true);
-    try {
-      const response = await fetch("/api/checkout", {
-        method: "POST",
-      });
-      const data = await response.json();
-      if (data.url) {
-        window.location.href = data.url;
-      }
-    } catch (error) {
-      console.error("Checkout error:", error);
-      setLoadingStripe(false);
-    }
+  const handleLemonSqueezyCheckout = () => {
+    setLoadingLemon(true);
+    window.location.href = lemonSqueezyUrl;
   };
 
-  const handlePayPalCheckout = async () => {
-    setLoadingPayPal(true);
-    window.location.href = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOUR_PAYPAL_EMAIL&item_name=Night+Shift+Nurse+Survival+Bundle&amount=12.99&currency_code=USD";
-  };
 
   if (success) {
     return (
@@ -266,58 +250,34 @@ export default function Home() {
             <div className="text-center">
               <p className="text-sm text-[#4A4A6A] mb-2">Full 8-page bundle</p>
               <p className="text-3xl font-bold text-[#0F1B2D] mb-6">$12.99</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  onClick={handleStripeCheckout}
-                  disabled={loadingStripe}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A7A6D] hover:bg-[#15685D] disabled:bg-[#1A7A6D]/70 text-white rounded-lg text-lg font-semibold transition-colors cursor-pointer"
-                >
-                  {loadingStripe ? (
-                    <span>Loading...</span>
-                  ) : (
-                    <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                      </svg>
-                      Pay with Stripe
-                    </>
-                  )}
-                </button>
-                <button
-                  onClick={handlePayPalCheckout}
-                  disabled={loadingPayPal}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#003087] hover:bg-[#002266] disabled:bg-[#003087]/70 text-white rounded-lg text-lg font-semibold transition-colors cursor-pointer"
-                >
-                  {loadingPayPal ? (
-                    <span>Loading...</span>
-                  ) : (
-                    <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106z" />
-                      </svg>
-                      Pay with PayPal
-                    </>
-                  )}
-                </button>
-              </div>
+              <button
+                onClick={handleLemonSqueezyCheckout}
+                disabled={loadingLemon}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A7A6D] hover:bg-[#15685D] disabled:bg-[#1A7A6D]/70 text-white rounded-lg text-lg font-semibold transition-colors cursor-pointer"
+              >
+                {loadingLemon ? (
+                  <span>Loading...</span>
+                ) : (
+                  <>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Buy Now with Lemon Squeezy
+                  </>
+                )}
+              </button>
               <p className="text-xs text-[#8A8AA0] mt-4">Secure checkout. Instant PDF download.</p>
             </div>
           </div>
