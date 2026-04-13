@@ -1,10 +1,6 @@
 "use client";
 
 // app/page.tsx
-import Image from 'next/image';
-
-const lemonSqueezyUrl = process.env.NEXT_PUBLIC_LEMON_SQUEEZY_URL || "https://your-store.lemonsqueezy.com";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0A1729] text-white font-sans">
@@ -85,13 +81,10 @@ export default function Home() {
 
         {/* HERO IMAGE - STACK MOCKUP */}
         <div className="relative">
-          <Image
-            src="/mockups/stack.svg"
+          <img
+            src="/mockups/stack.jpg"
             alt="2026 Night Shift Nurse Survival Bundle printed stack"
-            width={600}
-            height={500}
-            className="rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition"
-            priority
+            className="rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition w-full"
           />
           <div className="absolute -bottom-4 -right-4 bg-white text-black text-xs font-bold px-4 py-2 rounded-2xl flex items-center gap-2 shadow-xl">
             <span>8 PAGES</span>
@@ -132,34 +125,28 @@ export default function Home() {
         
         <div className="grid md:grid-cols-3 gap-8">
           <div className="group">
-            <Image
-              src="/mockups/stack.svg"
+            <img
+              src="/mockups/stack.jpg"
               alt="Printed bundle stack"
-              width={420}
-              height={380}
-              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+              className="rounded-3xl shadow-2xl group-hover:scale-105 transition w-full"
             />
             <p className="text-center mt-4 text-white/70 text-sm">8-Page Printable Stack</p>
           </div>
           
           <div className="group">
-            <Image
-              src="/mockups/locker.svg"
+            <img
+              src="/mockups/locker.jpg"
               alt="Bundle in nurse locker"
-              width={420}
-              height={380}
-              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+              className="rounded-3xl shadow-2xl group-hover:scale-105 transition w-full"
             />
             <p className="text-center mt-4 text-white/70 text-sm">Real locker setup</p>
           </div>
           
           <div className="group">
-            <Image
-              src="/mockups/phone.svg"
+            <img
+              src="/mockups/phone.jpg"
               alt="Bundle on phone/tablet"
-              width={420}
-              height={380}
-              className="rounded-3xl shadow-2xl group-hover:scale-105 transition"
+              className="rounded-3xl shadow-2xl group-hover:scale-105 transition w-full"
             />
             <p className="text-center mt-4 text-white/70 text-sm">Tablet + stylus ready</p>
           </div>
@@ -224,7 +211,7 @@ export default function Home() {
             <button 
               className="mt-10 w-full max-w-xs bg-[#00E5D8] text-black font-bold text-xl py-6 rounded-3xl hover:scale-105 transition flex items-center justify-center gap-3"
               onClick={() => {
-                window.open(lemonSqueezyUrl, '_blank');
+                window.open('https://YOUR-LEMON-SQUEEZY-CHECKOUT-LINK.com', '_blank');
               }}
             >
               Buy Now – Instant Download
@@ -242,7 +229,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="bg-black/30 py-12 text-white/60 text-sm">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <p>© 2026 Leon • Built for night shift heroes</p>
+          <p>© 2026 Leon Tucker • Built for night shift heroes</p>
           <p className="mt-2 text-xs">nightshift-blond.vercel.app • All rights reserved</p>
           <p className="mt-8 text-[10px] max-w-md mx-auto">
             night shift nurse planner • SBAR handoff sheet • medication timeline • fatigue tracker • sleep recovery for nurses • rotating shift scheduler
