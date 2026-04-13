@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>2026 Night Shift Nurse Survival Bundle — Leon-Link</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ─── RESET & BASE ─────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A0C12;
+  --ink2:#0F1520;
+  --ink3:#161C2A;
+  --red:#B83232;
+  --red2:#D44040;
+  --blue:#2B4C9E;
+  --blue2:#4068C8;
+  --gold:#C9943A;
+  --gold2:#E8B055;
+  --text:#EDE9E3;
+  --text2:#A8B0BF;
+  --text3:#636D7E;
+  --border:#1E2535;
+  --border2:#252D3F;
+  --teal:#0D6B72;
+  --teal2:#15909A;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:var(--ink);
+  color:var(--text);
+  font-family:'Barlow',sans-serif;
+  font-weight:400;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ─── GRAIN OVERLAY ────────────────────────────── */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  opacity:.35;pointer-events:none;z-index:999;mix-blend-mode:overlay;
+}
+
+/* ─── TYPOGRAPHY ───────────────────────────────── */
+.display{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;line-height:.95}
+.condensed{font-family:'Barlow Condensed',sans-serif}
+
+/* ─── NAV ──────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 40px;
+  background:rgba(10,12,18,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;letter-spacing:.12em;
+  display:flex;gap:.2em;align-items:center;
+}
+.nav-logo .r{color:var(--red)}
+.nav-logo .b{color:var(--blue2)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.85rem;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text2);
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.85rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;
+  background:var(--red);color:#fff;
+  padding:9px 20px;
+  border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+  clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+}
+.nav-cta:hover{background:var(--red2);transform:translateY(-1px)}
+
+/* ─── HERO ─────────────────────────────────────── */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:120px 40px 80px;
+  max-width:1200px;margin:0 auto;
+  gap:60px;
+}
+.hero-text{position:relative}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.8rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold2);
+  margin-bottom:22px;
+}
+.hero-eyebrow::before{
+  content:'';display:block;width:28px;height:2px;
+  background:linear-gradient(90deg,var(--red),var(--blue2));
+}
+.hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(4rem,8vw,7.5rem);
+  line-height:.92;letter-spacing:.03em;
+  margin-bottom:28px;
+}
+.hero h1 .line1{display:block;color:var(--text)}
+.hero h1 .line2{
+  display:block;
+  background:linear-gradient(95deg,var(--red) 0%,var(--red2) 40%,var(--blue2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero h1 .line3{display:block;color:var(--text)}
+.hero-sub{
+  font-size:1.1rem;font-weight:300;color:var(--text2);
+  line-height:1.7;margin-bottom:40px;max-width:440px;
+}
+.hero-sub strong{color:var(--text);font-weight:500}
+.hero-cta-group{display:flex;flex-direction:column;gap:14px}
+.btn-primary{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(135deg,var(--red) 0%,var(--blue) 100%);
+  color:#fff;font-family:'Barlow Condensed',sans-serif;
+  font-size:1.1rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;padding:18px 40px;
+  border:none;cursor:pointer;
+  clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);
+  transition:opacity .2s,transform .15s;
+  width:fit-content;
+}
+.btn-primary:hover{opacity:.88;transform:translateY(-2px)}
+.hero-trust{
+  display:flex;align-items:center;gap:20px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.85rem;font-weight:400;letter-spacing:.06em;
+  color:var(--text3);
+}
+.hero-trust span{display:flex;align-items:center;gap:6px}
+.hero-trust .dot{width:4px;height:4px;background:var(--border2);border-radius:50%}
+
+/* hero right — alien card */
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-img-wrap{
+  position:relative;
+  width:100%;max-width:480px;
+}
+.hero-img-wrap::before{
+  content:'';position:absolute;inset:-2px;
+  background:linear-gradient(135deg,var(--red),transparent 40%,var(--blue2));
+  z-index:0;
+}
+.hero-img-wrap img{
+  position:relative;z-index:1;
+  width:100%;
+  filter:grayscale(10%) contrast(1.05);
+  display:block;
+}
+.hero-badge{
+  position:absolute;bottom:-16px;right:-16px;z-index:2;
+  background:var(--gold);color:var(--ink);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.2rem;letter-spacing:.1em;
+  padding:14px 18px;line-height:1.1;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%);
+}
+.hero-badge span{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.15em;opacity:.8}
+.hero-price-tag{
+  position:absolute;top:-16px;left:-16px;z-index:2;
+  background:var(--ink2);border:1px solid var(--border2);
+  padding:10px 16px;
+  font-family:'Barlow Condensed',sans-serif;
+}
+.hero-price-tag .price{font-size:1.6rem;font-weight:700;color:var(--gold2)}
+.hero-price-tag .note{font-size:.7rem;font-weight:400;letter-spacing:.08em;color:var(--text3);text-transform:uppercase}
+
+/* ─── DIVIDER ──────────────────────────────────── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:0 40px}
+
+/* ─── BEFORE / AFTER ───────────────────────────── */
+.ba-section{
+  padding:100px 40px;
+  max-width:1200px;margin:0 auto;
+}
+.section-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.78rem;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--text3);
+  margin-bottom:16px;
+}
+.section-label::before{
+  content:'';display:block;width:20px;height:1px;
+  background:var(--border2);
+}
+.ba-section h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  letter-spacing:.04em;line-height:.95;
+  margin-bottom:60px;
+}
+.ba-grid{
+  display:grid;grid-template-columns:1fr 80px 1fr;
+  gap:0;align-items:start;
+}
+.ba-col{background:var(--ink2);border:1px solid var(--border)}
+.ba-col.before{border-color:rgba(184,50,50,.3)}
+.ba-col.after{border-color:rgba(43,76,158,.3)}
+.ba-col-hdr{
+  padding:16px 24px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.85rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;
+}
+.ba-col.before .ba-col-hdr{background:rgba(184,50,50,.12);color:var(--red2)}
+.ba-col.after .ba-col-hdr{background:rgba(43,76,158,.12);color:var(--blue2)}
+.ba-col-hdr .ico{font-size:1rem}
+.ba-items{padding:8px 0}
+.ba-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:14px 24px;
+  border-bottom:1px solid var(--border);
+  font-size:.95rem;color:var(--text2);
+  line-height:1.5;
+}
+.ba-item:last-child{border-bottom:none}
+.ba-item .mark{
+  font-size:.8rem;flex-shrink:0;margin-top:3px;
+}
+.before .ba-item .mark{color:var(--red);opacity:.7}
+.after .ba-item .mark{color:var(--teal2)}
+.ba-arrow{
+  display:flex;align-items:center;justify-content:center;
+  padding-top:120px;
+}
+.arrow-circle{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--red),var(--blue2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;flex-shrink:0;
+}
+
+/* ─── CONTENTS ─────────────────────────────────── */
+.contents-section{
+  padding:100px 40px;
+  background:var(--ink2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.contents-inner{max-width:1200px;margin:0 auto}
+.contents-section h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  letter-spacing:.04em;line-height:.95;
+  margin-bottom:60px;
+}
+.pages-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+}
+.page-card{
+  background:var(--ink);
+  border:1px solid var(--border);
+  padding:28px 24px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color .25s,transform .2s;
+}
+.page-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+.page-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--red),var(--blue2));
+  opacity:0;transition:opacity .25s;
+}
+.page-card:hover::before{opacity:1}
+.page-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3rem;color:var(--border2);
+  line-height:1;margin-bottom:12px;
+  letter-spacing:.05em;
+}
+.page-icon{font-size:1.5rem;margin-bottom:10px}
+.page-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text);
+  margin-bottom:8px;
+}
+.page-desc{font-size:.88rem;color:var(--text3);line-height:1.6}
+
+/* ─── TESTIMONIAL ──────────────────────────────── */
+.proof-section{
+  padding:100px 40px;
+  max-width:1200px;margin:0 auto;
+}
+.proof-section h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  letter-spacing:.04em;line-height:.95;
+  margin-bottom:60px;
+}
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.testi-card{
+  background:var(--ink2);
+  border:1px solid var(--border);
+  padding:32px 28px;
+  position:relative;
+}
+.testi-card::before{
+  content:'\201C';
+  position:absolute;top:16px;right:24px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:5rem;line-height:1;
+  color:var(--border2);
+}
+.stars{
+  display:flex;gap:3px;margin-bottom:18px;
+}
+.star{color:var(--gold2);font-size:.9rem}
+.testi-text{
+  font-size:.95rem;color:var(--text2);
+  line-height:1.75;margin-bottom:22px;
+  font-style:italic;font-weight:300;
+}
+.testi-text strong{color:var(--text);font-style:normal;font-weight:500}
+.testi-author{
+  display:flex;align-items:center;gap:12px;
+}
+.testi-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,var(--red),var(--blue2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-weight:700;flex-shrink:0;
+}
+.testi-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.9rem;font-weight:600;letter-spacing:.05em;
+  color:var(--text);
+}
+.testi-role{font-size:.78rem;color:var(--text3)}
+.proof-bar{
+  margin-top:48px;
+  background:var(--ink2);border:1px solid var(--border);
+  padding:24px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;
+}
+.proof-stat{text-align:center}
+.proof-stat .num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.4rem;letter-spacing:.05em;color:var(--gold2);
+}
+.proof-stat .lbl{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.75rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text3);
+}
+.proof-vr{width:1px;height:48px;background:var(--border)}
+
+/* ─── OFFER / CTA ──────────────────────────────── */
+.offer-section{
+  padding:100px 40px;
+  background:var(--ink2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.offer-inner{
+  max-width:860px;margin:0 auto;text-align:center;
+}
+.offer-inner .section-label{justify-content:center}
+.offer-inner h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,7vw,6rem);
+  letter-spacing:.04em;line-height:.92;
+  margin-bottom:20px;
+}
+.offer-inner h2 em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--red2),var(--blue2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.offer-sub{
+  font-size:1.1rem;font-weight:300;color:var(--text2);
+  margin-bottom:50px;line-height:1.7;
+}
+.offer-box{
+  background:var(--ink);
+  border:1px solid var(--border2);
+  padding:48px;
+  position:relative;
+  overflow:hidden;
+}
+.offer-box::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--red),var(--blue2));
+}
+.offer-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:5rem;letter-spacing:.05em;
+  line-height:1;margin-bottom:6px;
+}
+.offer-price .dollar{color:var(--text3);font-size:2.5rem;vertical-align:top;margin-top:10px;display:inline-block}
+.offer-price .cents{color:var(--text3);font-size:2.5rem;vertical-align:top;margin-top:10px;display:inline-block}
+.offer-price .main{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.offer-once{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.8rem;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text3);
+  margin-bottom:32px;
+}
+.offer-includes{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:12px;margin-bottom:40px;
+}
+.offer-include-item{
+  display:flex;align-items:center;gap:8px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.85rem;font-weight:500;letter-spacing:.06em;
+  color:var(--text2);
+  background:var(--ink2);
+  border:1px solid var(--border);
+  padding:8px 14px;
+}
+.offer-include-item .chk{color:var(--teal2)}
+.offer-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  background:linear-gradient(135deg,var(--red) 0%,var(--blue) 100%);
+  color:#fff;font-family:'Barlow Condensed',sans-serif;
+  font-size:1.25rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;padding:22px 60px;
+  border:none;cursor:pointer;
+  clip-path:polygon(16px 0%,100% 0%,calc(100% - 16px) 100%,0% 100%);
+  transition:opacity .2s,transform .15s;
+  width:100%;max-width:480px;
+}
+.offer-btn:hover{opacity:.88;transform:translateY(-3px)}
+.offer-guarantee{
+  margin-top:20px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.82rem;font-weight:400;letter-spacing:.06em;
+  color:var(--text3);
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.offer-guarantee .lock{color:var(--gold)}
+
+/* ─── FOOTER ───────────────────────────────────── */
+footer{
+  padding:40px;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+}
+.footer-logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.3rem;letter-spacing:.12em;
+}
+.footer-logo .r{color:var(--red)}
+.footer-logo .b{color:var(--blue2)}
+footer p{
+  font-size:.8rem;color:var(--text3);
+  font-family:'Barlow Condensed',sans-serif;
+  letter-spacing:.06em;
+}
+
+/* ─── ANIMATIONS ───────────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.fade-up{
+  opacity:0;
+  animation:fadeUp .7s ease forwards;
+}
+.fade-up.d1{animation-delay:.1s}
+.fade-up.d2{animation-delay:.25s}
+.fade-up.d3{animation-delay:.4s}
+.fade-up.d4{animation-delay:.55s}
+.fade-up.d5{animation-delay:.7s}
+
+/* scroll reveal */
+.reveal{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+
+/* ─── RESPONSIVE ───────────────────────────────── */
+@media(max-width:900px){
+  nav{padding:12px 20px}
+  .nav-links{display:none}
+  .hero{
+    grid-template-columns:1fr;
+    padding:100px 20px 60px;
+    gap:40px;
+  }
+  .hero-visual{order:-1}
+  .hero-img-wrap{max-width:320px;margin:0 auto}
+  .ba-grid{grid-template-columns:1fr;gap:16px}
+  .ba-arrow{display:none}
+  .pages-grid{grid-template-columns:repeat(2,1fr)}
+  .testimonials-grid{grid-template-columns:1fr}
+  .proof-bar{justify-content:center}
+  .proof-vr{display:none}
+  .offer-box{padding:32px 20px}
+  .contents-section,.proof-section,.ba-section,.offer-section{padding:70px 20px}
+  footer{padding:30px 20px;flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+  .pages-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="r">Leon</span><span style="color:var(--text3)">—</span><span class="b">Link</span>
+  </div>
+  <div class="nav-links">
+    <a href="#whats-inside">Inside</a>
+    <a href="#proof">Reviews</a>
+    <a href="#offer">Pricing</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('offer').scrollIntoView({behavior:'smooth'})">
+    Get the Bundle — $12.99
+  </button>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow fade-up d1">2026 Night Shift Edition &nbsp;·&nbsp; Instant Download</div>
+      <h1 class="display fade-up d2">
+        <span class="line1">Own Your</span>
+        <span class="line2">Night Shift.</span>
+        <span class="line3">Finally.</span>
+      </h1>
+      <p class="hero-sub fade-up d3">
+        The <strong>complete organizational system</strong> for 12-hour night shift RNs.
+        Stop duct-taping scattered notes together. One bundle replaces it all —
+        <strong>8 printable pages</strong> built from real shifts.
+      </p>
+      <div class="hero-cta-group fade-up d4">
+        <button class="btn-primary" onclick="document.getElementById('offer').scrollIntoView({behavior:'smooth'})">
+          ↓ &nbsp; Get Instant Access — $12.99
+        </button>
+        <div class="hero-trust">
+          <span>✓ Instant PDF download</span>
+          <span class="dot"></span>
+          <span>✓ Print unlimited</span>
+          <span class="dot"></span>
+          <span>✓ 30-day guarantee</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-up d3">
+      <div class="hero-img-wrap">
+        <div class="hero-price-tag">
+          <div class="price">$12.99</div>
+          <div class="note">One-time · Yours forever</div>
+        </div>
+        <img src="https://nightshift-blond.vercel.app/mockups/stack.jpg"
+             alt="Night Shift Nurse Bundle printout stack"
+             onerror="this.style.display='none'"/>
+        <!-- fallback visual if image missing -->
+        <div id="hero-fallback" style="
+          background:linear-gradient(135deg,#0F1724 0%,#161C2A 100%);
+          aspect-ratio:1;display:flex;flex-direction:column;
+          align-items:center;justify-content:center;gap:12px;
+          border:1px solid #1E2535;
+        ">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.12em;color:#C9943A">NIGHT SHIFT</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;line-height:.9;text-align:center;letter-spacing:.05em">NURSE<br/>SURVIVAL<br/>BUNDLE</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.2em;color:#636D7E;text-transform:uppercase">8 Pages · 2 PDFs · $12.99</div>
+        </div>
+        <div class="hero-badge">
+          8 PAGES
+          <span>2 PDF Files</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BEFORE / AFTER -->
+<section class="ba-section" id="transformation">
+  <div class="section-label reveal">The Transformation</div>
+  <h2 class="display reveal">
+    Before this bundle.<br/>After this bundle.
+  </h2>
+  <div class="ba-grid reveal">
+    <div class="ba-col before">
+      <div class="ba-col-hdr"><span class="ico">✕</span> Before — Your Night Shifts Now</div>
+      <div class="ba-items">
+        <div class="ba-item"><span class="mark">✕</span>Scribbling handoff notes on random paper scraps that fall out of your pocket</div>
+        <div class="ba-item"><span class="mark">✕</span>Forgetting which meds are due at 0200 when the fatigue hits hardest</div>
+        <div class="ba-item"><span class="mark">✕</span>Getting home and lying awake at 0900 despite being exhausted</div>
+        <div class="ba-item"><span class="mark">✕</span>No system to track your rotation — always reacting, never planning</div>
+        <div class="ba-item"><span class="mark">✕</span>Fumbling through SBAR in front of a physician at shift change</div>
+        <div class="ba-item"><span class="mark">✕</span>Burnout creeping in because you don't know what's working or breaking you</div>
+      </div>
+    </div>
+
+    <div class="ba-arrow">
+      <div class="arrow-circle">→</div>
+    </div>
+
+    <div class="ba-col after">
+      <div class="ba-col-hdr"><span class="ico">✓</span> After — With the Bundle</div>
+      <div class="ba-items">
+        <div class="ba-item"><span class="mark">✓</span>Structured SBAR sheet — complete, confident handoffs every single shift</div>
+        <div class="ba-item"><span class="mark">✓</span>1900–0700 medication & task timeline so nothing slips at 0230</div>
+        <div class="ba-item"><span class="mark">✓</span>Post-shift wind-down checklist that actually gets you to sleep in daylight</div>
+        <div class="ba-item"><span class="mark">✓</span>3-week rotating scheduler — see your pattern, protect your recovery days</div>
+        <div class="ba-item"><span class="mark">✓</span>Nurse brain reference card always in your pocket for fast assessment</div>
+        <div class="ba-item"><span class="mark">✓</span>Fatigue tracker reveals exactly what's draining you — and what fixes it</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTENTS -->
+<section class="contents-section" id="whats-inside">
+  <div class="contents-inner">
+    <div class="section-label reveal">What's Inside</div>
+    <h2 class="display reveal">8 Pages. Every shift, covered.</h2>
+    <div class="pages-grid">
+
+      <div class="page-card reveal">
+        <div class="page-num">01</div>
+        <div class="page-icon">📅</div>
+        <div class="page-title">Rotating Shift Scheduler</div>
+        <div class="page-desc">3-week calendar with N / D / OFF / Call codes. See your rotation, protect your recovery days, plan meals around your pattern.</div>
+      </div>
+
+      <div class="page-card reveal">
+        <div class="page-num">02</div>
+        <div class="page-icon">📋</div>
+        <div class="page-title">SBAR Patient Handoff</div>
+        <div class="page-desc">Full Situation–Background–Assessment–Recommendation with vitals trend, shift checklist, and I&O tracking. One page per patient.</div>
+      </div>
+
+      <div class="page-card reveal">
+        <div class="page-num">03</div>
+        <div class="page-icon">💊</div>
+        <div class="page-title">Medication & Task Timeline</div>
+        <div class="page-desc">Every hour 1900–0700. Log meds, pain reassessment, I&O, rounding, and AM labs. Built around the 0200–0400 fatigue window.</div>
+      </div>
+
+      <div class="page-card reveal">
+        <div class="page-num">04</div>
+        <div class="page-icon">📊</div>
+        <div class="page-title">Fatigue & Self-Care Tracker</div>
+        <div class="page-desc">Rate fatigue 1–10 after each shift. Log sleep hours, mood, triggers, and actions. Your patterns emerge in 1–2 weeks.</div>
+      </div>
+
+      <div class="page-card reveal">
+        <div class="page-num">05</div>
+        <div class="page-icon">😴</div>
+        <div class="page-title">Sleep Recovery Checklist</div>
+        <div class="page-desc">Wind-down routine, blackout environment, blue-light protocol, recovery day planner, and a 6-entry sleep hours log.</div>
+      </div>
+
+      <div class="page-card reveal">
+        <div class="page-num">06–08</div>
+        <div class="page-icon">🧠</div>
+        <div class="page-title">Nurse Brain & Tips Pages</div>
+        <div class="page-desc">System assessment cues, adult vitals reference, night-shift nutrition guide, and a burnout prevention + coping strategies section.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="proof-section" id="proof">
+  <div class="section-label reveal">Real Night Shift Nurses</div>
+  <h2 class="display reveal">What they're saying.</h2>
+
+  <div class="testimonials-grid">
+
+    <div class="testi-card reveal">
+      <div class="stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">
+        "I've been a night shift RN for 6 years and this is the first tool that
+        <strong>actually matches how my brain works at 0300.</strong>
+        The med timeline alone saved me from a near-miss last week."
+      </p>
+      <div class="testi-author">
+        <div class="testi-avatar">MR</div>
+        <div>
+          <div class="testi-name">M. Reyes, RN</div>
+          <div class="testi-role">ICU · 6 years night shift</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal">
+      <div class="stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">
+        "As a new grad I was terrified of handoffs. This SBAR sheet
+        <strong>made me look like a veteran RN</strong>
+        in front of the attending on my third week. Worth every penny."
+      </p>
+      <div class="testi-author">
+        <div class="testi-avatar">JT</div>
+        <div>
+          <div class="testi-name">J. Thomas, RN</div>
+          <div class="testi-role">Med-Surg · New Grad</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal">
+      <div class="stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">
+        "The fatigue tracker revealed I was crashing every time I worked 3 nights back-to-back with no meal plan.
+        <strong>I fixed my rotation in one week.</strong>
+        I actually sleep now."
+      </p>
+      <div class="testi-author">
+        <div class="testi-avatar">KP</div>
+        <div>
+          <div class="testi-name">K. Patel, RN, BSN</div>
+          <div class="testi-role">Telemetry · 4 years</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="proof-bar reveal">
+    <div class="proof-stat">
+      <div class="num">8</div>
+      <div class="lbl">Printable Pages</div>
+    </div>
+    <div class="proof-vr"></div>
+    <div class="proof-stat">
+      <div class="num">2</div>
+      <div class="lbl">PDF Files</div>
+    </div>
+    <div class="proof-vr"></div>
+    <div class="proof-stat">
+      <div class="num">∞</div>
+      <div class="lbl">Prints Included</div>
+    </div>
+    <div class="proof-vr"></div>
+    <div class="proof-stat">
+      <div class="num">$12</div>
+      <div class="lbl">One-Time Price</div>
+    </div>
+    <div class="proof-vr"></div>
+    <div class="proof-stat">
+      <div class="num">30</div>
+      <div class="lbl">Day Guarantee</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- OFFER / CTA -->
+<section class="offer-section" id="offer">
+  <div class="offer-inner">
+    <div class="section-label reveal" style="justify-content:center">Get the Bundle</div>
+    <h2 class="display reveal">
+      Your shift.<br/><em>Your system.</em>
+    </h2>
+    <p class="offer-sub reveal">
+      One download. Two PDFs. Eight pages that change how you work, sleep, and survive night shift.
+    </p>
+
+    <div class="offer-box reveal">
+      <div class="offer-price">
+        <span class="dollar">$</span><span class="main">12</span><span class="cents">.99</span>
+      </div>
+      <div class="offer-once">One-time purchase &nbsp;·&nbsp; Instant download &nbsp;·&nbsp; Yours forever</div>
+
+      <div class="offer-includes">
+        <div class="offer-include-item"><span class="chk">✓</span> Example Bundle PDF (filled)</div>
+        <div class="offer-include-item"><span class="chk">✓</span> Blank Fillable Bundle PDF</div>
+        <div class="offer-include-item"><span class="chk">✓</span> 8 total printable pages</div>
+        <div class="offer-include-item"><span class="chk">✓</span> Unlimited prints</div>
+        <div class="offer-include-item"><span class="chk">✓</span> Works on tablet + stylus</div>
+        <div class="offer-include-item"><span class="chk">✓</span> 30-day money-back guarantee</div>
+      </div>
+
+      <button class="offer-btn" onclick="alert('Stripe checkout coming soon!')">
+        ↓ &nbsp; Get Instant Access — $12.99
+      </button>
+      <div class="offer-guarantee">
+        <span class="lock">🔒</span>
+        Secure checkout via Stripe &nbsp;·&nbsp; All major cards + PayPal &nbsp;·&nbsp; 30-day money-back guarantee
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span class="r">Leon</span><span style="color:var(--text3)">—</span><span class="b">Link</span>
+  </div>
+  <p>© 2026 Leon-Link · Built for night shift heroes · All rights reserved</p>
+  <p style="color:var(--text3)">Night shift nurse planner · SBAR handoff · Med timeline · Fatigue tracker</p>
+</footer>
+
+<!-- SCROLL REVEAL SCRIPT -->
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      // stagger children in same parent
+      e.target.style.transitionDelay = (i % 6) * 0.08 + 's';
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => io.observe(el));
+
+// hero image fallback
+document.querySelectorAll('.hero-img-wrap img').forEach(img => {
+  img.addEventListener('load', () => {
+    document.getElementById('hero-fallback').style.display = 'none';
+  });
+  img.addEventListener('error', () => {
+    img.style.display = 'none';
+    document.getElementById('hero-fallback').style.display = 'flex';
+  });
+});
+</script>
+</body>
+</html>
