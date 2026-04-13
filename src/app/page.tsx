@@ -14,6 +14,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#whats-inside" className="hover:text-[#00E5D8] transition">What&apos;s Inside</a>
             <a href="#preview" className="hover:text-[#00E5D8] transition">Preview</a>
+            <a href="/sample" className="hover:text-[#00E5D8] transition">Sample Page</a>
             <a href="#for-you" className="hover:text-[#00E5D8] transition">Built For You</a>
           </div>
           <div className="flex items-center gap-3">
@@ -119,9 +120,18 @@ export default function Home() {
       {/* PREVIEW THE BUNDLE */}
       <section id="preview" className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-4xl font-bold text-center mb-4">Preview the Bundle</h2>
-        <p className="text-white/70 text-center max-w-md mx-auto mb-12">
+        <p className="text-white/70 text-center max-w-md mx-auto mb-8">
           Real pages. Real samples. Designed from actual night shifts.
         </p>
+        
+        <div className="text-center mb-8">
+          <a 
+            href="/sample"
+            className="inline-block bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-2xl text-sm font-medium transition border border-white/20"
+          >
+            📄 View Sample Page
+          </a>
+        </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           <div className="group">
