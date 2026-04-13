@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 
 const lemonSqueezyUrl = process.env.NEXT_PUBLIC_LEMON_SQUEEZY_URL || "https://your-store.lemonsqueezy.com";
