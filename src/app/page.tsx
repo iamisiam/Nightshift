@@ -3,9 +3,9 @@
 const lemonSqueezyUrl = process.env.NEXT_PUBLIC_LEMON_SQUEEZY_URL || "https://your-store.lemonsqueezy.com";
 
 const mockupImages = {
-  stack: '/mockup-stack.jpg',
-  locker: '/mockup-locker.jpg',
-  phone: '/mockup-phone.jpg',
+  stack: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/8c61fd71-d58a-4830-ae3f-10d5104bb9a3.jpg',
+  locker: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/6bb3b3eb-9b61-42f7-97dd-288a61d0b1cb.jpg',
+  phone: 'https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/ba393b4d-724b-4a01-8713-a25155b36692.jpg',
 };
 
 export default function Home() {
@@ -132,15 +132,11 @@ export default function Home() {
         
         <div className="grid md:grid-cols-3 gap-8">
           <div className="group">
-            <svg width="600" height="500" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition bg-white/5 border border-white/20">
-  <rect x="50" y="50" width="500" height="400" rx="20" fill="#0A1729" stroke="#00E5D8" strokeWidth="2"/>
-  <text x="300" y="150" textAnchor="middle" fill="#00E5D8" fontSize="24" fontWeight="bold">📄</text>
-  <text x="300" y="200" textAnchor="middle" fill="white" fontSize="16">PAGE 1</text>
-  <text x="300" y="300" textAnchor="middle" fill="white" fontSize="20" fontWeight="bold">NIGHT SHIFT</text>
-  <text x="300" y="330" textAnchor="middle" fill="white" fontSize="20" fontWeight="bold">SURVIVAL</text>
-  <text x="300" y="360" textAnchor="middle" fill="#00E5D8" fontSize="20" fontWeight="bold">BUNDLE</text>
-  <text x="300" y="430" textAnchor="middle" fill="white/60" fontSize="12">2026 EDITION</text>
-</svg>
+            <img
+            src={mockupImages.stack}
+            alt="2026 Night Shift Nurse Survival Bundle printed stack"
+            className="w-full max-w-[600px] rounded-3xl shadow-2xl shadow-black/50 rotate-[-3deg] hover:rotate-0 transition"
+          />
             <p className="text-center mt-4 text-white/70 text-sm">8-Page Printable Stack</p>
           </div>
           
