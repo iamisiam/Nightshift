@@ -141,31 +141,20 @@ export default function Home() {
           </div>
           
           <div className="group">
-            <svg width="420" height="380" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition bg-white/5 border border-white/20">
-  <rect x="20" y="20" width="380" height="340" rx="15" fill="#0A1729" stroke="#00E5D8" strokeWidth="1"/>
-  <rect x="40" y="40" width="340" height="300" rx="10" fill="#061021"/>
-  <text x="210" y="100" textAnchor="middle" fill="#00E5D8" fontSize="20">🔒</text>
-  <text x="210" y="150" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">NURSE LOCKER</text>
-  <text x="210" y="200" textAnchor="middle" fill="white" fontSize="12">📄 📄 📄</text>
-  <text x="210" y="230" textAnchor="middle" fill="white" fontSize="12">BUNDLE READY</text>
-  <text x="210" y="260" textAnchor="middle" fill="#00E5D8" fontSize="10">FOR SHIFT</text>
-</svg>
+            <img
+              src={mockupImages.stack}
+              alt="Printed bundle stack"
+              className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition"
+            />
             <p className="text-center mt-4 text-white/70 text-sm">Real locker setup</p>
           </div>
           
           <div className="group">
-            <svg width="420" height="380" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition bg-white/5 border border-white/20">
-  <rect x="120" y="20" width="180" height="340" rx="25" fill="#0A1729" stroke="#00E5D8" strokeWidth="2"/>
-  <rect x="140" y="40" width="140" height="280" fill="#061021"/>
-  <circle cx="210" cy="320" r="8" fill="#00E5D8"/>
-  <text x="210" y="80" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">📱</text>
-  <text x="210" y="120" textAnchor="middle" fill="white" fontSize="14">DIGITAL</text>
-  <text x="210" y="140" textAnchor="middle" fill="white" fontSize="14">VERSION</text>
-  <rect x="160" y="170" width="100" height="80" rx="5" fill="white/10"/>
-  <text x="210" y="200" textAnchor="middle" fill="#00E5D8" fontSize="12">📄</text>
-  <text x="210" y="220" textAnchor="middle" fill="white" fontSize="10">PDF</text>
-  <text x="210" y="235" textAnchor="middle" fill="white" fontSize="10">READY</text>
-</svg>
+            <img
+              src={mockupImages.locker}
+              alt="Bundle in nurse locker"
+              className="w-full rounded-3xl shadow-2xl group-hover:scale-105 transition"
+            />
             <p className="text-center mt-4 text-white/70 text-sm">Tablet + stylus ready</p>
           </div>
         </div>
