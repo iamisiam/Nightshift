@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Barlow, Barlow_Condensed } from "next/font/google";
-import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
   variable: "--font-bebas-neue",
@@ -32,15 +31,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-      </head>
-      <body
-        className={`${bebasNeue.variable} ${barlow.variable} ${barlowCondensed.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <>
+      <style>{`
+        @media (max-width: 768px) {
+          .ba-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          .ba-grid > :nth-child(2) {
+            display: none !important;
+          }
+        }
+      `}</style>
+      <html lang="en">
+        <head>
+          <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+        </head>
+        <body
+          className={`${bebasNeue.variable} ${barlow.variable} ${barlowCondensed.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </>
   );
 }
