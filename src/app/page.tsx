@@ -282,7 +282,19 @@ export default function Home() {
             </div>
           </div>
 
+          
           <div className="mb-12">
+            <h2 className="text-2xl font-bold text-[#0F1B2D] mb-8 text-center">
+              Preview the Bundle
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <img src="https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/8196ba65-71fd-4931-aa19-f85eacccc6f1.jpg" alt="Shift Scheduler Preview" className="w-full rounded-lg shadow-md" />
+              <img src="https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/57e0db84-dfb0-4f88-a808-560bebc682d1.jpg" alt="SBAR Handoff Preview" className="w-full rounded-lg shadow-md" />
+              <img src="https://assets.kiloapps.io/user_1492d4ff-6de1-44a4-bc5f2-47185bd467f8/323f8be6-e14d-4aae-8f8b-a6e19555f1da/bcbbedcd-a799-4d65-ac9b-a67bff3ce25b.jpg" alt="Fatigue Tracker Preview" className="w-full rounded-lg shadow-md" />
+            </div>
+          </div>
+
+<div className="mb-12">
             <h2 className="text-2xl font-bold text-[#0F1B2D] mb-8 text-center">
               What&apos;s Inside: 8 Printable Pages
             </h2>
