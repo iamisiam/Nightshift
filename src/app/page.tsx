@@ -130,7 +130,7 @@ export default function Home() {
               alt="Printed bundle stack"
               className="rounded-3xl shadow-2xl group-hover:scale-105 transition w-full"
             />
-            <p className="text-center mt-4 text-white/70 text-sm">8-Page Printable Stack</p>
+
           </div>
           
           <div className="group">
@@ -139,7 +139,7 @@ export default function Home() {
               alt="Bundle in nurse locker"
               className="rounded-3xl shadow-2xl group-hover:scale-105 transition w-full"
             />
-            <p className="text-center mt-4 text-white/70 text-sm">Real locker setup</p>
+
           </div>
           
           <div className="group">
@@ -148,7 +148,7 @@ export default function Home() {
               alt="Bundle on phone/tablet"
               className="rounded-3xl shadow-2xl group-hover:scale-105 transition w-full"
             />
-            <p className="text-center mt-4 text-white/70 text-sm">Tablet + stylus ready</p>
+
           </div>
         </div>
       </section>
