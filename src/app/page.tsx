@@ -47,7 +47,7 @@ export default function Home() {
           </h1>
           
           <p className="text-xl text-white/70 mt-6 max-w-lg">
-            8 printable pages built exclusively for 12-hour night shift RNs.<br />
+            2 printable PDFs (8 pages total) built exclusively for 12-hour night shift RNs.<br />
             Shift Scheduler • SBAR Handoff • Med Timeline • Fatigue Tracker • Sleep Recovery
           </p>
 
