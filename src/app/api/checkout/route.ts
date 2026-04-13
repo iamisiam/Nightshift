@@ -1,11 +1,26 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2026-03-25.dahlia" as const,
-});
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+
+if (!stripeSecretKey) {
+  console.error("STRIPE_SECRET_KEY is not configured");
+}
+
+const stripe = stripeSecretKey
+  ? new Stripe(stripeSecretKey, {
+      apiVersion: "2026-03-25.dahlia" as const,
+    })
+  : null;
 
 export async function POST() {
+  if (!stripe) {
+    return NextResponse.json(
+      { error: "Payment system not configured. Please contact support." },
+      { status: 503 }
+    );
+  }
+
   try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
