@@ -401,27 +401,6 @@ export default function Home() {
             <strong>Will it help during busy shifts?</strong><br/>
             That's when it helps most.
           </p>
-          <p>
-            <strong>Is this just another app?</strong><br/>
-            No — it's built specifically for nurses.
-          </p>
-        </div>
-
-        {/* CTA */}
-        <div style={{
-          margin: '60px 0',
-          textAlign: 'center'
-        }} id="offer">
-          <h2 style={{
-            color: '#ffffff',
-            fontSize: '2rem',
-            marginBottom: '20px'
-          }}>
-            You already do one of the hardest jobs there is.
-          </h2>
-          <p style={{marginBottom: '30px'}}>
-            This just makes it a little easier.
-          </p>
           <div 
             dangerouslySetInnerHTML={{
               __html: `<stripe-buy-button
