@@ -35,6 +35,39 @@ export default function Home() {
           }}>
             NightShift helps you stay organized, reduce stress, and get through your shifts without feeling overwhelmed.
           </p>
+          <div style={{
+            background: '#22c55e',
+            color: '#000',
+            padding: '12px 20px',
+            borderRadius: '8px',
+            display: 'inline-block',
+            fontSize: '0.9rem',
+            fontWeight: 'bold',
+            marginBottom: '20px',
+          }}>
+            🎁 FREE: Quick Reference Guide PDF (Download Now)
+          </div>
+          <br/>
+          <a
+            href="/free-nurse-tool.pdf"
+            download="nurse-quick-reference-guide.pdf"
+            style={{
+              display: 'inline-block',
+              background: '#22c55e',
+              color: '#000',
+              padding: '10px 20px',
+              borderRadius: '6px',
+              textDecoration: 'none',
+              fontSize: '0.9rem',
+              fontWeight: 'bold',
+              marginBottom: '20px',
+              border: '2px solid #22c55e',
+            }}
+          >
+            📥 Get FREE Tool
+          </a>
+          <br/>
+
           <button 
             onClick={() => document.getElementById('offer')?.scrollIntoView({behavior: 'smooth'})}
             style={{
