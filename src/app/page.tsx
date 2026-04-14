@@ -80,6 +80,119 @@ export default function Home() {
         </div>
 
         {/* The Solution */}
+        {/* After Section */}
+        <div style={{
+          margin: '60px 0'
+        }}>
+          <h2 style={{
+            color: '#ffffff',
+            fontSize: '2rem',
+            marginBottom: '20px'
+          }}>After — With the Bundle</h2>
+          <div style={{
+            background: '#0f5132',
+            padding: '30px',
+            borderRadius: '8px',
+            border: '1px solid #059669'
+          }}>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0
+            }}>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #059669',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px'
+              }}>
+                <span style={{
+                  color: '#22c55e',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✓</span>
+                <span>Structured SBAR sheet — complete, confident handoffs every single shift</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #059669',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px'
+              }}>
+                <span style={{
+                  color: '#22c55e',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✓</span>
+                <span>1900–0700 medication & task timeline so nothing slips at 0230</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #059669',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px'
+              }}>
+                <span style={{
+                  color: '#22c55e',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✓</span>
+                <span>Post-shift wind-down checklist that actually gets you to sleep in daylight</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #059669',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px'
+              }}>
+                <span style={{
+                  color: '#22c55e',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✓</span>
+                <span>3-week rotating scheduler — see your pattern, protect your recovery days</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #059669',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px'
+              }}>
+                <span style={{
+                  color: '#22c55e',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✓</span>
+                <span>Nurse brain reference card always in your pocket for fast assessment</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px'
+              }}>
+                <span style={{
+                  color: '#22c55e',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✓</span>
+                <span>Fatigue tracker reveals exactly what's draining you — and what fixes it</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <div style={{
           margin: '60px 0'
         }}>
