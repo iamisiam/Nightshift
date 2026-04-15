@@ -8,9 +8,8 @@ Nurses face unique challenges in their demanding roles - long shifts, complex do
 
 1. **Documentation Burden**: Streamlined PDF templates for efficient shift planning and patient records
 2. **Workflow Inefficiency**: Custom apps designed specifically for nursing workflows
-3. **Professional Development**: Educational content about nurse fatigue and wellness
-4. **Technology Gap**: User-friendly tools that don't require extensive tech knowledge
-5. **Time Management**: Solutions that save time on administrative tasks
+3. **Technology Gap**: User-friendly tools that don't require extensive tech knowledge
+4. **Time Management**: Solutions that save time on administrative tasks
 
 ## How It Should Work (User Flow)
 
@@ -34,9 +33,7 @@ Nurses face unique challenges in their demanding roles - long shifts, complex do
 1. **Downloadable PDF Bundles**: Comprehensive bundles including Shift Scheduler, SBAR Handoff Tool, Med Timeline, Fatigue Tracker, Sleep Recovery Planner, and Nurse Brain Tips & Organization Sheets - with unlimited prints
 2. **Premium.tenol Integration**: Execute any related documents nurses need through our premium platform
 3. **Custom App Development**: Tailored mobile/web apps for specific nursing workflows
-4. **Educational Content**: In-depth blogs about nurse fatigue and wellness
-5. **Community Support**: Connection points for healthcare professionals
-6. **Request System**: Easy way to get custom solutions built
+4. **Request System**: Easy way to get custom solutions built
 
 ## Integration Points
 

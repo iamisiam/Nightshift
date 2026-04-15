@@ -356,24 +356,6 @@ export default function Home() {
               fontSize: '0.85rem',
               fontWeight: '600'
             }}>⚡ Real-Time Tools</div>
-            <div style={{
-              background: 'rgba(59, 130, 246, 0.1)',
-              border: '1px solid rgba(59, 130, 246, 0.3)',
-              color: '#3b82f6',
-              padding: '6px 12px',
-              borderRadius: '16px',
-              fontSize: '0.85rem',
-              fontWeight: '600'
-            }}>🎓 Education Hub</div>
-            <div style={{
-              background: 'rgba(139, 92, 246, 0.1)',
-              border: '1px solid rgba(139, 92, 246, 0.3)',
-              color: '#8b5cf6',
-              padding: '6px 12px',
-              borderRadius: '16px',
-              fontSize: '0.85rem',
-              fontWeight: '600'
-            }}>🤝 Community Support</div>
           </div>
         </div>
       </section>
@@ -1011,7 +993,6 @@ export default function Home() {
             }}>Connect</h4>
             <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
               <div style={{color: '#9ca3af', fontSize: '0.95rem'}}>📧 support@nursegear.com</div>
-              <div style={{color: '#9ca3af', fontSize: '0.95rem'}}>📱 Community Forum</div>
               <div style={{color: '#9ca3af', fontSize: '0.95rem'}}>📚 Resource Library</div>
             </div>
           </div>
