@@ -89,6 +89,119 @@ export default function Home() {
         </div>
 
         {/* The Problem */}
+        {/* Before Section */}
+        <div style={{
+          margin: '60px 0'
+        }}>
+          <h2 style={{
+            color: '#ffffff',
+            fontSize: '2rem',
+            marginBottom: '20px',
+          }}>Before — Your Night Shifts Now</h2>
+          <div style={{
+            background: '#1e293b',
+            padding: '30px',
+            borderRadius: '8px',
+            border: '1px solid #334155'
+          }}>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0
+            }}>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Scribbling handoff notes on random paper scraps that fall out of your pocket</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Forgetting which meds are due at 0200 when the fatigue hits hardest</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Getting home and lying awake at 0900 despite being exhausted</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>No system to track your rotation — always reacting, never planning</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Fumbling through SBAR in front of a physician at shift change</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Burnout creeping in because you don't know what's working or breaking you</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
 
         <div style={{
           margin: '60px 0'
@@ -98,6 +211,119 @@ export default function Home() {
             fontSize: '2rem',
             marginBottom: '20px'
           }}>The Problem</h2>
+        {/* Before Section */}
+        <div style={{
+          margin: '60px 0'
+        }}>
+          <h2 style={{
+            color: '#ffffff',
+            fontSize: '2rem',
+            marginBottom: '20px',
+          }}>Before — Your Night Shifts Now</h2>
+          <div style={{
+            background: '#1e293b',
+            padding: '30px',
+            borderRadius: '8px',
+            border: '1px solid #334155'
+          }}>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0
+            }}>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Scribbling handoff notes on random paper scraps that fall out of your pocket</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Forgetting which meds are due at 0200 when the fatigue hits hardest</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Getting home and lying awake at 0900 despite being exhausted</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>No system to track your rotation — always reacting, never planning</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                borderBottom: '1px solid #334155',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Fumbling through SBAR in front of a physician at shift change</span>
+              </li>
+              <li style={{
+                padding: '12px 0',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px',
+              }}>
+                <span style={{
+                  color: '#ef4444',
+                  fontSize: '1.2rem',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>✕</span>
+                <span>Burnout creeping in because you don't know what's working or breaking you</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
           <p style={{marginBottom: '20px'}}>
             Night shift nurses deal with constant mental overload, interruptions, and exhaustion.
           </p>
