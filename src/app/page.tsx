@@ -4,11 +4,11 @@
 export default function Home() {
   return (
     <div style={{
-      fontFamily: 'system-ui, -apple-system, sans-serif',
+      fontFamily: '"Impact", "Arial Black", sans-serif',
       margin: 0,
-      background: 'linear-gradient(135deg, #0c0a09 0%, #1c1917 25%, #292524 50%, #3f3f46 75%, #18181b 100%)',
-      color: '#fafaf9',
-      lineHeight: 1.6,
+      background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #2a2a2a 50%, #ff0000 75%, #000000 100%)',
+      color: '#ffffff',
+      lineHeight: 1.4,
       minHeight: '100vh'
     }}>
       {/* Mobile-First Navigation */}
@@ -18,13 +18,14 @@ export default function Home() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        background: 'rgba(12, 10, 9, 0.95)',
-        backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(251, 191, 36, 0.2)',
-        padding: '16px 20px',
+        background: 'rgba(0, 0, 0, 0.9)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '3px solid #ff0000',
+        padding: '20px 25px',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        boxShadow: '0 0 20px rgba(255, 0, 0, 0.3)'
       }}>
         {/* Animated Logo */}
         <div style={{
@@ -33,37 +34,38 @@ export default function Home() {
           gap: '12px'
         }}>
           <div style={{
-            fontSize: '2.5rem',
-            animation: 'pulse 3s ease-in-out infinite',
-            filter: 'drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))'
-          }}>⚕️</div>
+            fontSize: '3rem',
+            animation: 'pulse 2s ease-in-out infinite',
+            filter: 'drop-shadow(0 0 15px rgba(255, 0, 0, 0.8))',
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'
+          }}>💀</div>
           <div style={{
-            fontSize: '1.5rem',
+            fontSize: '2rem',
             fontWeight: '900',
-            letterSpacing: '0.1em',
-            background: 'linear-gradient(135deg, #22c55e, #3b82f6, #8b5cf6)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textShadow: '0 0 20px rgba(34, 197, 94, 0.3)',
-            animation: 'glow 4s ease-in-out infinite alternate'
+            letterSpacing: '0.2em',
+            color: '#ff0000',
+            textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
+            animation: 'glow 3s ease-in-out infinite alternate',
+            fontFamily: '"Impact", "Arial Black", sans-serif'
           }}>
             NURSE TOOLS & TECH
           </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           id="mobile-menu-btn"
           style={{
             display: 'block',
-            background: 'transparent',
-            border: '2px solid #22c55e',
-            color: '#22c55e',
-            padding: '8px',
-            borderRadius: '6px',
+            background: 'rgba(255, 0, 0, 0.2)',
+            border: '2px solid #ff0000',
+            color: '#ffffff',
+            padding: '10px',
+            borderRadius: '4px',
             cursor: 'pointer',
-            transition: 'all 0.3s ease'
+            transition: 'all 0.2s ease',
+            fontWeight: '900',
+            fontFamily: '"Impact", "Arial Black", sans-serif'
           }}
           onClick={() => {
             const menu = document.getElementById('mobile-menu');
@@ -72,7 +74,7 @@ export default function Home() {
             }
           }}
         >
-          <span style={{fontSize: '1.2rem'}}>☰</span>
+          <span style={{fontSize: '1.4rem'}}>☰</span>
         </button>
 
         {/* Desktop Navigation */}
@@ -82,38 +84,45 @@ export default function Home() {
           gap: '32px'
         }}>
           <a href="/" style={{
-            color: '#e5e7eb',
+            color: '#ffffff',
             textDecoration: 'none',
-            fontSize: '0.95rem',
-            fontWeight: '600',
-            letterSpacing: '0.05em',
-            padding: '8px 16px',
-            borderRadius: '8px',
-            transition: 'all 0.3s ease',
-            border: '1px solid transparent'
+            fontSize: '1rem',
+            fontWeight: '900',
+            letterSpacing: '0.1em',
+            padding: '10px 20px',
+            borderRadius: '4px',
+            transition: 'all 0.2s ease',
+            border: '2px solid transparent',
+            textTransform: 'uppercase',
+            fontFamily: '"Impact", "Arial Black", sans-serif'
           }}>HOME</a>
           <a href="/blogs" style={{
-            color: '#e5e7eb',
+            color: '#ffffff',
             textDecoration: 'none',
-            fontSize: '0.95rem',
-            fontWeight: '600',
-            letterSpacing: '0.05em',
-            padding: '8px 16px',
-            borderRadius: '8px',
-            transition: 'all 0.3s ease',
-            border: '1px solid transparent'
+            fontSize: '1rem',
+            fontWeight: '900',
+            letterSpacing: '0.1em',
+            padding: '10px 20px',
+            borderRadius: '4px',
+            transition: 'all 0.2s ease',
+            border: '2px solid transparent',
+            textTransform: 'uppercase',
+            fontFamily: '"Impact", "Arial Black", sans-serif'
           }}>BLOGS</a>
           <a href="/request-customer-product" style={{
-            color: '#e5e7eb',
+            color: '#ffffff',
             textDecoration: 'none',
-            fontSize: '0.95rem',
-            fontWeight: '600',
-            letterSpacing: '0.05em',
-            padding: '8px 16px',
-            borderRadius: '8px',
-            transition: 'all 0.3s ease',
-            border: '1px solid transparent'
-          }}>REQUEST CUSTOMER PRODUCT</a>
+            fontSize: '1rem',
+            fontWeight: '900',
+            letterSpacing: '0.1em',
+            padding: '10px 20px',
+            borderRadius: '4px',
+            transition: 'all 0.2s ease',
+            border: '2px solid #ff0000',
+            background: 'rgba(255, 0, 0, 0.1)',
+            textTransform: 'uppercase',
+            fontFamily: '"Impact", "Arial Black", sans-serif'
+          }}>CUSTOM APPS</a>
         </div>
       </nav>
 
@@ -124,40 +133,50 @@ export default function Home() {
         top: '100%',
         left: 0,
         right: 0,
-        background: 'rgba(12, 10, 9, 0.98)',
-        backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(251, 191, 36, 0.2)',
+        background: 'rgba(0, 0, 0, 0.95)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '3px solid #ff0000',
         flexDirection: 'column',
-        padding: '20px',
-        zIndex: 999
+        padding: '25px',
+        zIndex: 999,
+        boxShadow: '0 0 20px rgba(255, 0, 0, 0.3)'
       }}>
         <a href="/" style={{
-          color: '#e5e7eb',
+          color: '#ffffff',
           textDecoration: 'none',
-          fontSize: '1.1rem',
-          fontWeight: '600',
-          padding: '12px 0',
-          borderBottom: '1px solid rgba(55, 65, 81, 0.3)',
-          marginBottom: '8px'
+          fontSize: '1.2rem',
+          fontWeight: '900',
+          padding: '15px 0',
+          borderBottom: '1px solid rgba(255, 0, 0, 0.3)',
+          marginBottom: '10px',
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          fontFamily: '"Impact", "Arial Black", sans-serif'
         }}>HOME</a>
         <a href="/blogs" style={{
-          color: '#e5e7eb',
+          color: '#ffffff',
           textDecoration: 'none',
-          fontSize: '1.1rem',
-          fontWeight: '600',
-          padding: '12px 0',
-          borderBottom: '1px solid rgba(55, 65, 81, 0.3)',
-          marginBottom: '8px'
+          fontSize: '1.2rem',
+          fontWeight: '900',
+          padding: '15px 0',
+          borderBottom: '1px solid rgba(255, 0, 0, 0.3)',
+          marginBottom: '10px',
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          fontFamily: '"Impact", "Arial Black", sans-serif'
         }}>BLOGS</a>
         <a href="/request-customer-product" style={{
-          color: '#e5e7eb',
+          color: '#ff0000',
           textDecoration: 'none',
-          fontSize: '1.1rem',
-          fontWeight: '600',
-          padding: '12px 0',
-          borderBottom: '1px solid rgba(55, 65, 81, 0.3)',
-          marginBottom: '8px'
-        }}>REQUEST CUSTOMER PRODUCT</a>
+          fontSize: '1.2rem',
+          fontWeight: '900',
+          padding: '15px 0',
+          borderBottom: '1px solid rgba(255, 0, 0, 0.3)',
+          marginBottom: '10px',
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          fontFamily: '"Impact", "Arial Black", sans-serif'
+        }}>CUSTOM APPS</a>
       </div>
 
       {/* ANIMATIONS */}
@@ -197,23 +216,36 @@ export default function Home() {
         {/* Background Effects */}
         <div style={{
           position: 'absolute',
-          top: '10%',
-          left: '10%',
-          width: '200px',
-          height: '200px',
-          background: 'radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%)',
+          top: '5%',
+          left: '5%',
+          width: '300px',
+          height: '300px',
+          background: 'radial-gradient(circle, rgba(255, 0, 0, 0.15) 0%, transparent 70%)',
           borderRadius: '50%',
-          animation: 'pulse 4s ease-in-out infinite'
+          animation: 'pulse 3s ease-in-out infinite',
+          filter: 'blur(50px)'
         }}></div>
         <div style={{
           position: 'absolute',
-          bottom: '20%',
-          right: '15%',
+          bottom: '10%',
+          right: '10%',
+          width: '250px',
+          height: '250px',
+          background: 'radial-gradient(circle, rgba(255, 0, 0, 0.1) 0%, transparent 70%)',
+          borderRadius: '50%',
+          animation: 'pulse 4s ease-in-out infinite reverse',
+          filter: 'blur(40px)'
+        }}></div>
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '80%',
           width: '150px',
           height: '150px',
-          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%)',
           borderRadius: '50%',
-          animation: 'pulse 6s ease-in-out infinite reverse'
+          animation: 'pulse 5s ease-in-out infinite',
+          filter: 'blur(30px)'
         }}></div>
 
         <div style={{
@@ -227,135 +259,134 @@ export default function Home() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            background: 'rgba(251, 191, 36, 0.1)',
-            border: '1px solid rgba(251, 191, 36, 0.3)',
-            color: '#fbbf24',
-            padding: '8px 16px',
-            borderRadius: '20px',
-            fontSize: '0.9rem',
-            fontWeight: '600',
-            marginBottom: '24px',
-            backdropFilter: 'blur(10px)'
+            background: 'rgba(255, 0, 0, 0.2)',
+            border: '2px solid #ff0000',
+            color: '#ffffff',
+            padding: '12px 24px',
+            borderRadius: '4px',
+            fontSize: '1.2rem',
+            fontWeight: '900',
+            marginBottom: '32px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            boxShadow: '0 0 20px rgba(255, 0, 0, 0.5)',
+            fontFamily: '"Impact", "Arial Black", sans-serif'
           }}>
-            <span style={{width: '8px', height: '8px', background: '#fbbf24', borderRadius: '50%', animation: 'pulse 2s infinite'}}></span>
-            NURSE EMPOWERMENT PLATFORM
+            <span style={{width: '12px', height: '12px', background: '#ff0000', borderRadius: '50%', animation: 'pulse 1s infinite'}}></span>
+            PREMIUM DIGITAL TOOLS
           </div>
 
           {/* Main Heading */}
           <h1 style={{
-            fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+            fontSize: 'clamp(3rem, 10vw, 6rem)',
             fontWeight: '900',
-            lineHeight: '1.1',
+            lineHeight: '1',
             marginBottom: '24px',
-            background: 'linear-gradient(135deg, #ffffff 0%, #e5e7eb 50%, #d1d5db 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textShadow: '0 0 40px rgba(255, 255, 255, 0.1)'
+            color: '#ffffff',
+            textShadow: '4px 4px 8px rgba(0, 0, 0, 1)',
+            fontFamily: '"Impact", "Arial Black", sans-serif',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em'
           }}>
-            Empowering Nurses<br/>
+            DOMINATE YOUR<br/>
             <span style={{
-              background: 'linear-gradient(135deg, #22c55e, #3b82f6)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>Through Innovation</span>
+              color: '#ff0000',
+              textShadow: '4px 4px 8px rgba(255, 0, 0, 0.8)'
+            }}>NURSING SHIFT</span>
           </h1>
 
           {/* Subheading */}
           <p style={{
-            fontSize: 'clamp(1rem, 4vw, 1.25rem)',
-            color: '#9ca3af',
-            lineHeight: '1.6',
-            marginBottom: '40px',
-            maxWidth: '600px',
+            fontSize: 'clamp(1.2rem, 4vw, 1.5rem)',
+            color: '#cccccc',
+            lineHeight: '1.4',
+            marginBottom: '50px',
+            maxWidth: '700px',
             marginLeft: 'auto',
-            marginRight: 'auto'
+            marginRight: 'auto',
+            fontWeight: '700',
+            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'
           }}>
-            We provide hardworking nurses with the essential tools they need—premium PDF templates and custom app designs and implementations—to help them thrive in their demanding roles.
+            GET UNLIMITED ACCESS TO PRO NURSE PDF BUNDLES. SHIFT SCHEDULER • SBAR HANDOFF • MED TIMELINE • FATIGUE TRACKER • SLEEP PLANNER • BRAIN TIPS. DOMINATE YOUR WORKFLOW LIKE A BOSS.
           </p>
 
           {/* CTA Buttons */}
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '16px',
+            gap: '20px',
             alignItems: 'center',
             marginBottom: '60px'
           }}>
             <button style={{
-              background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+              background: 'linear-gradient(135deg, #ff0000, #cc0000)',
               color: '#ffffff',
-              border: 'none',
-              padding: '16px 32px',
-              borderRadius: '12px',
-              fontSize: '1.1rem',
-              fontWeight: '700',
+              border: '3px solid #ffffff',
+              padding: '20px 40px',
+              borderRadius: '4px',
+              fontSize: '1.4rem',
+              fontWeight: '900',
               cursor: 'pointer',
-              boxShadow: '0 10px 30px rgba(34, 197, 94, 0.3)',
-              transition: 'all 0.3s ease',
-              minWidth: '250px'
+              boxShadow: '0 0 30px rgba(255, 0, 0, 0.6)',
+              transition: 'all 0.2s ease',
+              minWidth: '300px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              fontFamily: '"Impact", "Arial Black", sans-serif'
             }}
             onMouseOver={(e) => {
               const target = e.target as HTMLElement;
-              target.style.transform = 'translateY(-2px)';
-              target.style.boxShadow = '0 20px 40px rgba(34, 197, 94, 0.4)';
+              target.style.transform = 'scale(1.05)';
+              target.style.boxShadow = '0 0 40px rgba(255, 0, 0, 0.9)';
             }}
             onMouseOut={(e) => {
               const target = e.target as HTMLElement;
-              target.style.transform = 'translateY(0)';
-              target.style.boxShadow = '0 10px 30px rgba(34, 197, 94, 0.3)';
+              target.style.transform = 'scale(1)';
+              target.style.boxShadow = '0 0 30px rgba(255, 0, 0, 0.6)';
             }}
             >
-              🚀 Explore Nurse Tools & Tech
+              🔥 GRAB YOUR BUNDLES NOW
             </button>
 
             <div style={{
               display: 'flex',
-              gap: '12px',
+              gap: '16px',
               flexWrap: 'wrap',
               justifyContent: 'center'
             }}>
-              <a href="/blogs" style={{
-                color: '#22c55e',
-                textDecoration: 'none',
-                fontSize: '1rem',
-                fontWeight: '600',
-                padding: '8px 16px',
-                border: '2px solid #22c55e',
-                borderRadius: '8px',
-                transition: 'all 0.3s ease'
-              }}>📚 Read Blogs</a>
               <a href="/request-customer-product" style={{
-                color: '#3b82f6',
+                color: '#ffffff',
                 textDecoration: 'none',
-                fontSize: '1rem',
-                fontWeight: '600',
-                padding: '8px 16px',
-                border: '2px solid #3b82f6',
-                borderRadius: '8px',
-                transition: 'all 0.3s ease'
-              }}>💬 Custom Requests</a>
+                fontSize: '1.1rem',
+                fontWeight: '900',
+                padding: '12px 24px',
+                border: '2px solid #ff0000',
+                borderRadius: '4px',
+                transition: 'all 0.2s ease',
+                background: 'rgba(255, 0, 0, 0.1)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontFamily: '"Impact", "Arial Black", sans-serif'
+              }}>⚡ Custom Apps</a>
             </div>
           </div>
 
-          {/* Feature Pills */}
+          {/* Urgency Banner */}
           <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '12px',
-            justifyContent: 'center',
-            marginBottom: '40px'
+            display: 'inline-block',
+            background: 'rgba(0, 0, 0, 0.8)',
+            border: '2px solid #ff0000',
+            color: '#ff0000',
+            padding: '15px 30px',
+            borderRadius: '4px',
+            fontSize: '1.1rem',
+            fontWeight: '900',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            boxShadow: '0 0 20px rgba(255, 0, 0, 0.5)',
+            fontFamily: '"Impact", "Arial Black", sans-serif'
           }}>
-            <div style={{
-              background: 'rgba(34, 197, 94, 0.1)',
-              border: '1px solid rgba(34, 197, 94, 0.3)',
-              color: '#22c55e',
-              padding: '6px 12px',
-              borderRadius: '16px',
-              fontSize: '0.85rem',
-              fontWeight: '600'
-            }}>⚡ Real-Time Tools</div>
+            🔥 LIMITED TIME: UNLIMITED PRINTS 🔥
           </div>
         </div>
       </section>
@@ -363,8 +394,9 @@ export default function Home() {
       {/* PDF BUNDLES SHOWCASE - Mobile First */}
       <section style={{
         padding: '60px 20px',
-        background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%)',
-        position: 'relative'
+        background: 'linear-gradient(135deg, #1a1a1a 0%, #000000 100%)',
+        position: 'relative',
+        borderTop: '3px solid #ff0000'
       }}>
         <div style={{
           position: 'absolute',
@@ -398,24 +430,27 @@ export default function Home() {
             marginBottom: '40px'
           }}>
             <h2 style={{
-              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontSize: 'clamp(2.5rem, 6vw, 4rem)',
               fontWeight: '900',
-              marginBottom: '16px',
-              background: 'linear-gradient(135deg, #ffffff, #e5e7eb)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
+              marginBottom: '20px',
+              color: '#ffffff',
+              textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              fontFamily: '"Impact", "Arial Black", sans-serif'
             }}>
-              Essential Nurse PDF Bundles
+              PRO NURSE PDF BUNDLES
             </h2>
             <p style={{
-              fontSize: 'clamp(1rem, 3vw, 1.25rem)',
-              color: '#9ca3af',
-              lineHeight: '1.6',
-              maxWidth: '600px',
-              margin: '0 auto'
+              fontSize: 'clamp(1.1rem, 3vw, 1.4rem)',
+              color: '#cccccc',
+              lineHeight: '1.4',
+              maxWidth: '700px',
+              margin: '0 auto',
+              fontWeight: '700',
+              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'
             }}>
-              Download comprehensive PDF bundles designed specifically for nursing professionals. Unlimited prints included.
+              DOMINATE YOUR SHIFT WITH THESE POWERFUL TOOLS. UNLIMITED PRINTS • DOWNLOAD NOW • CRUSH YOUR WORKFLOW.
             </p>
           </div>
 
@@ -427,253 +462,277 @@ export default function Home() {
           }}>
             {/* Bundle Item 1 */}
             <div style={{
-              background: 'rgba(31, 41, 55, 0.9)',
-              border: '1px solid rgba(75, 85, 99, 0.3)',
-              borderRadius: '12px',
-              padding: '24px',
-              backdropFilter: 'blur(10px)',
-              transition: 'all 0.3s ease'
+              background: 'rgba(0, 0, 0, 0.8)',
+              border: '2px solid #ff0000',
+              borderRadius: '4px',
+              padding: '30px',
+              transition: 'all 0.2s ease',
+              boxShadow: '0 0 15px rgba(255, 0, 0, 0.3)'
             }}
             onMouseOver={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(-2px)';
-              target.style.borderColor = 'rgba(34, 197, 94, 0.4)';
+              target.style.transform = 'scale(1.05)';
+              target.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.6)';
             }}
             onMouseOut={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(0)';
-              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+              target.style.transform = 'scale(1)';
+              target.style.boxShadow = '0 0 15px rgba(255, 0, 0, 0.3)';
             }}
             >
               <div style={{
-                fontSize: '2rem',
-                marginBottom: '12px',
+                fontSize: '2.5rem',
+                marginBottom: '15px',
                 textAlign: 'center'
               }}>📅</div>
               <h3 style={{
-                fontSize: '1.2rem',
-                fontWeight: '700',
-                marginBottom: '8px',
+                fontSize: '1.3rem',
+                fontWeight: '900',
+                marginBottom: '10px',
                 color: '#ffffff',
-                textAlign: 'center'
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontFamily: '"Impact", "Arial Black", sans-serif'
               }}>Shift Scheduler</h3>
               <p style={{
-                color: '#9ca3af',
-                lineHeight: '1.5',
-                fontSize: '0.9rem',
-                textAlign: 'center'
+                color: '#cccccc',
+                lineHeight: '1.4',
+                fontSize: '1rem',
+                textAlign: 'center',
+                fontWeight: '600'
               }}>
-                Organize your work schedule, track hours, and plan your shifts efficiently.
+                CRUSH YOUR SCHEDULE. TRACK HOURS. DOMINATE YOUR SHIFTS LIKE A BOSS.
               </p>
             </div>
 
             {/* Bundle Item 2 */}
             <div style={{
-              background: 'rgba(31, 41, 55, 0.9)',
-              border: '1px solid rgba(75, 85, 99, 0.3)',
-              borderRadius: '12px',
-              padding: '24px',
-              backdropFilter: 'blur(10px)',
-              transition: 'all 0.3s ease'
+              background: 'rgba(0, 0, 0, 0.8)',
+              border: '2px solid #ff0000',
+              borderRadius: '4px',
+              padding: '30px',
+              transition: 'all 0.2s ease',
+              boxShadow: '0 0 15px rgba(255, 0, 0, 0.3)'
             }}
             onMouseOver={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(-2px)';
-              target.style.borderColor = 'rgba(59, 130, 246, 0.4)';
+              target.style.transform = 'scale(1.05)';
+              target.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.6)';
             }}
             onMouseOut={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(0)';
-              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+              target.style.transform = 'scale(1)';
+              target.style.boxShadow = '0 0 15px rgba(255, 0, 0, 0.3)';
             }}
             >
               <div style={{
-                fontSize: '2rem',
-                marginBottom: '12px',
+                fontSize: '2.5rem',
+                marginBottom: '15px',
                 textAlign: 'center'
               }}>📋</div>
               <h3 style={{
-                fontSize: '1.2rem',
-                fontWeight: '700',
-                marginBottom: '8px',
+                fontSize: '1.3rem',
+                fontWeight: '900',
+                marginBottom: '10px',
                 color: '#ffffff',
-                textAlign: 'center'
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontFamily: '"Impact", "Arial Black", sans-serif'
               }}>SBAR Handoff Tool</h3>
               <p style={{
-                color: '#9ca3af',
-                lineHeight: '1.5',
-                fontSize: '0.9rem',
-                textAlign: 'center'
+                color: '#cccccc',
+                lineHeight: '1.4',
+                fontSize: '1rem',
+                textAlign: 'center',
+                fontWeight: '600'
               }}>
-                Structured communication tool for Situation, Background, Assessment, and Recommendation.
+                PERFECT HANDOFFS EVERY TIME. SITUATION • BACKGROUND • ASSESSMENT • RECOMMENDATION.
               </p>
             </div>
 
             {/* Bundle Item 3 */}
             <div style={{
-              background: 'rgba(31, 41, 55, 0.9)',
-              border: '1px solid rgba(75, 85, 99, 0.3)',
-              borderRadius: '12px',
-              padding: '24px',
-              backdropFilter: 'blur(10px)',
-              transition: 'all 0.3s ease'
+              background: 'rgba(0, 0, 0, 0.8)',
+              border: '2px solid #ff0000',
+              borderRadius: '4px',
+              padding: '30px',
+              transition: 'all 0.2s ease',
+              boxShadow: '0 0 15px rgba(255, 0, 0, 0.3)'
             }}
             onMouseOver={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(-2px)';
-              target.style.borderColor = 'rgba(139, 92, 246, 0.4)';
+              target.style.transform = 'scale(1.05)';
+              target.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.6)';
             }}
             onMouseOut={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(0)';
-              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+              target.style.transform = 'scale(1)';
+              target.style.boxShadow = '0 0 15px rgba(255, 0, 0, 0.3)';
             }}
             >
               <div style={{
-                fontSize: '2rem',
-                marginBottom: '12px',
+                fontSize: '2.5rem',
+                marginBottom: '15px',
                 textAlign: 'center'
               }}>⏰</div>
               <h3 style={{
-                fontSize: '1.2rem',
-                fontWeight: '700',
-                marginBottom: '8px',
+                fontSize: '1.3rem',
+                fontWeight: '900',
+                marginBottom: '10px',
                 color: '#ffffff',
-                textAlign: 'center'
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontFamily: '"Impact", "Arial Black", sans-serif'
               }}>Med Timeline</h3>
               <p style={{
-                color: '#9ca3af',
-                lineHeight: '1.5',
-                fontSize: '0.9rem',
-                textAlign: 'center'
+                color: '#cccccc',
+                lineHeight: '1.4',
+                fontSize: '1rem',
+                textAlign: 'center',
+                fontWeight: '600'
               }}>
-                Track medication schedules, administration times, and patient medication history.
+                NEVER MISS A MED. TRACK SCHEDULES. DOMINATE MEDICATION MANAGEMENT.
               </p>
             </div>
 
             {/* Bundle Item 4 */}
             <div style={{
-              background: 'rgba(31, 41, 55, 0.9)',
-              border: '1px solid rgba(75, 85, 99, 0.3)',
-              borderRadius: '12px',
-              padding: '24px',
-              backdropFilter: 'blur(10px)',
-              transition: 'all 0.3s ease'
+              background: 'rgba(0, 0, 0, 0.8)',
+              border: '2px solid #ff0000',
+              borderRadius: '4px',
+              padding: '30px',
+              transition: 'all 0.2s ease',
+              boxShadow: '0 0 15px rgba(255, 0, 0, 0.3)'
             }}
             onMouseOver={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(-2px)';
-              target.style.borderColor = 'rgba(251, 191, 36, 0.4)';
+              target.style.transform = 'scale(1.05)';
+              target.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.6)';
             }}
             onMouseOut={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(0)';
-              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+              target.style.transform = 'scale(1)';
+              target.style.boxShadow = '0 0 15px rgba(255, 0, 0, 0.3)';
             }}
             >
               <div style={{
-                fontSize: '2rem',
-                marginBottom: '12px',
+                fontSize: '2.5rem',
+                marginBottom: '15px',
                 textAlign: 'center'
               }}>😴</div>
               <h3 style={{
-                fontSize: '1.2rem',
-                fontWeight: '700',
-                marginBottom: '8px',
+                fontSize: '1.3rem',
+                fontWeight: '900',
+                marginBottom: '10px',
                 color: '#ffffff',
-                textAlign: 'center'
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontFamily: '"Impact", "Arial Black", sans-serif'
               }}>Fatigue Tracker</h3>
               <p style={{
-                color: '#9ca3af',
-                lineHeight: '1.5',
-                fontSize: '0.9rem',
-                textAlign: 'center'
+                color: '#cccccc',
+                lineHeight: '1.4',
+                fontSize: '1rem',
+                textAlign: 'center',
+                fontWeight: '600'
               }}>
-                Monitor fatigue levels, sleep patterns, and identify optimal rest periods.
+                BEAT FATIGUE BEFORE IT BEATS YOU. MONITOR • TRACK • RECOVER LIKE A CHAMP.
               </p>
             </div>
 
             {/* Bundle Item 5 */}
             <div style={{
-              background: 'rgba(31, 41, 55, 0.9)',
-              border: '1px solid rgba(75, 85, 99, 0.3)',
-              borderRadius: '12px',
-              padding: '24px',
-              backdropFilter: 'blur(10px)',
-              transition: 'all 0.3s ease'
+              background: 'rgba(0, 0, 0, 0.8)',
+              border: '2px solid #ff0000',
+              borderRadius: '4px',
+              padding: '30px',
+              transition: 'all 0.2s ease',
+              boxShadow: '0 0 15px rgba(255, 0, 0, 0.3)'
             }}
             onMouseOver={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(-2px)';
-              target.style.borderColor = 'rgba(236, 72, 153, 0.4)';
+              target.style.transform = 'scale(1.05)';
+              target.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.6)';
             }}
             onMouseOut={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(0)';
-              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+              target.style.transform = 'scale(1)';
+              target.style.boxShadow = '0 0 15px rgba(255, 0, 0, 0.3)';
             }}
             >
               <div style={{
-                fontSize: '2rem',
-                marginBottom: '12px',
+                fontSize: '2.5rem',
+                marginBottom: '15px',
                 textAlign: 'center'
               }}>🌙</div>
               <h3 style={{
-                fontSize: '1.2rem',
-                fontWeight: '700',
-                marginBottom: '8px',
+                fontSize: '1.3rem',
+                fontWeight: '900',
+                marginBottom: '10px',
                 color: '#ffffff',
-                textAlign: 'center'
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontFamily: '"Impact", "Arial Black", sans-serif'
               }}>Sleep Recovery Planner</h3>
               <p style={{
-                color: '#9ca3af',
-                lineHeight: '1.5',
-                fontSize: '0.9rem',
-                textAlign: 'center'
+                color: '#cccccc',
+                lineHeight: '1.4',
+                fontSize: '1rem',
+                textAlign: 'center',
+                fontWeight: '600'
               }}>
-                Plan recovery strategies, track sleep quality, and optimize rest schedules.
+                MAXIMIZE YOUR REST. PLAN RECOVERY. OPTIMIZE SLEEP. DOMINATE TOMORROW.
               </p>
             </div>
 
             {/* Bundle Item 6 */}
             <div style={{
-              background: 'rgba(31, 41, 55, 0.9)',
-              border: '1px solid rgba(75, 85, 99, 0.3)',
-              borderRadius: '12px',
-              padding: '24px',
-              backdropFilter: 'blur(10px)',
-              transition: 'all 0.3s ease'
+              background: 'rgba(0, 0, 0, 0.8)',
+              border: '2px solid #ff0000',
+              borderRadius: '4px',
+              padding: '30px',
+              transition: 'all 0.2s ease',
+              boxShadow: '0 0 15px rgba(255, 0, 0, 0.3)'
             }}
             onMouseOver={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(-2px)';
-              target.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+              target.style.transform = 'scale(1.05)';
+              target.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.6)';
             }}
             onMouseOut={(e) => {
               const target = e.currentTarget as HTMLElement;
-              target.style.transform = 'translateY(0)';
-              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+              target.style.transform = 'scale(1)';
+              target.style.boxShadow = '0 0 15px rgba(255, 0, 0, 0.3)';
             }}
             >
               <div style={{
-                fontSize: '2rem',
-                marginBottom: '12px',
+                fontSize: '2.5rem',
+                marginBottom: '15px',
                 textAlign: 'center'
               }}>🧠</div>
               <h3 style={{
-                fontSize: '1.2rem',
-                fontWeight: '700',
-                marginBottom: '8px',
+                fontSize: '1.3rem',
+                fontWeight: '900',
+                marginBottom: '10px',
                 color: '#ffffff',
-                textAlign: 'center'
-              }}>Nurse Brain Tips & Organization</h3>
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontFamily: '"Impact", "Arial Black", sans-serif'
+              }}>Nurse Brain Tips</h3>
               <p style={{
-                color: '#9ca3af',
-                lineHeight: '1.5',
-                fontSize: '0.9rem',
-                textAlign: 'center'
+                color: '#cccccc',
+                lineHeight: '1.4',
+                fontSize: '1rem',
+                textAlign: 'center',
+                fontWeight: '600'
               }}>
-                Memory aids, organization sheets, and productivity tips for nursing professionals.
+                MEMORY AIDS • ORGANIZATION SHEETS • PRODUCTIVITY HACKS • STAY SHARP.
               </p>
             </div>
           </div>
@@ -683,45 +742,49 @@ export default function Home() {
             marginTop: '40px'
           }}>
             <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              background: 'rgba(251, 191, 36, 0.1)',
-              border: '1px solid rgba(251, 191, 36, 0.3)',
-              color: '#fbbf24',
-              padding: '12px 24px',
-              borderRadius: '24px',
-              fontSize: '1rem',
-              fontWeight: '600',
-              marginBottom: '20px'
+              display: 'inline-block',
+              background: 'rgba(255, 0, 0, 0.2)',
+              border: '2px solid #ff0000',
+              color: '#ffffff',
+              padding: '15px 30px',
+              borderRadius: '4px',
+              fontSize: '1.2rem',
+              fontWeight: '900',
+              marginBottom: '30px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              fontFamily: '"Impact", "Arial Black", sans-serif',
+              boxShadow: '0 0 20px rgba(255, 0, 0, 0.5)'
             }}>
-              <span style={{fontSize: '1.2rem'}}>⭐</span>
-              Available on Premium.tenol - Execute any related documents you need
+              ⚡ PREMIUM.TENOL: EXECUTE ANY DOCUMENTS YOU NEED ⚡
             </div>
             <button style={{
-              background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+              background: 'linear-gradient(135deg, #ff0000, #cc0000)',
               color: '#ffffff',
-              border: 'none',
-              padding: '14px 28px',
-              borderRadius: '10px',
-              fontSize: '1rem',
-              fontWeight: '700',
+              border: '3px solid #ffffff',
+              padding: '18px 36px',
+              borderRadius: '4px',
+              fontSize: '1.3rem',
+              fontWeight: '900',
               cursor: 'pointer',
-              boxShadow: '0 8px 25px rgba(34, 197, 94, 0.3)',
-              transition: 'all 0.3s ease'
+              boxShadow: '0 0 25px rgba(255, 0, 0, 0.6)',
+              transition: 'all 0.2s ease',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              fontFamily: '"Impact", "Arial Black", sans-serif'
             }}
             onMouseOver={(e) => {
               const target = e.target as HTMLElement;
-              target.style.transform = 'translateY(-1px)';
-              target.style.boxShadow = '0 12px 35px rgba(34, 197, 94, 0.4)';
+              target.style.transform = 'scale(1.05)';
+              target.style.boxShadow = '0 0 35px rgba(255, 0, 0, 0.9)';
             }}
             onMouseOut={(e) => {
               const target = e.target as HTMLElement;
-              target.style.transform = 'translateY(0)';
-              target.style.boxShadow = '0 8px 25px rgba(34, 197, 94, 0.3)';
+              target.style.transform = 'scale(1)';
+              target.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.6)';
             }}
             >
-              📥 Download PDF Bundle
+              🔥 DOWNLOAD NOW - UNLIMITED PRINTS 🔥
             </button>
           </div>
         </div>
