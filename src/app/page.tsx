@@ -1,477 +1,641 @@
-// app/page.tsx
+// app/page.tsx - Mobile-First Nurse Gear Landing
 "use client";
 
 export default function Home() {
   return (
     <div style={{
-      fontFamily: 'Arial, sans-serif',
+      fontFamily: 'system-ui, -apple-system, sans-serif',
       margin: 0,
-      background: '#0f172a',
-      color: '#e2e8f0',
+      background: 'linear-gradient(135deg, #0c0a09 0%, #1c1917 25%, #292524 50%, #3f3f46 75%, #18181b 100%)',
+      color: '#fafaf9',
       lineHeight: 1.6,
       minHeight: '100vh'
     }}>
-      {/* NAV */}
+      {/* Mobile-First Navigation */}
       <nav style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 100,
+        zIndex: 1000,
+        background: 'rgba(12, 10, 9, 0.95)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid rgba(251, 191, 36, 0.2)',
+        padding: '16px 20px',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '14px 40px',
-        background: 'rgba(10,12,18,.85)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid #1E2535'
+        justifyContent: 'space-between'
       }}>
+        {/* Animated Logo */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '16px'
+          gap: '12px'
         }}>
-          {/* Animated Nurse Logo */}
           <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px'
+            fontSize: '2.5rem',
+            animation: 'pulse 3s ease-in-out infinite',
+            filter: 'drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))'
+          }}>⚕️</div>
+          <div style={{
+            fontSize: '1.5rem',
+            fontWeight: '900',
+            letterSpacing: '0.1em',
+            background: 'linear-gradient(135deg, #22c55e, #3b82f6, #8b5cf6)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            textShadow: '0 0 20px rgba(34, 197, 94, 0.3)',
+            animation: 'glow 4s ease-in-out infinite alternate'
           }}>
-            <div style={{
-              fontSize: '2rem',
-              animation: 'bounce 2s infinite'
-            }}>👩‍⚕️</div>
-            <div style={{
-              fontFamily: 'Bebas Neue, sans-serif',
-              fontSize: '1.8rem',
-              letterSpacing: '.12em',
-              background: 'linear-gradient(45deg, #22c55e, #3b82f6)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              animation: 'glow 3s ease-in-out infinite alternate'
-            }}>
-              Nurse Gear
-            </div>
+            NURSE GEAR
           </div>
         </div>
-        
-        <div style={{
-          display: 'flex',
+
+        {/* Mobile Menu Button */}
+        <button 
+          id="mobile-menu-btn"
+          style={{
+            display: 'block',
+            background: 'transparent',
+            border: '2px solid #22c55e',
+            color: '#22c55e',
+            padding: '8px',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease'
+          }}
+          onClick={() => {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+              menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+            }
+          }}
+        >
+          <span style={{fontSize: '1.2rem'}}>☰</span>
+        </button>
+
+        {/* Desktop Navigation */}
+        <div id="desktop-nav" style={{
+          display: 'none',
           alignItems: 'center',
           gap: '32px'
         }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '20px'
-          }}>
-            <a href="/" style={{
-              fontFamily: 'Barlow Condensed, sans-serif',
-              fontSize: '.85rem',
-              fontWeight: 500,
-              letterSpacing: '.1em',
-              textTransform: 'uppercase',
-              color: '#A8B0BF',
-              transition: 'color .2s'
-            }}>Home</a>
-            <a href="/blogs" style={{
-              fontFamily: 'Barlow Condensed, sans-serif',
-              fontSize: '.85rem',
-              fontWeight: 500,
-              letterSpacing: '.1em',
-              textTransform: 'uppercase',
-              color: '#A8B0BF',
-              transition: 'color .2s'
-            }}>Blogs</a>
-            <a href="#offer" style={{
-              fontFamily: 'Barlow Condensed, sans-serif',
-              fontSize: '.85rem',
-              fontWeight: 500,
-              letterSpacing: '.1em',
-              textTransform: 'uppercase',
-              color: '#A8B0BF',
-              transition: 'color .2s'
-            }}>Shop</a>
-          </div>
-          
-          {/* Theme Switcher */}
-          <button 
-            style={{
-              background: 'transparent',
-              border: '1px solid #334155',
-              color: '#e2e8f0',
-              padding: '8px 12px',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              fontSize: '0.9rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px'
-            }}
-          >
-            🌙 Dark
-          </button>
-          
-          <button 
-            onClick={() => document.getElementById('offer')?.scrollIntoView({behavior: 'smooth'})}
-            style={{
-              fontFamily: 'Barlow Condensed, sans-serif',
-              fontSize: '.85rem',
-              fontWeight: 600,
-              letterSpacing: '.12em',
-              textTransform: 'uppercase',
-              background: '#22c55e',
-              color: '#000',
-              padding: '9px 20px',
-              border: 'none',
-              cursor: 'pointer',
-              clipPath: 'polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)'
-            }}
-          >
-            Get Nurse Gear — $12.99
-          </button>
+          <a href="/" style={{
+            color: '#e5e7eb',
+            textDecoration: 'none',
+            fontSize: '0.95rem',
+            fontWeight: '600',
+            letterSpacing: '0.05em',
+            padding: '8px 16px',
+            borderRadius: '8px',
+            transition: 'all 0.3s ease',
+            border: '1px solid transparent'
+          }}>HOME</a>
+          <a href="/blogs" style={{
+            color: '#e5e7eb',
+            textDecoration: 'none',
+            fontSize: '0.95rem',
+            fontWeight: '600',
+            letterSpacing: '0.05em',
+            padding: '8px 16px',
+            borderRadius: '8px',
+            transition: 'all 0.3s ease',
+            border: '1px solid transparent'
+          }}>BLOGS</a>
+          <a href="/request-customer-product" style={{
+            color: '#e5e7eb',
+            textDecoration: 'none',
+            fontSize: '0.95rem',
+            fontWeight: '600',
+            letterSpacing: '0.05em',
+            padding: '8px 16px',
+            borderRadius: '8px',
+            transition: 'all 0.3s ease',
+            border: '1px solid transparent'
+          }}>REQUEST CUSTOMER PRODUCT</a>
         </div>
       </nav>
 
+      {/* Mobile Menu Overlay */}
+      <div id="mobile-menu" style={{
+        display: 'none',
+        position: 'fixed',
+        top: '100%',
+        left: 0,
+        right: 0,
+        background: 'rgba(12, 10, 9, 0.98)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid rgba(251, 191, 36, 0.2)',
+        flexDirection: 'column',
+        padding: '20px',
+        zIndex: 999
+      }}>
+        <a href="/" style={{
+          color: '#e5e7eb',
+          textDecoration: 'none',
+          fontSize: '1.1rem',
+          fontWeight: '600',
+          padding: '12px 0',
+          borderBottom: '1px solid rgba(55, 65, 81, 0.3)',
+          marginBottom: '8px'
+        }}>HOME</a>
+        <a href="/blogs" style={{
+          color: '#e5e7eb',
+          textDecoration: 'none',
+          fontSize: '1.1rem',
+          fontWeight: '600',
+          padding: '12px 0',
+          borderBottom: '1px solid rgba(55, 65, 81, 0.3)',
+          marginBottom: '8px'
+        }}>BLOGS</a>
+        <a href="/request-customer-product" style={{
+          color: '#e5e7eb',
+          textDecoration: 'none',
+          fontSize: '1.1rem',
+          fontWeight: '600',
+          padding: '12px 0',
+          borderBottom: '1px solid rgba(55, 65, 81, 0.3)',
+          marginBottom: '8px'
+        }}>REQUEST CUSTOMER PRODUCT</a>
+      </div>
+
       {/* ANIMATIONS */}
       <style jsx>{`
-        @keyframes bounce {
-          0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-          40% { transform: translateY(-4px); }
-          60% { transform: translateY(-2px); }
+        @keyframes glow {
+          from { 
+            filter: brightness(1) drop-shadow(0 0 5px rgba(34, 197, 94, 0.3));
+          }
+          to { 
+            filter: brightness(1.2) drop-shadow(0 0 15px rgba(34, 197, 94, 0.6));
+          }
         }
         
-        @keyframes glow {
-          from { filter: brightness(1); }
-          to { filter: brightness(1.2); }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+
+        /* Mobile-First Responsive */
+        @media (min-width: 768px) {
+          #desktop-nav {
+            display: flex !important;
+          }
+          #mobile-menu-btn {
+            display: none !important;
+          }
         }
       `}</style>
 
-      <div style={{
-        maxWidth: '900px',
-        margin: '0 auto',
-        padding: '40px 20px'
+      {/* HERO SECTION - Mobile First */}
+      <section style={{
+        padding: '120px 20px 80px',
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        {/* HERO */}
+        {/* Background Effects */}
         <div style={{
-          textAlign: 'center',
-          padding: '100px 20px',
-          marginBottom: '40px'
+          position: 'absolute',
+          top: '10%',
+          left: '10%',
+          width: '200px',
+          height: '200px',
+          background: 'radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%)',
+          borderRadius: '50%',
+          animation: 'pulse 4s ease-in-out infinite'
+        }}></div>
+        <div style={{
+          position: 'absolute',
+          bottom: '20%',
+          right: '15%',
+          width: '150px',
+          height: '150px',
+          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%)',
+          borderRadius: '50%',
+          animation: 'pulse 6s ease-in-out infinite reverse'
+        }}></div>
+
+        <div style={{
+          maxWidth: '800px',
+          margin: '0 auto',
+          position: 'relative',
+          zIndex: 10
         }}>
-          <h1 style={{
-            color: '#ffffff',
-            fontSize: '3rem',
-            marginBottom: '20px'
-          }}>Welcome to Nurse Gear</h1>
-          <p style={{
-            fontSize: '1.2rem',
-            marginBottom: '30px',
-            maxWidth: '600px',
-            margin: '0 auto 30px'
+          {/* Badge */}
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            background: 'rgba(251, 191, 36, 0.1)',
+            border: '1px solid rgba(251, 191, 36, 0.3)',
+            color: '#fbbf24',
+            padding: '8px 16px',
+            borderRadius: '20px',
+            fontSize: '0.9rem',
+            fontWeight: '600',
+            marginBottom: '24px',
+            backdropFilter: 'blur(10px)'
           }}>
-            Essential tools and insights for nurses. From shift organization to fatigue management, 
-            we've got everything you need to thrive in healthcare.
+            <span style={{width: '8px', height: '8px', background: '#fbbf24', borderRadius: '50%', animation: 'pulse 2s infinite'}}></span>
+            NURSE EMPOWERMENT PLATFORM
+          </div>
+
+          {/* Main Heading */}
+          <h1 style={{
+            fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+            fontWeight: '900',
+            lineHeight: '1.1',
+            marginBottom: '24px',
+            background: 'linear-gradient(135deg, #ffffff 0%, #e5e7eb 50%, #d1d5db 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            textShadow: '0 0 40px rgba(255, 255, 255, 0.1)'
+          }}>
+            Empowering Nurses<br/>
+            <span style={{
+              background: 'linear-gradient(135deg, #22c55e, #3b82f6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>Through Innovation</span>
+          </h1>
+
+          {/* Subheading */}
+          <p style={{
+            fontSize: 'clamp(1rem, 4vw, 1.25rem)',
+            color: '#9ca3af',
+            lineHeight: '1.6',
+            marginBottom: '40px',
+            maxWidth: '600px',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+          }}>
+            Discover cutting-edge tools, educational resources, and community support designed specifically for modern nursing professionals.
           </p>
+
+          {/* CTA Buttons */}
           <div style={{
             display: 'flex',
-            justifyContent: 'center',
-            gap: '20px',
-            flexWrap: 'wrap'
+            flexDirection: 'column',
+            gap: '16px',
+            alignItems: 'center',
+            marginBottom: '60px'
           }}>
-            <a href="/blogs" style={{
-              background: '#22c55e',
-              color: '#000',
-              padding: '12px 24px',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontWeight: 'bold'
-            }}>Read Our Blogs</a>
-            <button 
-              onClick={() => document.getElementById('offer')?.scrollIntoView({behavior: 'smooth'})}
-              style={{
-                background: '#3b82f6',
-                color: '#fff',
-                padding: '12px 24px',
-                border: 'none',
-                borderRadius: '8px',
-                fontWeight: 'bold',
-                cursor: 'pointer'
-              }}
-            >
-              Shop Nurse Gear
-            </button>
-          </div>
-        </div>
-
-        {/* BEFORE */}
-        <div style={{
-          margin: '60px 0'
-        }}>
-          <h2 style={{
-            color: '#ffffff',
-            fontSize: '2rem',
-            marginBottom: '20px'
-          }}>Before</h2>
-          <div style={{
-            background: '#1e293b',
-            padding: '30px',
-            borderRadius: '8px',
-            border: '1px solid #334155'
-          }}>
-            <ul style={{
-              listStyle: 'none',
-              padding: 0,
-              margin: 0
-            }}>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #334155',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#ef4444',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✕</span>
-                <span>Scribbling handoff notes on random paper scraps that fall out of your pocket</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #334155',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#ef4444',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✕</span>
-                <span>Forgetting which meds are due at 0200 when the fatigue hits hardest</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #334155',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#ef4444',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✕</span>
-                <span>Getting home and lying awake at 0900 despite being exhausted</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #334155',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#ef4444',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✕</span>
-                <span>No system to track your rotation — always reacting, never planning</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #334155',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#ef4444',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✕</span>
-                <span>Fumbling through SBAR in front of a physician at shift change</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#ef4444',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✕</span>
-                <span>Burnout creeping in because you don't know what's working or breaking you</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* AFTER */}
-        <div style={{
-          margin: '60px 0'
-        }}>
-          <h2 style={{
-            color: '#ffffff',
-            fontSize: '2rem',
-            marginBottom: '20px'
-          }}>After</h2>
-          <div style={{
-            background: '#0f5132',
-            padding: '30px',
-            borderRadius: '8px',
-            border: '1px solid #059669'
-          }}>
-            <ul style={{
-              listStyle: 'none',
-              padding: 0,
-              margin: 0
-            }}>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #059669',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#22c55e',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✓</span>
-                <span>Structured SBAR sheet — complete, confident handoffs every single shift</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #059669',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#22c55e',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✓</span>
-                <span>1900–0700 medication & task timeline so nothing slips at 0230</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #059669',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#22c55e',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✓</span>
-                <span>Post-shift wind-down checklist that actually gets you to sleep in daylight</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #059669',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#22c55e',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✓</span>
-                <span>3-week rotating scheduler — see your pattern, protect your recovery days</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                borderBottom: '1px solid #059669',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#22c55e',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✓</span>
-                <span>Nurse brain reference card always in your pocket for fast assessment</span>
-              </li>
-              <li style={{
-                padding: '12px 0',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <span style={{
-                  color: '#22c55e',
-                  fontSize: '1.2rem',
-                  fontWeight: 'bold',
-                  flexShrink: 0
-                }}>✓</span>
-                <span>Fatigue tracker reveals exactly what's draining you — and what fixes it</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div style={{
-          margin: '60px 0',
-          textAlign: 'center'
-        }} id="offer">
-          <div 
-            dangerouslySetInnerHTML={{
-              __html: `<stripe-buy-button
-                buy-button-id="buy_btn_1TLfalDmD8jmsJxFRrGnfU9r"
-                publishable-key="pk_live_51RQh85DmD8jmsJxFIX38XYfCkF655F4phTR6McqYqmbMfdU6w0iVy8LUtkTWQc8yupZMu8jwKud8J7mVRsBKoEXQ00pbqDp1Mq"
-              ></stripe-buy-button>`
+            <button style={{
+              background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+              color: '#ffffff',
+              border: 'none',
+              padding: '16px 32px',
+              borderRadius: '12px',
+              fontSize: '1.1rem',
+              fontWeight: '700',
+              cursor: 'pointer',
+              boxShadow: '0 10px 30px rgba(34, 197, 94, 0.3)',
+              transition: 'all 0.3s ease',
+              minWidth: '250px'
             }}
-          />
+            onMouseOver={(e) => {
+              const target = e.target as HTMLElement;
+              target.style.transform = 'translateY(-2px)';
+              target.style.boxShadow = '0 20px 40px rgba(34, 197, 94, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.target as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.boxShadow = '0 10px 30px rgba(34, 197, 94, 0.3)';
+            }}
+            >
+              🚀 Explore Nurse Gear
+            </button>
+
+            <div style={{
+              display: 'flex',
+              gap: '12px',
+              flexWrap: 'wrap',
+              justifyContent: 'center'
+            }}>
+              <a href="/blogs" style={{
+                color: '#22c55e',
+                textDecoration: 'none',
+                fontSize: '1rem',
+                fontWeight: '600',
+                padding: '8px 16px',
+                border: '2px solid #22c55e',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease'
+              }}>📚 Read Blogs</a>
+              <a href="/request-customer-product" style={{
+                color: '#3b82f6',
+                textDecoration: 'none',
+                fontSize: '1rem',
+                fontWeight: '600',
+                padding: '8px 16px',
+                border: '2px solid #3b82f6',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease'
+              }}>💬 Custom Requests</a>
+            </div>
+          </div>
+
+          {/* Feature Pills */}
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '12px',
+            justifyContent: 'center',
+            marginBottom: '40px'
+          }}>
+            <div style={{
+              background: 'rgba(34, 197, 94, 0.1)',
+              border: '1px solid rgba(34, 197, 94, 0.3)',
+              color: '#22c55e',
+              padding: '6px 12px',
+              borderRadius: '16px',
+              fontSize: '0.85rem',
+              fontWeight: '600'
+            }}>⚡ Real-Time Tools</div>
+            <div style={{
+              background: 'rgba(59, 130, 246, 0.1)',
+              border: '1px solid rgba(59, 130, 246, 0.3)',
+              color: '#3b82f6',
+              padding: '6px 12px',
+              borderRadius: '16px',
+              fontSize: '0.85rem',
+              fontWeight: '600'
+            }}>🎓 Education Hub</div>
+            <div style={{
+              background: 'rgba(139, 92, 246, 0.1)',
+              border: '1px solid rgba(139, 92, 246, 0.3)',
+              color: '#8b5cf6',
+              padding: '6px 12px',
+              borderRadius: '16px',
+              fontSize: '0.85rem',
+              fontWeight: '600'
+            }}>🤝 Community Support</div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* FEATURE CARDS - Mobile First Grid */}
+      <section style={{
+        padding: '60px 20px',
+        background: 'linear-gradient(135deg, rgba(31, 41, 55, 0.5) 0%, rgba(17, 24, 39, 0.5) 100%)'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          <h2 style={{
+            fontSize: 'clamp(2rem, 5vw, 3rem)',
+            fontWeight: '900',
+            textAlign: 'center',
+            marginBottom: '60px',
+            background: 'linear-gradient(135deg, #ffffff, #e5e7eb)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            Why Choose Nurse Gear?
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '32px',
+            marginBottom: '60px'
+          }}>
+            {/* Feature Card 1 */}
+            <div style={{
+              background: 'rgba(31, 41, 55, 0.8)',
+              border: '1px solid rgba(75, 85, 99, 0.3)',
+              borderRadius: '16px',
+              padding: '32px',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+            onMouseOver={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(-4px)';
+              target.style.borderColor = 'rgba(34, 197, 94, 0.5)';
+              target.style.boxShadow = '0 20px 40px rgba(34, 197, 94, 0.1)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+              target.style.boxShadow = 'none';
+            }}
+            >
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '4px',
+                background: 'linear-gradient(90deg, #22c55e, #3b82f6)'
+              }}></div>
+              <div style={{fontSize: '3rem', marginBottom: '16px'}}>🧠</div>
+              <h3 style={{
+                fontSize: '1.5rem',
+                fontWeight: '700',
+                marginBottom: '12px',
+                color: '#ffffff'
+              }}>Smart Learning Tools</h3>
+              <p style={{
+                color: '#9ca3af',
+                lineHeight: '1.6',
+                fontSize: '1rem'
+              }}>
+                AI-powered educational resources and adaptive learning paths designed specifically for nursing professionals.
+              </p>
+            </div>
+
+            {/* Feature Card 2 */}
+            <div style={{
+              background: 'rgba(31, 41, 55, 0.8)',
+              border: '1px solid rgba(75, 85, 99, 0.3)',
+              borderRadius: '16px',
+              padding: '32px',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+            onMouseOver={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(-4px)';
+              target.style.borderColor = 'rgba(59, 130, 246, 0.5)';
+              target.style.boxShadow = '0 20px 40px rgba(59, 130, 246, 0.1)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+              target.style.boxShadow = 'none';
+            }}
+            >
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '4px',
+                background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)'
+              }}></div>
+              <div style={{fontSize: '3rem', marginBottom: '16px'}}>🤝</div>
+              <h3 style={{
+                fontSize: '1.5rem',
+                fontWeight: '700',
+                marginBottom: '12px',
+                color: '#ffffff'
+              }}>Community Network</h3>
+              <p style={{
+                color: '#9ca3af',
+                lineHeight: '1.6',
+                fontSize: '1rem'
+              }}>
+                Connect with fellow nurses, share experiences, and access peer support from professionals worldwide.
+              </p>
+            </div>
+
+            {/* Feature Card 3 */}
+            <div style={{
+              background: 'rgba(31, 41, 55, 0.8)',
+              border: '1px solid rgba(75, 85, 99, 0.3)',
+              borderRadius: '16px',
+              padding: '32px',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+            onMouseOver={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(-4px)';
+              target.style.borderColor = 'rgba(139, 92, 246, 0.5)';
+              target.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.1)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+              target.style.boxShadow = 'none';
+            }}
+            >
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '4px',
+                background: 'linear-gradient(90deg, #8b5cf6, #ec4899)'
+              }}></div>
+              <div style={{fontSize: '3rem', marginBottom: '16px'}}>⚡</div>
+              <h3 style={{
+                fontSize: '1.5rem',
+                fontWeight: '700',
+                marginBottom: '12px',
+                color: '#ffffff'
+              }}>Cutting-Edge Innovation</h3>
+              <p style={{
+                color: '#9ca3af',
+                lineHeight: '1.6',
+                fontSize: '1rem'
+              }}>
+                Stay ahead with the latest nursing technology, research insights, and industry advancements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FOOTER */}
       <footer style={{
-        padding: '40px',
-        borderTop: '1px solid #1E2535',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: '20px',
-        flexWrap: 'wrap'
+        padding: '40px 20px',
+        borderTop: '1px solid rgba(55, 65, 81, 0.3)',
+        background: 'rgba(12, 10, 9, 0.5)',
+        backdropFilter: 'blur(10px)'
       }}>
         <div style={{
-          fontFamily: 'Bebas Neue, sans-serif',
-          fontSize: '1.3rem',
-          letterSpacing: '.12em'
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '32px',
+          marginBottom: '32px'
         }}>
-          <span style={{color: '#22c55e'}}>Nurse</span>
-          <span style={{color: '#3b82f6'}}>Gear</span>
+          <div>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              marginBottom: '16px'
+            }}>
+              <div style={{
+                fontSize: '2rem',
+                filter: 'drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))'
+              }}>⚕️</div>
+              <div style={{
+                fontSize: '1.5rem',
+                fontWeight: '900',
+                letterSpacing: '0.1em',
+                background: 'linear-gradient(135deg, #22c55e, #3b82f6)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>NURSE GEAR</div>
+            </div>
+            <p style={{
+              color: '#9ca3af',
+              lineHeight: '1.6',
+              fontSize: '0.95rem'
+            }}>
+              Empowering nurses with innovative tools, education, and community support for the modern healthcare landscape.
+            </p>
+          </div>
+
+          <div>
+            <h4 style={{
+              color: '#ffffff',
+              fontSize: '1.1rem',
+              fontWeight: '700',
+              marginBottom: '16px'
+            }}>Quick Links</h4>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
+              <a href="/" style={{color: '#9ca3af', textDecoration: 'none', fontSize: '0.95rem'}}>Home</a>
+              <a href="/blogs" style={{color: '#9ca3af', textDecoration: 'none', fontSize: '0.95rem'}}>Blogs</a>
+              <a href="/request-customer-product" style={{color: '#9ca3af', textDecoration: 'none', fontSize: '0.95rem'}}>Custom Requests</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{
+              color: '#ffffff',
+              fontSize: '1.1rem',
+              fontWeight: '700',
+              marginBottom: '16px'
+            }}>Connect</h4>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
+              <div style={{color: '#9ca3af', fontSize: '0.95rem'}}>📧 support@nursegear.com</div>
+              <div style={{color: '#9ca3af', fontSize: '0.95rem'}}>📱 Community Forum</div>
+              <div style={{color: '#9ca3af', fontSize: '0.95rem'}}>📚 Resource Library</div>
+            </div>
+          </div>
         </div>
-        <p style={{
-          fontSize: '.8rem',
-          color: '#636D7E',
-          fontFamily: 'Barlow Condensed, sans-serif',
-          letterSpacing: '.06em'
+
+        <div style={{
+          borderTop: '1px solid rgba(55, 65, 81, 0.3)',
+          paddingTop: '24px',
+          textAlign: 'center',
+          color: '#6b7280',
+          fontSize: '0.9rem'
         }}>
-          © 2026 Nurse Gear · Essential tools for nurses · All rights reserved
-        </p>
+          © 2026 Nurse Gear. All rights reserved. | Built for nurses, by nurses.
+        </div>
       </footer>
     </div>
   );
