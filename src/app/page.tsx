@@ -378,6 +378,373 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PDF BUNDLES SHOWCASE - Mobile First */}
+      <section style={{
+        padding: '60px 20px',
+        background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%)',
+        position: 'relative'
+      }}>
+        <div style={{
+          position: 'absolute',
+          top: '20%',
+          left: '10%',
+          width: '120px',
+          height: '120px',
+          background: 'radial-gradient(circle, rgba(34, 197, 94, 0.05) 0%, transparent 70%)',
+          borderRadius: '50%',
+          animation: 'pulse 5s ease-in-out infinite'
+        }}></div>
+        <div style={{
+          position: 'absolute',
+          bottom: '30%',
+          right: '15%',
+          width: '80px',
+          height: '80px',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%)',
+          borderRadius: '50%',
+          animation: 'pulse 7s ease-in-out infinite reverse'
+        }}></div>
+
+        <div style={{
+          maxWidth: '1000px',
+          margin: '0 auto',
+          position: 'relative',
+          zIndex: 10
+        }}>
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '40px'
+          }}>
+            <h2 style={{
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontWeight: '900',
+              marginBottom: '16px',
+              background: 'linear-gradient(135deg, #ffffff, #e5e7eb)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              Essential Nurse PDF Bundles
+            </h2>
+            <p style={{
+              fontSize: 'clamp(1rem, 3vw, 1.25rem)',
+              color: '#9ca3af',
+              lineHeight: '1.6',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              Download comprehensive PDF bundles designed specifically for nursing professionals. Unlimited prints included.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '24px',
+            marginBottom: '40px'
+          }}>
+            {/* Bundle Item 1 */}
+            <div style={{
+              background: 'rgba(31, 41, 55, 0.9)',
+              border: '1px solid rgba(75, 85, 99, 0.3)',
+              borderRadius: '12px',
+              padding: '24px',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(-2px)';
+              target.style.borderColor = 'rgba(34, 197, 94, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+            }}
+            >
+              <div style={{
+                fontSize: '2rem',
+                marginBottom: '12px',
+                textAlign: 'center'
+              }}>📅</div>
+              <h3 style={{
+                fontSize: '1.2rem',
+                fontWeight: '700',
+                marginBottom: '8px',
+                color: '#ffffff',
+                textAlign: 'center'
+              }}>Shift Scheduler</h3>
+              <p style={{
+                color: '#9ca3af',
+                lineHeight: '1.5',
+                fontSize: '0.9rem',
+                textAlign: 'center'
+              }}>
+                Organize your work schedule, track hours, and plan your shifts efficiently.
+              </p>
+            </div>
+
+            {/* Bundle Item 2 */}
+            <div style={{
+              background: 'rgba(31, 41, 55, 0.9)',
+              border: '1px solid rgba(75, 85, 99, 0.3)',
+              borderRadius: '12px',
+              padding: '24px',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(-2px)';
+              target.style.borderColor = 'rgba(59, 130, 246, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+            }}
+            >
+              <div style={{
+                fontSize: '2rem',
+                marginBottom: '12px',
+                textAlign: 'center'
+              }}>📋</div>
+              <h3 style={{
+                fontSize: '1.2rem',
+                fontWeight: '700',
+                marginBottom: '8px',
+                color: '#ffffff',
+                textAlign: 'center'
+              }}>SBAR Handoff Tool</h3>
+              <p style={{
+                color: '#9ca3af',
+                lineHeight: '1.5',
+                fontSize: '0.9rem',
+                textAlign: 'center'
+              }}>
+                Structured communication tool for Situation, Background, Assessment, and Recommendation.
+              </p>
+            </div>
+
+            {/* Bundle Item 3 */}
+            <div style={{
+              background: 'rgba(31, 41, 55, 0.9)',
+              border: '1px solid rgba(75, 85, 99, 0.3)',
+              borderRadius: '12px',
+              padding: '24px',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(-2px)';
+              target.style.borderColor = 'rgba(139, 92, 246, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+            }}
+            >
+              <div style={{
+                fontSize: '2rem',
+                marginBottom: '12px',
+                textAlign: 'center'
+              }}>⏰</div>
+              <h3 style={{
+                fontSize: '1.2rem',
+                fontWeight: '700',
+                marginBottom: '8px',
+                color: '#ffffff',
+                textAlign: 'center'
+              }}>Med Timeline</h3>
+              <p style={{
+                color: '#9ca3af',
+                lineHeight: '1.5',
+                fontSize: '0.9rem',
+                textAlign: 'center'
+              }}>
+                Track medication schedules, administration times, and patient medication history.
+              </p>
+            </div>
+
+            {/* Bundle Item 4 */}
+            <div style={{
+              background: 'rgba(31, 41, 55, 0.9)',
+              border: '1px solid rgba(75, 85, 99, 0.3)',
+              borderRadius: '12px',
+              padding: '24px',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(-2px)';
+              target.style.borderColor = 'rgba(251, 191, 36, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+            }}
+            >
+              <div style={{
+                fontSize: '2rem',
+                marginBottom: '12px',
+                textAlign: 'center'
+              }}>😴</div>
+              <h3 style={{
+                fontSize: '1.2rem',
+                fontWeight: '700',
+                marginBottom: '8px',
+                color: '#ffffff',
+                textAlign: 'center'
+              }}>Fatigue Tracker</h3>
+              <p style={{
+                color: '#9ca3af',
+                lineHeight: '1.5',
+                fontSize: '0.9rem',
+                textAlign: 'center'
+              }}>
+                Monitor fatigue levels, sleep patterns, and identify optimal rest periods.
+              </p>
+            </div>
+
+            {/* Bundle Item 5 */}
+            <div style={{
+              background: 'rgba(31, 41, 55, 0.9)',
+              border: '1px solid rgba(75, 85, 99, 0.3)',
+              borderRadius: '12px',
+              padding: '24px',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(-2px)';
+              target.style.borderColor = 'rgba(236, 72, 153, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+            }}
+            >
+              <div style={{
+                fontSize: '2rem',
+                marginBottom: '12px',
+                textAlign: 'center'
+              }}>🌙</div>
+              <h3 style={{
+                fontSize: '1.2rem',
+                fontWeight: '700',
+                marginBottom: '8px',
+                color: '#ffffff',
+                textAlign: 'center'
+              }}>Sleep Recovery Planner</h3>
+              <p style={{
+                color: '#9ca3af',
+                lineHeight: '1.5',
+                fontSize: '0.9rem',
+                textAlign: 'center'
+              }}>
+                Plan recovery strategies, track sleep quality, and optimize rest schedules.
+              </p>
+            </div>
+
+            {/* Bundle Item 6 */}
+            <div style={{
+              background: 'rgba(31, 41, 55, 0.9)',
+              border: '1px solid rgba(75, 85, 99, 0.3)',
+              borderRadius: '12px',
+              padding: '24px',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(-2px)';
+              target.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.borderColor = 'rgba(75, 85, 99, 0.3)';
+            }}
+            >
+              <div style={{
+                fontSize: '2rem',
+                marginBottom: '12px',
+                textAlign: 'center'
+              }}>🧠</div>
+              <h3 style={{
+                fontSize: '1.2rem',
+                fontWeight: '700',
+                marginBottom: '8px',
+                color: '#ffffff',
+                textAlign: 'center'
+              }}>Nurse Brain Tips & Organization</h3>
+              <p style={{
+                color: '#9ca3af',
+                lineHeight: '1.5',
+                fontSize: '0.9rem',
+                textAlign: 'center'
+              }}>
+                Memory aids, organization sheets, and productivity tips for nursing professionals.
+              </p>
+            </div>
+          </div>
+
+          <div style={{
+            textAlign: 'center',
+            marginTop: '40px'
+          }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: 'rgba(251, 191, 36, 0.1)',
+              border: '1px solid rgba(251, 191, 36, 0.3)',
+              color: '#fbbf24',
+              padding: '12px 24px',
+              borderRadius: '24px',
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '20px'
+            }}>
+              <span style={{fontSize: '1.2rem'}}>⭐</span>
+              Available on Premium.tenol - Execute any related documents you need
+            </div>
+            <button style={{
+              background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+              color: '#ffffff',
+              border: 'none',
+              padding: '14px 28px',
+              borderRadius: '10px',
+              fontSize: '1rem',
+              fontWeight: '700',
+              cursor: 'pointer',
+              boxShadow: '0 8px 25px rgba(34, 197, 94, 0.3)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              const target = e.target as HTMLElement;
+              target.style.transform = 'translateY(-1px)';
+              target.style.boxShadow = '0 12px 35px rgba(34, 197, 94, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              const target = e.target as HTMLElement;
+              target.style.transform = 'translateY(0)';
+              target.style.boxShadow = '0 8px 25px rgba(34, 197, 94, 0.3)';
+            }}
+            >
+              📥 Download PDF Bundle
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURE CARDS - Mobile First Grid */}
       <section style={{
         padding: '60px 20px',
@@ -438,20 +805,43 @@ export default function Home() {
                 height: '4px',
                 background: 'linear-gradient(90deg, #22c55e, #3b82f6)'
               }}></div>
-              <div style={{fontSize: '3rem', marginBottom: '16px'}}>🧠</div>
+              <div style={{fontSize: '3rem', marginBottom: '16px'}}>📋</div>
               <h3 style={{
                 fontSize: '1.5rem',
                 fontWeight: '700',
                 marginBottom: '12px',
                 color: '#ffffff'
-              }}>Premium PDF Templates</h3>
+              }}>Downloadable PDF Bundles</h3>
               <p style={{
                 color: '#9ca3af',
                 lineHeight: '1.6',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                marginBottom: '16px'
               }}>
-                Professional, customizable PDF templates for shift planning, documentation, and patient care management.
+                Professional PDF bundles with unlimited prints: Shift Scheduler, SBAR Handoff Tool, Med Timeline, Fatigue Tracker, Sleep Recovery Planner, and Nurse Brain Tips & Organization Sheets.
               </p>
+              <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '8px'
+              }}>
+                <span style={{
+                  background: 'rgba(34, 197, 94, 0.2)',
+                  color: '#22c55e',
+                  padding: '4px 8px',
+                  borderRadius: '12px',
+                  fontSize: '0.8rem',
+                  fontWeight: '600'
+                }}>✨ Unlimited Prints</span>
+                <span style={{
+                  background: 'rgba(59, 130, 246, 0.2)',
+                  color: '#3b82f6',
+                  padding: '4px 8px',
+                  borderRadius: '12px',
+                  fontSize: '0.8rem',
+                  fontWeight: '600'
+                }}>📄 Premium.tenol</span>
+              </div>
             </div>
 
             {/* Feature Card 2 */}

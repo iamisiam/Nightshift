@@ -31,11 +31,12 @@ Nurses face unique challenges in their demanding roles - long shifts, complex do
 
 ## What This Product Provides
 
-1. **Premium PDF Templates**: Professional templates for documentation and planning
-2. **Custom App Development**: Tailored mobile/web apps for specific nursing needs
-3. **Educational Content**: In-depth blogs about nurse fatigue and wellness
-4. **Community Support**: Connection points for healthcare professionals
-5. **Request System**: Easy way to get custom solutions built
+1. **Downloadable PDF Bundles**: Comprehensive bundles including Shift Scheduler, SBAR Handoff Tool, Med Timeline, Fatigue Tracker, Sleep Recovery Planner, and Nurse Brain Tips & Organization Sheets - with unlimited prints
+2. **Premium.tenol Integration**: Execute any related documents nurses need through our premium platform
+3. **Custom App Development**: Tailored mobile/web apps for specific nursing workflows
+4. **Educational Content**: In-depth blogs about nurse fatigue and wellness
+5. **Community Support**: Connection points for healthcare professionals
+6. **Request System**: Easy way to get custom solutions built
 
 ## Integration Points
 
