@@ -1,48 +1,53 @@
-# Project Brief: Next.js Starter Template
+# Project Brief: Nurse Tools & Tech Website
 
 ## Purpose
 
-This is a minimal Next.js starter template designed for AI-assisted development. It provides a clean foundation that can be extended to build any type of web application through interaction with an AI assistant.
+A professional website providing premium PDF templates and custom app designs/implementations for hardworking nurses. The site empowers nurses with essential tools to streamline their workflow and excel in patient care.
 
 ## Target Users
 
-- Developers wanting a clean Next.js starting point
-- Users building applications through AI-assisted coding
-- Teams needing a standardized, modern Next.js setup
+- Registered nurses seeking productivity tools
+- Nurse practitioners needing documentation templates
+- Healthcare professionals requiring custom app solutions
+- Nursing students looking for educational resources
 
 ## Core Use Case
 
-Users describe what they want to build to an AI assistant, which then expands this template by:
-
-1. Adding components and pages as needed
-2. Installing additional dependencies
-3. Setting up databases, authentication, etc. using recipes
-4. Customizing styling and branding
+Nurses can:
+1. Download premium PDF templates for shift planning and documentation
+2. Request custom app development for specific nursing workflows
+3. Access educational content about nurse fatigue and wellness
+4. Connect with a community of healthcare professionals
 
 ## Key Requirements
 
 ### Must Have
 
-- Modern Next.js 16 setup with App Router
-- TypeScript for type safety
-- Tailwind CSS 4 for styling
-- ESLint for code quality
-- Clean, minimal starting structure
-- Bun as package manager
+- Mobile-first responsive design with modern UI
+- Premium PDF template downloads
+- Custom product request form with email integration
+- Comprehensive blog system about nurse fatigue
+- Clean navigation and user experience
+- Professional branding focused on nurse empowerment
 
 ### Nice to Have
 
-- Recipe system for common additions (database, auth)
-- Memory bank for AI context persistence
-- Clear development guidelines
+- Social sharing for blog posts
+- Community forum integration
+- Advanced filtering for resources
+- User account system for saved templates
 
 ## Success Metrics
 
-- Clean, zero-error TypeScript setup
-- Passing lint and type checks
+- High-quality, downloadable PDF resources
+- Functional contact/request forms
+- Engaging, informative blog content
+- Mobile-optimized user experience
+- Clear value proposition for nurses
 
 ## Constraints
 
-- Minimal dependencies by default
-- Framework: Next.js 16 + React 19 + Tailwind CSS 4
+- Framework: Next.js 16 + React 19 + TypeScript + Tailwind CSS 4
 - Package manager: Bun
+- Focus on nurse-specific tools and education
+- Professional, trustworthy branding

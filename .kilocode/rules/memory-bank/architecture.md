@@ -1,106 +1,93 @@
-# System Patterns: Next.js Starter Template
+# System Patterns: Nurse Tools & Tech
 
 ## Architecture Overview
 
 ```
 src/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx          # Root layout + metadata
-│   ├── page.tsx            # Home page
-│   ├── globals.css         # Tailwind imports + global styles
-│   └── favicon.ico         # Site icon
-└── (expand as needed)
-    ├── components/         # React components (add when needed)
-    ├── lib/                # Utilities and helpers (add when needed)
-    └── db/                 # Database files (add via recipe)
+├── app/                          # Next.js App Router
+│   ├── layout.tsx                # Root layout with fonts
+│   ├── page.tsx                  # Home page with hero/features
+│   ├── globals.css               # Global styles and animations
+│   ├── blogs/                    # Blog system
+│   │   ├── page.tsx             # Blog listing
+│   │   └── [slug]/page.tsx      # Individual blog posts
+│   └── request-customer-product/ # Custom request form
+│       └── page.tsx             # Contact form with email integration
+├── components/                   # React components
+└── public/                       # Static assets (PDFs, images)
+    ├── free-nurse-tool.pdf      # Free PDF download
+    ├── mockups/                 # App mockup images
+    └── night-shift-nurse-bundle*.pdf # Premium PDF bundles
 ```
 
 ## Key Design Patterns
 
-### 1. App Router Pattern
+### 1. Mobile-First Responsive Design
 
-Uses Next.js App Router with file-based routing:
-```
-src/app/
-├── page.tsx           # Route: /
-├── about/page.tsx     # Route: /about
-├── blog/
-│   ├── page.tsx       # Route: /blog
-│   └── [slug]/page.tsx # Route: /blog/:slug
-└── api/
-    └── route.ts       # API Route: /api
-```
+All components designed mobile-first with progressive enhancement:
+- Base styles for mobile (320px+)
+- Tablet enhancements (768px+)
+- Desktop optimizations (1024px+)
+- Large screen refinements (1280px+)
 
-### 2. Component Organization Pattern (When Expanding)
+### 2. Inline Styling with CSS-in-JS
 
-```
-src/components/
-├── ui/                # Reusable UI components (Button, Card, etc.)
-├── layout/            # Layout components (Header, Footer)
-├── sections/          # Page sections (Hero, Features, etc.)
-└── forms/             # Form components
-```
-
-### 3. Server Components by Default
-
-All components are Server Components unless marked with `"use client"`:
+Uses styled-jsx for component-scoped CSS:
 ```tsx
-// Server Component (default) - can fetch data, access DB
-export default function Page() {
-  return <div>Server rendered</div>;
-}
-
-// Client Component - for interactivity
-"use client";
-export default function Counter() {
-  const [count, setCount] = useState(0);
-  return <button onClick={() => setCount(c => c + 1)}>{count}</button>;
-}
+<style jsx>{`
+  .hero {
+    background: linear-gradient(135deg, #0c0a09 0%, #1c1917 25%);
+  }
+  @media (min-width: 768px) {
+    .hero { padding: 120px 40px; }
+  }
+`}</style>
 ```
 
-### 4. Layout Pattern
+### 3. Client Components for Interactivity
 
-Layouts wrap pages and can be nested:
+Strategic use of `"use client"` for interactive elements:
+- Navigation menus with mobile toggle
+- Form handling and validation
+- Hover effects and animations
+- Modal dialogs and overlays
+
+### 4. Form Handling Pattern
+
+Complex forms use React state with TypeScript:
 ```tsx
-// src/app/layout.tsx - Root layout
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
-}
+const [formData, setFormData] = useState<FormData>({
+  name: '',
+  email: '',
+  requestType: 'app',
+  message: ''
+});
 
-// src/app/dashboard/layout.tsx - Nested layout
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex">
-      <Sidebar />
-      <main>{children}</main>
-    </div>
-  );
-}
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  // Email submission logic
+};
 ```
 
 ## Styling Conventions
 
-### Tailwind CSS Usage
-- Utility classes directly on elements
-- Component composition for repeated patterns
-- Responsive: `sm:`, `md:`, `lg:`, `xl:`
+### Design System
+- **Colors**: Dark theme with green/blue accent gradients
+- **Typography**: System fonts with clamp() for responsive sizing
+- **Spacing**: 8px grid system (8, 16, 24, 32, 40, 60, 80px)
+- **Borders**: Rounded corners (6px, 8px, 12px, 16px, 20px)
+- **Shadows**: Subtle box-shadows with rgba colors
 
-### Common Patterns
-```tsx
-// Container
-<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+### Animation Patterns
+- CSS keyframes for continuous animations (pulse, glow)
+- Transform transitions for hover states
+- Backdrop-filter blur effects for modern glassmorphism
 
-// Responsive grid
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-// Flexbox centering
-<div className="flex items-center justify-center">
-```
-
+### Component Patterns
+- Feature cards with gradient borders and hover effects
+- Navigation with mobile hamburger menu
+- Hero sections with animated background elements
+- Pill-shaped badges for feature highlights
 ## File Naming Conventions
 
 - Components: PascalCase (`Button.tsx`, `Header.tsx`)

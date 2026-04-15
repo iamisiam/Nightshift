@@ -1,44 +1,45 @@
-# Product Context: Next.js Starter Template
+# Product Context: Nurse Tools & Tech
 
-## Why This Template Exists
+## Why This Product Exists
 
-Starting a new Next.js project involves boilerplate setup, configuration decisions, and establishing patterns. This template provides a clean, opinionated starting point that eliminates setup friction and establishes best practices from the start. It's optimized for AI-assisted development, where an AI can quickly extend the template based on user requirements.
+Nurses face unique challenges in their demanding roles - long shifts, complex documentation, patient care coordination, and constant fatigue. Nurse Tools & Tech provides essential digital solutions that help nurses thrive in their profession by offering premium tools and custom applications tailored to their specific needs.
 
 ## Problems It Solves
 
-1. **Setup Time**: Eliminates boilerplate configuration (TypeScript, Tailwind, ESLint)
-2. **Decision Fatigue**: Pre-made choices for tooling and patterns
-3. **AI Context**: Memory bank provides persistent context for AI assistants
-4. **Extensibility**: Recipe system for adding common features
-5. **Consistency**: Standardized project structure and conventions
+1. **Documentation Burden**: Streamlined PDF templates for efficient shift planning and patient records
+2. **Workflow Inefficiency**: Custom apps designed specifically for nursing workflows
+3. **Professional Development**: Educational content about nurse fatigue and wellness
+4. **Technology Gap**: User-friendly tools that don't require extensive tech knowledge
+5. **Time Management**: Solutions that save time on administrative tasks
 
 ## How It Should Work (User Flow)
 
-1. User starts with this template
-2. User describes what they want to build to AI assistant
-3. AI adds pages, components, and features as needed
-4. AI uses recipes for common additions (database, auth)
-5. User previews changes via hot reload
-6. Iterate until satisfied
-7. Deploy
+1. Nurse visits the website and explores available tools
+2. Downloads premium PDF templates for immediate use
+3. Reads educational blogs about nurse wellness and fatigue
+4. Requests custom app development through the contact form
+5. Receives personalized solutions via email follow-up
+6. Returns for additional resources and community support
 
 ## Key User Experience Goals
 
-- **Zero to Feature Fast**: Get building immediately, no setup required
-- **AI-Friendly**: Memory bank and recipes make AI assistance effective
-- **Flexible Foundation**: Can become any type of application
-- **Best Practices Built-In**: TypeScript strict mode, ESLint, clean structure
+- **Nurse-Centric Design**: Everything focused on supporting nursing professionals
+- **Professional Trust**: Clean, modern design that conveys reliability
+- **Mobile-First**: Tools accessible during shifts and on-the-go
+- **Empowerment Focus**: Messaging that emphasizes helping nurses thrive
+- **Quality Resources**: High-value, practical tools and information
 
-## What This Template Provides
+## What This Product Provides
 
-1. **Clean App Structure**: Single page ready for expansion
-2. **Type Safety**: Full TypeScript setup with strict mode
-3. **Modern Styling**: Tailwind CSS 4 ready to use
-4. **Code Quality**: ESLint configured
-5. **Extensibility**: Recipe system for common features
+1. **Premium PDF Templates**: Professional templates for documentation and planning
+2. **Custom App Development**: Tailored mobile/web apps for specific nursing needs
+3. **Educational Content**: In-depth blogs about nurse fatigue and wellness
+4. **Community Support**: Connection points for healthcare professionals
+5. **Request System**: Easy way to get custom solutions built
 
 ## Integration Points
 
-- **Database**: Use add-database recipe for Drizzle + SQLite
-- **Styling**: Tailwind CSS pre-configured
-- **AI Assistance**: Memory bank for context persistence
+- **Email Integration**: Contact forms send to designated email
+- **Social Sharing**: Blog posts shareable on social media
+- **File Downloads**: Direct download links for PDF resources
+- **Responsive Design**: Works seamlessly on all devices

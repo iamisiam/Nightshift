@@ -1,4 +1,4 @@
-// app/page.tsx - Mobile-First Nurse Gear Landing
+// app/page.tsx - Mobile-First Nurse Tools & Tech Landing
 "use client";
 
 export default function Home() {
@@ -48,7 +48,7 @@ export default function Home() {
             textShadow: '0 0 20px rgba(34, 197, 94, 0.3)',
             animation: 'glow 4s ease-in-out infinite alternate'
           }}>
-            NURSE GEAR
+            NURSE TOOLS & TECH
           </div>
         </div>
 
@@ -272,7 +272,7 @@ export default function Home() {
             marginLeft: 'auto',
             marginRight: 'auto'
           }}>
-            Discover cutting-edge tools, educational resources, and community support designed specifically for modern nursing professionals.
+            We provide hardworking nurses with the essential tools they need—premium PDF templates and custom app designs and implementations—to help them thrive in their demanding roles.
           </p>
 
           {/* CTA Buttons */}
@@ -307,7 +307,7 @@ export default function Home() {
               target.style.boxShadow = '0 10px 30px rgba(34, 197, 94, 0.3)';
             }}
             >
-              🚀 Explore Nurse Gear
+              🚀 Explore Nurse Tools & Tech
             </button>
 
             <div style={{
@@ -397,7 +397,7 @@ export default function Home() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
           }}>
-            Why Choose Nurse Gear?
+            Why Choose Nurse Tools & Tech?
           </h2>
 
           <div style={{
@@ -444,13 +444,13 @@ export default function Home() {
                 fontWeight: '700',
                 marginBottom: '12px',
                 color: '#ffffff'
-              }}>Smart Learning Tools</h3>
+              }}>Premium PDF Templates</h3>
               <p style={{
                 color: '#9ca3af',
                 lineHeight: '1.6',
                 fontSize: '1rem'
               }}>
-                AI-powered educational resources and adaptive learning paths designed specifically for nursing professionals.
+                Professional, customizable PDF templates for shift planning, documentation, and patient care management.
               </p>
             </div>
 
@@ -492,13 +492,13 @@ export default function Home() {
                 fontWeight: '700',
                 marginBottom: '12px',
                 color: '#ffffff'
-              }}>Community Network</h3>
+              }}>Custom App Development</h3>
               <p style={{
                 color: '#9ca3af',
                 lineHeight: '1.6',
                 fontSize: '1rem'
               }}>
-                Connect with fellow nurses, share experiences, and access peer support from professionals worldwide.
+                Tailored mobile and web applications designed specifically for nursing workflows and patient care needs.
               </p>
             </div>
 
@@ -540,13 +540,13 @@ export default function Home() {
                 fontWeight: '700',
                 marginBottom: '12px',
                 color: '#ffffff'
-              }}>Cutting-Edge Innovation</h3>
+              }}>Nursing Technology Solutions</h3>
               <p style={{
                 color: '#9ca3af',
                 lineHeight: '1.6',
                 fontSize: '1rem'
               }}>
-                Stay ahead with the latest nursing technology, research insights, and industry advancements.
+                Comprehensive technology solutions including app implementations, digital tools, and workflow optimization for modern nursing practice.
               </p>
             </div>
           </div>
@@ -587,14 +587,14 @@ export default function Home() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
-              }}>NURSE GEAR</div>
+              }}>NURSE TOOLS & TECH</div>
             </div>
             <p style={{
               color: '#9ca3af',
               lineHeight: '1.6',
               fontSize: '0.95rem'
             }}>
-              Empowering nurses with innovative tools, education, and community support for the modern healthcare landscape.
+              Essential tools and technology solutions designed to help hardworking nurses thrive, from premium PDF templates to custom app designs and implementations.
             </p>
           </div>
 
@@ -634,7 +634,7 @@ export default function Home() {
           color: '#6b7280',
           fontSize: '0.9rem'
         }}>
-          © 2026 Nurse Gear. All rights reserved. | Built for nurses, by nurses.
+          © 2026 Nurse Tools & Tech. All rights reserved. | Built for nurses, by nurses.
         </div>
       </footer>
     </div>

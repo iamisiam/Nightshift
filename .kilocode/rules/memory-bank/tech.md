@@ -1,14 +1,15 @@
-# Technical Context: Next.js Starter Template
+# Technical Context: Nurse Tools & Tech
 
 ## Technology Stack
 
 | Technology   | Version | Purpose                         |
 | ------------ | ------- | ------------------------------- |
 | Next.js      | 16.x    | React framework with App Router |
-| React        | 19.x    | UI library                      |
+| React        | 19.x    | UI library with hooks           |
 | TypeScript   | 5.9.x   | Type-safe JavaScript            |
 | Tailwind CSS | 4.x     | Utility-first CSS               |
 | Bun          | Latest  | Package manager & runtime       |
+| styled-jsx   | Built-in| Scoped CSS-in-JS for components |
 
 ## Development Environment
 
@@ -33,23 +34,29 @@ bun typecheck      # Run TypeScript type checking
 ### Next.js Config (`next.config.ts`)
 
 - App Router enabled
-- Default settings for flexibility
+- TypeScript strict mode
+- ESLint integration
+- Optimized for static generation
 
 ### TypeScript Config (`tsconfig.json`)
 
 - Strict mode enabled
 - Path alias: `@/*` → `src/*`
-- Target: ESNext
+- Target: ESNext with modern features
+- React 19 JSX transform
 
-### Tailwind CSS 4 (`postcss.config.mjs`)
+### Styling Setup
 
-- Uses `@tailwindcss/postcss` plugin
-- CSS-first configuration (v4 style)
+- Tailwind CSS 4 with PostCSS
+- CSS-in-JS via styled-jsx for component scoping
+- Custom animations and gradients
+- Mobile-first responsive design
 
-### ESLint (`eslint.config.mjs`)
+### ESLint Config
 
-- Uses `eslint-config-next`
-- Flat config format
+- Next.js recommended rules
+- TypeScript integration
+- Code quality enforcement
 
 ## Key Dependencies
 
@@ -57,9 +64,9 @@ bun typecheck      # Run TypeScript type checking
 
 ```json
 {
-  "next": "^16.1.3", // Framework
-  "react": "^19.2.3", // UI library
-  "react-dom": "^19.2.3" // React DOM
+  "next": "^16.1.3",
+  "react": "^19.2.3",
+  "react-dom": "^19.2.3"
 }
 ```
 
@@ -82,62 +89,70 @@ bun typecheck      # Run TypeScript type checking
 
 ```
 /
-├── .gitignore              # Git ignore rules
-├── package.json            # Dependencies and scripts
-├── bun.lock                # Bun lockfile
-├── next.config.ts          # Next.js configuration
-├── tsconfig.json           # TypeScript configuration
-├── postcss.config.mjs      # PostCSS (Tailwind) config
-├── eslint.config.mjs       # ESLint configuration
-├── public/                 # Static assets
-│   └── .gitkeep
-└── src/                    # Source code
-    └── app/                # Next.js App Router
-        ├── layout.tsx      # Root layout
-        ├── page.tsx        # Home page
-        ├── globals.css     # Global styles
-        └── favicon.ico     # Site icon
+├── .gitignore                    # Git ignore rules
+├── package.json                  # Dependencies and scripts
+├── bun.lock                      # Bun lockfile
+├── next.config.ts                # Next.js configuration
+├── tsconfig.json                 # TypeScript configuration
+├── postcss.config.mjs            # PostCSS config for Tailwind
+├── eslint.config.mjs             # ESLint configuration
+├── .kilocode/                    # AI context and recipes
+└── src/
+    ├── app/                      # Next.js App Router
+    │   ├── layout.tsx            # Root layout with fonts
+    │   ├── page.tsx              # Home page (mobile-first)
+    │   ├── globals.css           # Global styles + animations
+    │   ├── blogs/                # Blog system
+    │   │   ├── page.tsx          # Blog listing
+    │   │   └── [slug]/page.tsx   # Individual posts
+    │   └── request-customer-product/
+    │       └── page.tsx          # Custom request form
+    └── components/               # Shared components
+        └── SamplePage.tsx        # Blog post template
+└── public/                       # Static assets
+    ├── favicon.ico               # Site icon
+    ├── free-nurse-tool.pdf       # Free PDF download
+    ├── mockups/                  # App mockup images
+    └── night-shift-nurse-bundle*.pdf # Premium PDFs
 ```
 
 ## Technical Constraints
 
-### Starting Point
+### Design Requirements
 
-- Minimal structure - expand as needed
-- No database by default (use recipe to add)
-- No authentication by default (add when needed)
+- Mobile-first responsive design
+- Dark theme with gradient accents
+- Smooth animations and transitions
+- Professional healthcare branding
+- Accessible form interactions
 
-### Browser Support
+### Performance Goals
 
-- Modern browsers (ES2020+)
-- No IE11 support
+- Fast loading on mobile devices
+- Optimized images and assets
+- Efficient CSS with Tailwind purging
+- Minimal JavaScript bundle
 
-## Performance Considerations
+## Special Features
 
-### Image Optimization
+### Form Integration
 
-- Use Next.js `Image` component for optimization
-- Place images in `public/` directory
+- Custom product request form
+- Email submission to leonptucker3886@gmail.com
+- Success message display
+- Form validation and error handling
 
-### Bundle Size
+### Content Management
 
-- Tree-shaking enabled by default
-- Tailwind CSS purges unused styles
+- Blog system with 1500+ word articles
+- Social sharing integration
+- SEO-optimized content structure
+- Mobile-friendly reading experience
 
-### Core Web Vitals
+### Asset Management
 
-- Server Components reduce client JavaScript
-- Streaming and Suspense for better UX
-
-## Deployment
-
-### Build Output
-
-- Server-rendered pages by default
-- Can be configured for static export
-
-### Environment Variables
-
-- None required for base template
-- Add as needed for features
+- PDF downloads for templates
+- Image optimization for mockups
+- Direct download links
+- File organization in public directory
 - Use `.env.local` for local development

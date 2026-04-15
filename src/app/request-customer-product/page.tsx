@@ -159,7 +159,7 @@ export default function RequestCustomerProduct() {
             textShadow: '0 0 20px rgba(34, 197, 94, 0.3)',
             animation: 'glow 4s ease-in-out infinite alternate'
           }}>
-            NURSE GEAR
+            NURSE TOOLS & TECH
           </div>
         </div>
 
@@ -262,7 +262,7 @@ export default function RequestCustomerProduct() {
               fontSize: '1.1rem',
               lineHeight: '1.6'
             }}>
-              Tell us about your custom nursing tool or resource needs. We'll create something amazing together.
+              Tell us about your premium PDF template or custom app development needs. We specialize in tools that help hardworking nurses thrive in their demanding roles.
             </p>
           </div>
 
@@ -292,7 +292,7 @@ export default function RequestCustomerProduct() {
                 borderRadius: '6px',
                 border: '1px solid rgba(251, 191, 36, 0.3)'
               }}>
-                Every field is optional — fill out as much or as little as you'd like
+                Every field is optional — fill out as much or as little as you&apos;d like
               </p>
 
               <div style={{

@@ -116,7 +116,7 @@ export default function SamplePage() {
       {/* Footer */}
       <div className="mt-8 text-center text-xs text-gray-600 border-t border-gray-300 pt-4">
         <p className="mb-2">💡 <strong>Pro Tip:</strong> Use checkboxes to track completion. Highlight critical times.</p>
-        <p>🌙 <strong>Night Shift Focus:</strong> 0200-0400 is the "dip" - double-check everything!</p>
+        <p>🌙 <strong>Night Shift Focus:</strong> 0200-0400 is the &quot;dip&quot; - double-check everything!</p>
         <p className="mt-4 text-xs text-blue-600 font-semibold">This is a sample page. Download the full bundle for all 8 pages!</p>
       </div>
     </div>
