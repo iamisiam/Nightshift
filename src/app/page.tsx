@@ -27,45 +27,186 @@ export default function Home() {
         borderBottom: '1px solid #1E2535'
       }}>
         <div style={{
-          fontFamily: 'Bebas Neue, sans-serif',
-          fontSize: '1.5rem',
-          letterSpacing: '.12em',
           display: 'flex',
-          gap: '.2em',
-          alignItems: 'center'
+          alignItems: 'center',
+          gap: '16px'
         }}>
-          <span style={{color: '#B83232'}}>Leon</span>
-          <span style={{color: '#636D7E'}}>—</span>
-          <span style={{color: '#2B4C9E'}}>Link</span>
+          {/* Animated Nurse Logo */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px'
+          }}>
+            <div style={{
+              fontSize: '2rem',
+              animation: 'bounce 2s infinite'
+            }}>👩‍⚕️</div>
+            <div style={{
+              fontFamily: 'Bebas Neue, sans-serif',
+              fontSize: '1.8rem',
+              letterSpacing: '.12em',
+              background: 'linear-gradient(45deg, #22c55e, #3b82f6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              animation: 'glow 3s ease-in-out infinite alternate'
+            }}>
+              Nurse Gear
+            </div>
+          </div>
         </div>
-        <button 
-          onClick={() => document.getElementById('offer')?.scrollIntoView({behavior: 'smooth'})}
-          style={{
-            fontFamily: 'Barlow Condensed, sans-serif',
-            fontSize: '.85rem',
-            fontWeight: 600,
-            letterSpacing: '.12em',
-            textTransform: 'uppercase',
-            background: '#B83232',
-            color: '#fff',
-            padding: '9px 20px',
-            border: 'none',
-            cursor: 'pointer',
-            clipPath: 'polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)'
-          }}
-        >
-          Get the Bundle — $12.99
-        </button>
+        
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '32px'
+        }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '20px'
+          }}>
+            <a href="/" style={{
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.85rem',
+              fontWeight: 500,
+              letterSpacing: '.1em',
+              textTransform: 'uppercase',
+              color: '#A8B0BF',
+              transition: 'color .2s'
+            }}>Home</a>
+            <a href="/blogs" style={{
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.85rem',
+              fontWeight: 500,
+              letterSpacing: '.1em',
+              textTransform: 'uppercase',
+              color: '#A8B0BF',
+              transition: 'color .2s'
+            }}>Blogs</a>
+            <a href="#offer" style={{
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.85rem',
+              fontWeight: 500,
+              letterSpacing: '.1em',
+              textTransform: 'uppercase',
+              color: '#A8B0BF',
+              transition: 'color .2s'
+            }}>Shop</a>
+          </div>
+          
+          {/* Theme Switcher */}
+          <button 
+            style={{
+              background: 'transparent',
+              border: '1px solid #334155',
+              color: '#e2e8f0',
+              padding: '8px 12px',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontSize: '0.9rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}
+          >
+            🌙 Dark
+          </button>
+          
+          <button 
+            onClick={() => document.getElementById('offer')?.scrollIntoView({behavior: 'smooth'})}
+            style={{
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '.85rem',
+              fontWeight: 600,
+              letterSpacing: '.12em',
+              textTransform: 'uppercase',
+              background: '#22c55e',
+              color: '#000',
+              padding: '9px 20px',
+              border: 'none',
+              cursor: 'pointer',
+              clipPath: 'polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)'
+            }}
+          >
+            Get Nurse Gear — $12.99
+          </button>
+        </div>
       </nav>
+
+      {/* ANIMATIONS */}
+      <style jsx>{`
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+          40% { transform: translateY(-4px); }
+          60% { transform: translateY(-2px); }
+        }
+        
+        @keyframes glow {
+          from { filter: brightness(1); }
+          to { filter: brightness(1.2); }
+        }
+      `}</style>
 
       <div style={{
         maxWidth: '900px',
         margin: '0 auto',
         padding: '40px 20px'
       }}>
+        {/* HERO */}
+        <div style={{
+          textAlign: 'center',
+          padding: '100px 20px',
+          marginBottom: '40px'
+        }}>
+          <h1 style={{
+            color: '#ffffff',
+            fontSize: '3rem',
+            marginBottom: '20px'
+          }}>Welcome to Nurse Gear</h1>
+          <p style={{
+            fontSize: '1.2rem',
+            marginBottom: '30px',
+            maxWidth: '600px',
+            margin: '0 auto 30px'
+          }}>
+            Essential tools and insights for nurses. From shift organization to fatigue management, 
+            we've got everything you need to thrive in healthcare.
+          </p>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '20px',
+            flexWrap: 'wrap'
+          }}>
+            <a href="/blogs" style={{
+              background: '#22c55e',
+              color: '#000',
+              padding: '12px 24px',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: 'bold'
+            }}>Read Our Blogs</a>
+            <button 
+              onClick={() => document.getElementById('offer')?.scrollIntoView({behavior: 'smooth'})}
+              style={{
+                background: '#3b82f6',
+                color: '#fff',
+                padding: '12px 24px',
+                border: 'none',
+                borderRadius: '8px',
+                fontWeight: 'bold',
+                cursor: 'pointer'
+              }}
+            >
+              Shop Nurse Gear
+            </button>
+          </div>
+        </div>
+
         {/* BEFORE */}
         <div style={{
-          margin: '120px 0 60px 0'
+          margin: '60px 0'
         }}>
           <h2 style={{
             color: '#ffffff',
@@ -320,9 +461,8 @@ export default function Home() {
           fontSize: '1.3rem',
           letterSpacing: '.12em'
         }}>
-          <span style={{color: '#B83232'}}>Leon</span>
-          <span style={{color: '#636D7E'}}>—</span>
-          <span style={{color: '#2B4C9E'}}>Link</span>
+          <span style={{color: '#22c55e'}}>Nurse</span>
+          <span style={{color: '#3b82f6'}}>Gear</span>
         </div>
         <p style={{
           fontSize: '.8rem',
@@ -330,7 +470,7 @@ export default function Home() {
           fontFamily: 'Barlow Condensed, sans-serif',
           letterSpacing: '.06em'
         }}>
-          © 2026 Leon-Link · Built for night shift heroes · All rights reserved
+          © 2026 Nurse Gear · Essential tools for nurses · All rights reserved
         </p>
       </footer>
     </div>
