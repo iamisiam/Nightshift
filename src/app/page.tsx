@@ -1,15 +1,21 @@
 // app/page.tsx - Mobile-First Nurse Tools & Tech Landing
 "use client";
 
+import { useState } from 'react';
+
 export default function Home() {
+  const [isHardcoreTheme, setIsHardcoreTheme] = useState(true);
   return (
     <div style={{
-      fontFamily: '"Impact", "Arial Black", sans-serif',
+      fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, -apple-system, sans-serif',
       margin: 0,
-      background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #2a2a2a 50%, #ff0000 75%, #000000 100%)',
-      color: '#ffffff',
-      lineHeight: 1.4,
-      minHeight: '100vh'
+      background: isHardcoreTheme
+        ? 'linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #2a2a2a 50%, #ff0000 75%, #000000 100%)'
+        : 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #f1f5f9 100%)',
+      color: isHardcoreTheme ? '#ffffff' : '#1f2937',
+      lineHeight: isHardcoreTheme ? 1.4 : 1.6,
+      minHeight: '100vh',
+      transition: 'all 0.3s ease'
     }}>
       {/* Mobile-First Navigation */}
       <nav style={{
@@ -18,14 +24,15 @@ export default function Home() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        background: 'rgba(0, 0, 0, 0.9)',
+        background: isHardcoreTheme ? 'rgba(0, 0, 0, 0.9)' : 'rgba(255, 255, 255, 0.95)',
         backdropFilter: 'blur(10px)',
-        borderBottom: '3px solid #ff0000',
+        borderBottom: `3px solid ${isHardcoreTheme ? '#ff0000' : '#2563eb'}`,
         padding: '20px 25px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        boxShadow: '0 0 20px rgba(255, 0, 0, 0.3)'
+        boxShadow: isHardcoreTheme ? '0 0 20px rgba(255, 0, 0, 0.3)' : '0 0 20px rgba(37, 99, 235, 0.2)',
+        transition: 'all 0.3s ease'
       }}>
         {/* Animated Logo */}
         <div style={{
@@ -35,18 +42,18 @@ export default function Home() {
         }}>
           <div style={{
             fontSize: '3rem',
-            animation: 'pulse 2s ease-in-out infinite',
-            filter: 'drop-shadow(0 0 15px rgba(255, 0, 0, 0.8))',
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'
-          }}>💀</div>
+            animation: isHardcoreTheme ? 'pulse 2s ease-in-out infinite' : 'none',
+            filter: isHardcoreTheme ? 'drop-shadow(0 0 15px rgba(255, 0, 0, 0.8))' : 'drop-shadow(0 0 10px rgba(37, 99, 235, 0.5))',
+            textShadow: isHardcoreTheme ? '2px 2px 4px rgba(0, 0, 0, 0.8)' : '1px 1px 2px rgba(0, 0, 0, 0.3)'
+          }}>⚕️</div>
           <div style={{
             fontSize: '2rem',
             fontWeight: '900',
             letterSpacing: '0.2em',
-            color: '#ff0000',
-            textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
-            animation: 'glow 3s ease-in-out infinite alternate',
-            fontFamily: '"Impact", "Arial Black", sans-serif'
+            color: isHardcoreTheme ? '#ff0000' : '#2563eb',
+            textShadow: isHardcoreTheme ? '3px 3px 6px rgba(0, 0, 0, 0.9)' : '2px 2px 4px rgba(37, 99, 235, 0.3)',
+            animation: isHardcoreTheme ? 'glow 3s ease-in-out infinite alternate' : 'none',
+            fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
           }}>
             NURSE TOOLS & TECH
           </div>
@@ -57,15 +64,15 @@ export default function Home() {
           id="mobile-menu-btn"
           style={{
             display: 'block',
-            background: 'rgba(255, 0, 0, 0.2)',
-            border: '2px solid #ff0000',
-            color: '#ffffff',
+            background: isHardcoreTheme ? 'rgba(255, 0, 0, 0.2)' : 'rgba(37, 99, 235, 0.2)',
+            border: `2px solid ${isHardcoreTheme ? '#ff0000' : '#2563eb'}`,
+            color: isHardcoreTheme ? '#ffffff' : '#1f2937',
             padding: '10px',
             borderRadius: '4px',
             cursor: 'pointer',
             transition: 'all 0.2s ease',
             fontWeight: '900',
-            fontFamily: '"Impact", "Arial Black", sans-serif'
+            fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
           }}
           onClick={() => {
             const menu = document.getElementById('mobile-menu');
@@ -84,7 +91,7 @@ export default function Home() {
           gap: '32px'
         }}>
           <a href="/" style={{
-            color: '#ffffff',
+            color: isHardcoreTheme ? '#ffffff' : '#1f2937',
             textDecoration: 'none',
             fontSize: '1rem',
             fontWeight: '900',
@@ -94,10 +101,10 @@ export default function Home() {
             transition: 'all 0.2s ease',
             border: '2px solid transparent',
             textTransform: 'uppercase',
-            fontFamily: '"Impact", "Arial Black", sans-serif'
+            fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
           }}>HOME</a>
           <a href="/blogs" style={{
-            color: '#ffffff',
+            color: isHardcoreTheme ? '#ffffff' : '#1f2937',
             textDecoration: 'none',
             fontSize: '1rem',
             fontWeight: '900',
@@ -107,10 +114,10 @@ export default function Home() {
             transition: 'all 0.2s ease',
             border: '2px solid transparent',
             textTransform: 'uppercase',
-            fontFamily: '"Impact", "Arial Black", sans-serif'
+            fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
           }}>BLOGS</a>
           <a href="/request-customer-product" style={{
-            color: '#ffffff',
+            color: isHardcoreTheme ? '#ffffff' : '#ffffff',
             textDecoration: 'none',
             fontSize: '1rem',
             fontWeight: '900',
@@ -118,11 +125,30 @@ export default function Home() {
             padding: '10px 20px',
             borderRadius: '4px',
             transition: 'all 0.2s ease',
-            border: '2px solid #ff0000',
-            background: 'rgba(255, 0, 0, 0.1)',
+            border: `2px solid ${isHardcoreTheme ? '#ff0000' : '#2563eb'}`,
+            background: isHardcoreTheme ? 'rgba(255, 0, 0, 0.1)' : 'rgba(37, 99, 235, 0.1)',
             textTransform: 'uppercase',
-            fontFamily: '"Impact", "Arial Black", sans-serif'
+            fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
           }}>CUSTOM APPS</a>
+          <button
+            onClick={() => setIsHardcoreTheme(!isHardcoreTheme)}
+            style={{
+              background: isHardcoreTheme ? 'rgba(255, 0, 0, 0.2)' : 'rgba(37, 99, 235, 0.2)',
+              border: `2px solid ${isHardcoreTheme ? '#ff0000' : '#2563eb'}`,
+              color: isHardcoreTheme ? '#ffffff' : '#1f2937',
+              padding: '8px 16px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontWeight: '900',
+              fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif',
+              textTransform: 'uppercase',
+              fontSize: '0.9rem',
+              letterSpacing: '0.05em'
+            }}
+          >
+            {isHardcoreTheme ? '☀️ LIGHT' : '🌙 DARK'}
+          </button>
         </div>
       </nav>
 
@@ -133,49 +159,50 @@ export default function Home() {
         top: '100%',
         left: 0,
         right: 0,
-        background: 'rgba(0, 0, 0, 0.95)',
+        background: isHardcoreTheme ? 'rgba(0, 0, 0, 0.95)' : 'rgba(255, 255, 255, 0.95)',
         backdropFilter: 'blur(10px)',
-        borderBottom: '3px solid #ff0000',
+        borderBottom: `3px solid ${isHardcoreTheme ? '#ff0000' : '#2563eb'}`,
         flexDirection: 'column',
         padding: '25px',
         zIndex: 999,
-        boxShadow: '0 0 20px rgba(255, 0, 0, 0.3)'
+        boxShadow: isHardcoreTheme ? '0 0 20px rgba(255, 0, 0, 0.3)' : '0 0 20px rgba(37, 99, 235, 0.2)',
+        transition: 'all 0.3s ease'
       }}>
         <a href="/" style={{
-          color: '#ffffff',
+          color: isHardcoreTheme ? '#ffffff' : '#1f2937',
           textDecoration: 'none',
           fontSize: '1.2rem',
           fontWeight: '900',
           padding: '15px 0',
-          borderBottom: '1px solid rgba(255, 0, 0, 0.3)',
+          borderBottom: `1px solid ${isHardcoreTheme ? 'rgba(255, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.3)'}`,
           marginBottom: '10px',
           textTransform: 'uppercase',
           letterSpacing: '0.1em',
-          fontFamily: '"Impact", "Arial Black", sans-serif'
+          fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
         }}>HOME</a>
         <a href="/blogs" style={{
-          color: '#ffffff',
+          color: isHardcoreTheme ? '#ffffff' : '#1f2937',
           textDecoration: 'none',
           fontSize: '1.2rem',
           fontWeight: '900',
           padding: '15px 0',
-          borderBottom: '1px solid rgba(255, 0, 0, 0.3)',
+          borderBottom: `1px solid ${isHardcoreTheme ? 'rgba(255, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.3)'}`,
           marginBottom: '10px',
           textTransform: 'uppercase',
           letterSpacing: '0.1em',
-          fontFamily: '"Impact", "Arial Black", sans-serif'
+          fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
         }}>BLOGS</a>
         <a href="/request-customer-product" style={{
-          color: '#ff0000',
+          color: isHardcoreTheme ? '#ff0000' : '#2563eb',
           textDecoration: 'none',
           fontSize: '1.2rem',
           fontWeight: '900',
           padding: '15px 0',
-          borderBottom: '1px solid rgba(255, 0, 0, 0.3)',
+          borderBottom: `1px solid ${isHardcoreTheme ? 'rgba(255, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.3)'}`,
           marginBottom: '10px',
           textTransform: 'uppercase',
           letterSpacing: '0.1em',
-          fontFamily: '"Impact", "Arial Black", sans-serif'
+          fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
         }}>CUSTOM APPS</a>
       </div>
 
@@ -220,7 +247,9 @@ export default function Home() {
           left: '5%',
           width: '300px',
           height: '300px',
-          background: 'radial-gradient(circle, rgba(255, 0, 0, 0.15) 0%, transparent 70%)',
+          background: isHardcoreTheme
+            ? 'radial-gradient(circle, rgba(255, 0, 0, 0.15) 0%, transparent 70%)'
+            : 'radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%)',
           borderRadius: '50%',
           animation: 'pulse 3s ease-in-out infinite',
           filter: 'blur(50px)'
@@ -231,7 +260,9 @@ export default function Home() {
           right: '10%',
           width: '250px',
           height: '250px',
-          background: 'radial-gradient(circle, rgba(255, 0, 0, 0.1) 0%, transparent 70%)',
+          background: isHardcoreTheme
+            ? 'radial-gradient(circle, rgba(255, 0, 0, 0.1) 0%, transparent 70%)'
+            : 'radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%)',
           borderRadius: '50%',
           animation: 'pulse 4s ease-in-out infinite reverse',
           filter: 'blur(40px)'
@@ -242,7 +273,9 @@ export default function Home() {
           left: '80%',
           width: '150px',
           height: '150px',
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%)',
+          background: isHardcoreTheme
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%)'
+            : 'radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%)',
           borderRadius: '50%',
           animation: 'pulse 5s ease-in-out infinite',
           filter: 'blur(30px)'
@@ -282,32 +315,41 @@ export default function Home() {
             fontWeight: '900',
             lineHeight: '1',
             marginBottom: '24px',
-            color: '#ffffff',
-            textShadow: '4px 4px 8px rgba(0, 0, 0, 1)',
-            fontFamily: '"Impact", "Arial Black", sans-serif',
-            textTransform: 'uppercase',
-            letterSpacing: '0.05em'
+            color: isHardcoreTheme ? '#ffffff' : '#1f2937',
+            textShadow: isHardcoreTheme
+              ? '4px 4px 8px rgba(0, 0, 0, 1)'
+              : '2px 2px 4px rgba(0, 0, 0, 0.3)',
+            fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif',
+            textTransform: isHardcoreTheme ? 'uppercase' : 'none',
+            letterSpacing: isHardcoreTheme ? '0.05em' : 'normal'
           }}>
-            DOMINATE YOUR<br/>
+            {isHardcoreTheme ? 'DOMINATE YOUR' : 'Master Your'}<br/>
             <span style={{
-              color: '#ff0000',
-              textShadow: '4px 4px 8px rgba(255, 0, 0, 0.8)'
-            }}>NURSING SHIFT</span>
+              color: isHardcoreTheme ? '#ff0000' : '#2563eb',
+              textShadow: isHardcoreTheme
+                ? '4px 4px 8px rgba(255, 0, 0, 0.8)'
+                : '2px 2px 4px rgba(37, 99, 235, 0.3)'
+            }}>
+              {isHardcoreTheme ? 'NURSING SHIFT' : 'Nursing Workflow'}
+            </span>
           </h1>
 
           {/* Subheading */}
           <p style={{
             fontSize: 'clamp(1.2rem, 4vw, 1.5rem)',
-            color: '#cccccc',
+            color: isHardcoreTheme ? '#cccccc' : '#4b5563',
             lineHeight: '1.4',
             marginBottom: '50px',
             maxWidth: '700px',
             marginLeft: 'auto',
             marginRight: 'auto',
             fontWeight: '700',
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'
+            textShadow: isHardcoreTheme ? '1px 1px 2px rgba(0, 0, 0, 0.8)' : 'none'
           }}>
-            GET UNLIMITED ACCESS TO PRO NURSE PDF BUNDLES. SHIFT SCHEDULER • SBAR HANDOFF • MED TIMELINE • FATIGUE TRACKER • SLEEP PLANNER • BRAIN TIPS. DOMINATE YOUR WORKFLOW LIKE A BOSS.
+            {isHardcoreTheme
+              ? 'GET UNLIMITED ACCESS TO THE PRO NURSE PDF BUNDLE. SHIFT SCHEDULER • SBAR HANDOFF • MED TIMELINE • FATIGUE TRACKER • SLEEP PLANNER • BRAIN TIPS. DOMINATE YOUR WORKFLOW LIKE A BOSS.'
+              : 'Get unlimited access to the comprehensive Nurse PDF Bundle. Includes shift scheduling, handoff tools, medication tracking, fatigue monitoring, and productivity aids. Streamline your nursing workflow today.'
+            }
           </p>
 
           {/* CTA Buttons */}
@@ -319,33 +361,41 @@ export default function Home() {
             marginBottom: '60px'
           }}>
             <button style={{
-              background: 'linear-gradient(135deg, #ff0000, #cc0000)',
+              background: isHardcoreTheme
+                ? 'linear-gradient(135deg, #ff0000, #cc0000)'
+                : 'linear-gradient(135deg, #2563eb, #1d4ed8)',
               color: '#ffffff',
-              border: '3px solid #ffffff',
+              border: `3px solid ${isHardcoreTheme ? '#ffffff' : '#1e40af'}`,
               padding: '20px 40px',
-              borderRadius: '4px',
+              borderRadius: isHardcoreTheme ? '4px' : '8px',
               fontSize: '1.4rem',
               fontWeight: '900',
               cursor: 'pointer',
-              boxShadow: '0 0 30px rgba(255, 0, 0, 0.6)',
+              boxShadow: isHardcoreTheme
+                ? '0 0 30px rgba(255, 0, 0, 0.6)'
+                : '0 4px 15px rgba(37, 99, 235, 0.3)',
               transition: 'all 0.2s ease',
               minWidth: '300px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              fontFamily: '"Impact", "Arial Black", sans-serif'
+              textTransform: isHardcoreTheme ? 'uppercase' : 'none',
+              letterSpacing: isHardcoreTheme ? '0.1em' : 'normal',
+              fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
             }}
             onMouseOver={(e) => {
               const target = e.target as HTMLElement;
               target.style.transform = 'scale(1.05)';
-              target.style.boxShadow = '0 0 40px rgba(255, 0, 0, 0.9)';
+              target.style.boxShadow = isHardcoreTheme
+                ? '0 0 40px rgba(255, 0, 0, 0.9)'
+                : '0 8px 25px rgba(37, 99, 235, 0.4)';
             }}
             onMouseOut={(e) => {
               const target = e.target as HTMLElement;
               target.style.transform = 'scale(1)';
-              target.style.boxShadow = '0 0 30px rgba(255, 0, 0, 0.6)';
+              target.style.boxShadow = isHardcoreTheme
+                ? '0 0 30px rgba(255, 0, 0, 0.6)'
+                : '0 4px 15px rgba(37, 99, 235, 0.3)';
             }}
             >
-              🔥 GRAB YOUR BUNDLES NOW
+              {isHardcoreTheme ? '🔥 GRAB YOUR BUNDLE NOW' : '📥 Download PDF Bundle'}
             </button>
 
             <div style={{
@@ -373,7 +423,7 @@ export default function Home() {
 
           {/* Urgency Banner */}
           <div style={{
-            display: 'inline-block',
+            display: isHardcoreTheme ? 'inline-block' : 'none',
             background: 'rgba(0, 0, 0, 0.8)',
             border: '2px solid #ff0000',
             color: '#ff0000',
@@ -391,12 +441,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PDF BUNDLES SHOWCASE - Mobile First */}
+      {/* PDF BUNDLE SHOWCASE - Mobile First */}
       <section style={{
         padding: '60px 20px',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #000000 100%)',
+        background: isHardcoreTheme
+          ? 'linear-gradient(135deg, #1a1a1a 0%, #000000 100%)'
+          : 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
         position: 'relative',
-        borderTop: '3px solid #ff0000'
+        borderTop: `3px solid ${isHardcoreTheme ? '#ff0000' : '#2563eb'}`,
+        transition: 'all 0.3s ease'
       }}>
         <div style={{
           position: 'absolute',
@@ -433,24 +486,27 @@ export default function Home() {
               fontSize: 'clamp(2.5rem, 6vw, 4rem)',
               fontWeight: '900',
               marginBottom: '20px',
-              color: '#ffffff',
-              textShadow: '3px 3px 6px rgba(0, 0, 0, 0.9)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              fontFamily: '"Impact", "Arial Black", sans-serif'
+              color: isHardcoreTheme ? '#ffffff' : '#1f2937',
+              textShadow: isHardcoreTheme ? '3px 3px 6px rgba(0, 0, 0, 0.9)' : 'none',
+              textTransform: isHardcoreTheme ? 'uppercase' : 'none',
+              letterSpacing: isHardcoreTheme ? '0.05em' : 'normal',
+              fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
             }}>
-              PRO NURSE PDF BUNDLES
+              {isHardcoreTheme ? 'PRO NURSE PDF BUNDLE' : 'Comprehensive Nurse PDF Bundle'}
             </h2>
             <p style={{
               fontSize: 'clamp(1.1rem, 3vw, 1.4rem)',
-              color: '#cccccc',
+              color: isHardcoreTheme ? '#cccccc' : '#4b5563',
               lineHeight: '1.4',
               maxWidth: '700px',
               margin: '0 auto',
               fontWeight: '700',
-              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'
+              textShadow: isHardcoreTheme ? '1px 1px 2px rgba(0, 0, 0, 0.8)' : 'none'
             }}>
-              DOMINATE YOUR SHIFT WITH THESE POWERFUL TOOLS. UNLIMITED PRINTS • DOWNLOAD NOW • CRUSH YOUR WORKFLOW.
+              {isHardcoreTheme
+                ? 'DOMINATE YOUR SHIFT WITH THESE POWERFUL TOOLS. UNLIMITED PRINTS • DOWNLOAD NOW • CRUSH YOUR WORKFLOW.'
+                : 'Access comprehensive tools designed for nursing professionals. Includes everything you need to streamline your workflow and enhance patient care.'
+              }
             </p>
           </div>
 
@@ -462,22 +518,28 @@ export default function Home() {
           }}>
             {/* Bundle Item 1 */}
             <div style={{
-              background: 'rgba(0, 0, 0, 0.8)',
-              border: '2px solid #ff0000',
-              borderRadius: '4px',
+              background: isHardcoreTheme ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.9)',
+              border: `2px solid ${isHardcoreTheme ? '#ff0000' : '#2563eb'}`,
+              borderRadius: isHardcoreTheme ? '4px' : '8px',
               padding: '30px',
               transition: 'all 0.2s ease',
-              boxShadow: '0 0 15px rgba(255, 0, 0, 0.3)'
+              boxShadow: isHardcoreTheme
+                ? '0 0 15px rgba(255, 0, 0, 0.3)'
+                : '0 4px 15px rgba(37, 99, 235, 0.1)'
             }}
             onMouseOver={(e) => {
               const target = e.currentTarget as HTMLElement;
               target.style.transform = 'scale(1.05)';
-              target.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.6)';
+              target.style.boxShadow = isHardcoreTheme
+                ? '0 0 25px rgba(255, 0, 0, 0.6)'
+                : '0 8px 25px rgba(37, 99, 235, 0.2)';
             }}
             onMouseOut={(e) => {
               const target = e.currentTarget as HTMLElement;
               target.style.transform = 'scale(1)';
-              target.style.boxShadow = '0 0 15px rgba(255, 0, 0, 0.3)';
+              target.style.boxShadow = isHardcoreTheme
+                ? '0 0 15px rgba(255, 0, 0, 0.3)'
+                : '0 4px 15px rgba(37, 99, 235, 0.1)';
             }}
             >
               <div style={{
@@ -489,20 +551,23 @@ export default function Home() {
                 fontSize: '1.3rem',
                 fontWeight: '900',
                 marginBottom: '10px',
-                color: '#ffffff',
+                color: isHardcoreTheme ? '#ffffff' : '#1f2937',
                 textAlign: 'center',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                fontFamily: '"Impact", "Arial Black", sans-serif'
+                textTransform: isHardcoreTheme ? 'uppercase' : 'none',
+                letterSpacing: isHardcoreTheme ? '0.05em' : 'normal',
+                fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
               }}>Shift Scheduler</h3>
               <p style={{
-                color: '#cccccc',
+                color: isHardcoreTheme ? '#cccccc' : '#4b5563',
                 lineHeight: '1.4',
                 fontSize: '1rem',
                 textAlign: 'center',
                 fontWeight: '600'
               }}>
-                CRUSH YOUR SCHEDULE. TRACK HOURS. DOMINATE YOUR SHIFTS LIKE A BOSS.
+                {isHardcoreTheme
+                  ? 'CRUSH YOUR SCHEDULE. TRACK HOURS. DOMINATE YOUR SHIFTS LIKE A BOSS.'
+                  : 'Organize your work schedule, track hours, and plan your shifts efficiently.'
+                }
               </p>
             </div>
 
@@ -743,48 +808,56 @@ export default function Home() {
           }}>
             <div style={{
               display: 'inline-block',
-              background: 'rgba(255, 0, 0, 0.2)',
-              border: '2px solid #ff0000',
-              color: '#ffffff',
+              background: isHardcoreTheme ? 'rgba(255, 0, 0, 0.2)' : 'rgba(37, 99, 235, 0.1)',
+              border: `2px solid ${isHardcoreTheme ? '#ff0000' : '#2563eb'}`,
+              color: isHardcoreTheme ? '#ffffff' : '#1f2937',
               padding: '15px 30px',
-              borderRadius: '4px',
+              borderRadius: isHardcoreTheme ? '4px' : '8px',
               fontSize: '1.2rem',
               fontWeight: '900',
               marginBottom: '30px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              fontFamily: '"Impact", "Arial Black", sans-serif',
-              boxShadow: '0 0 20px rgba(255, 0, 0, 0.5)'
+              textTransform: isHardcoreTheme ? 'uppercase' : 'none',
+              letterSpacing: isHardcoreTheme ? '0.05em' : 'normal',
+              fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif',
+              boxShadow: isHardcoreTheme ? '0 0 20px rgba(255, 0, 0, 0.5)' : '0 4px 15px rgba(37, 99, 235, 0.1)'
             }}>
-              ⚡ PREMIUM.TENOL: EXECUTE ANY DOCUMENTS YOU NEED ⚡
+              {isHardcoreTheme ? '⚡ PREMIUM.TENOL: EXECUTE ANY DOCUMENTS YOU NEED ⚡' : '📋 Premium.tenol: Custom document execution available'}
             </div>
             <button style={{
-              background: 'linear-gradient(135deg, #ff0000, #cc0000)',
+              background: isHardcoreTheme
+                ? 'linear-gradient(135deg, #ff0000, #cc0000)'
+                : 'linear-gradient(135deg, #2563eb, #1d4ed8)',
               color: '#ffffff',
-              border: '3px solid #ffffff',
+              border: `3px solid ${isHardcoreTheme ? '#ffffff' : '#1e40af'}`,
               padding: '18px 36px',
-              borderRadius: '4px',
+              borderRadius: isHardcoreTheme ? '4px' : '8px',
               fontSize: '1.3rem',
               fontWeight: '900',
               cursor: 'pointer',
-              boxShadow: '0 0 25px rgba(255, 0, 0, 0.6)',
+              boxShadow: isHardcoreTheme
+                ? '0 0 25px rgba(255, 0, 0, 0.6)'
+                : '0 4px 15px rgba(37, 99, 235, 0.3)',
               transition: 'all 0.2s ease',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              fontFamily: '"Impact", "Arial Black", sans-serif'
+              textTransform: isHardcoreTheme ? 'uppercase' : 'none',
+              letterSpacing: isHardcoreTheme ? '0.1em' : 'normal',
+              fontFamily: isHardcoreTheme ? '"Impact", "Arial Black", sans-serif' : 'system-ui, sans-serif'
             }}
             onMouseOver={(e) => {
               const target = e.target as HTMLElement;
               target.style.transform = 'scale(1.05)';
-              target.style.boxShadow = '0 0 35px rgba(255, 0, 0, 0.9)';
+              target.style.boxShadow = isHardcoreTheme
+                ? '0 0 35px rgba(255, 0, 0, 0.9)'
+                : '0 8px 25px rgba(37, 99, 235, 0.4)';
             }}
             onMouseOut={(e) => {
               const target = e.target as HTMLElement;
               target.style.transform = 'scale(1)';
-              target.style.boxShadow = '0 0 25px rgba(255, 0, 0, 0.6)';
+              target.style.boxShadow = isHardcoreTheme
+                ? '0 0 25px rgba(255, 0, 0, 0.6)'
+                : '0 4px 15px rgba(37, 99, 235, 0.3)';
             }}
             >
-              🔥 DOWNLOAD NOW - UNLIMITED PRINTS 🔥
+              {isHardcoreTheme ? '🔥 DOWNLOAD NOW - UNLIMITED PRINTS 🔥' : '📥 Download PDF Bundle'}
             </button>
           </div>
         </div>
@@ -991,9 +1064,10 @@ export default function Home() {
       {/* FOOTER */}
       <footer style={{
         padding: '40px 20px',
-        borderTop: '1px solid rgba(55, 65, 81, 0.3)',
-        background: 'rgba(12, 10, 9, 0.5)',
-        backdropFilter: 'blur(10px)'
+        borderTop: `1px solid ${isHardcoreTheme ? 'rgba(55, 65, 81, 0.3)' : 'rgba(0, 0, 0, 0.1)'}`,
+        background: isHardcoreTheme ? 'rgba(12, 10, 9, 0.5)' : 'rgba(255, 255, 255, 0.8)',
+        backdropFilter: 'blur(10px)',
+        transition: 'all 0.3s ease'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -1025,7 +1099,7 @@ export default function Home() {
               }}>NURSE TOOLS & TECH</div>
             </div>
             <p style={{
-              color: '#9ca3af',
+              color: isHardcoreTheme ? '#9ca3af' : '#6b7280',
               lineHeight: '1.6',
               fontSize: '0.95rem'
             }}>
@@ -1035,37 +1109,37 @@ export default function Home() {
 
           <div>
             <h4 style={{
-              color: '#ffffff',
+              color: isHardcoreTheme ? '#ffffff' : '#1f2937',
               fontSize: '1.1rem',
               fontWeight: '700',
               marginBottom: '16px'
             }}>Quick Links</h4>
             <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
-              <a href="/" style={{color: '#9ca3af', textDecoration: 'none', fontSize: '0.95rem'}}>Home</a>
-              <a href="/blogs" style={{color: '#9ca3af', textDecoration: 'none', fontSize: '0.95rem'}}>Blogs</a>
-              <a href="/request-customer-product" style={{color: '#9ca3af', textDecoration: 'none', fontSize: '0.95rem'}}>Custom Requests</a>
+              <a href="/" style={{color: isHardcoreTheme ? '#9ca3af' : '#6b7280', textDecoration: 'none', fontSize: '0.95rem'}}>Home</a>
+              <a href="/blogs" style={{color: isHardcoreTheme ? '#9ca3af' : '#6b7280', textDecoration: 'none', fontSize: '0.95rem'}}>Blogs</a>
+              <a href="/request-customer-product" style={{color: isHardcoreTheme ? '#9ca3af' : '#6b7280', textDecoration: 'none', fontSize: '0.95rem'}}>Custom Requests</a>
             </div>
           </div>
 
           <div>
             <h4 style={{
-              color: '#ffffff',
+              color: isHardcoreTheme ? '#ffffff' : '#1f2937',
               fontSize: '1.1rem',
               fontWeight: '700',
               marginBottom: '16px'
             }}>Connect</h4>
             <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
-              <div style={{color: '#9ca3af', fontSize: '0.95rem'}}>📧 support@nursegear.com</div>
-              <div style={{color: '#9ca3af', fontSize: '0.95rem'}}>📚 Resource Library</div>
+              <div style={{color: isHardcoreTheme ? '#9ca3af' : '#6b7280', fontSize: '0.95rem'}}>📧 support@nursegear.com</div>
+              <div style={{color: isHardcoreTheme ? '#9ca3af' : '#6b7280', fontSize: '0.95rem'}}>📚 Resource Library</div>
             </div>
           </div>
         </div>
 
         <div style={{
-          borderTop: '1px solid rgba(55, 65, 81, 0.3)',
+          borderTop: `1px solid ${isHardcoreTheme ? 'rgba(55, 65, 81, 0.3)' : 'rgba(0, 0, 0, 0.1)'}`,
           paddingTop: '24px',
           textAlign: 'center',
-          color: '#6b7280',
+          color: isHardcoreTheme ? '#6b7280' : '#9ca3af',
           fontSize: '0.9rem'
         }}>
           © 2026 Nurse Tools & Tech. All rights reserved. | Built for nurses, by nurses.
